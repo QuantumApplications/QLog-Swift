@@ -12,95 +12,132 @@ import MobileCoreServices
 var documentInteractionController: UIDocumentInteractionController!
 
 // Needs to inherit from NSObject to allow selectors working properly
+
 public class LogViewer: NSObject {
-    
-    static let font = UIFont.monospacedDigitSystemFont(ofSize: 8, weight: UIFontWeightMedium)
+
+    static let font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFontWeightMedium)
     static let shared = LogViewer()
-    
+
     public static var textColor = UIColor.red
     public static var debugColor = UIColor.blue
     public static var infoColor = UIColor.green
     public static var warningColor = UIColor.yellow
     public static var errorColor = UIColor.red
-    
+
     var viewController: LogViewController?
-    
+
     public static func enable() {
         // Register observer to be notified when a new window appears
         NotificationCenter.default.addObserver(LogViewer.shared, selector: #selector(registerGestureRecognizer), name: .UIWindowDidBecomeVisible, object: nil)
         LogViewer.shared.createViewController()
     }
-    
+
     public static func logDebug(_ text: String) {
         LogViewer.log(text, color: LogViewer.debugColor)
     }
-    
+
     public static func logInfo(_ text: String) {
         LogViewer.log(text, color: LogViewer.infoColor)
     }
-    
+
     public static func logWarning(_ text: String) {
         LogViewer.log(text, color: LogViewer.warningColor)
     }
-    
+
     public static func logError(_ text: String) {
         LogViewer.log(text, color: LogViewer.errorColor)
     }
-    
+
     public static func logDebug(_ text: String, file: String, function: String, line: String) {
         LogViewer.log(text, file: file, function: function, line: line, color: LogViewer.debugColor)
     }
-    
+
     public static func logInfo(_ text: String, file: String, function: String, line: String) {
         LogViewer.log(text, file: file, function: function, line: line, color: LogViewer.infoColor)
     }
-    
+
     public static func logWarning(_ text: String, file: String, function: String, line: String) {
         LogViewer.log(text, file: file, function: function, line: line, color: LogViewer.warningColor)
     }
-    
+
     public static func logError(_ text: String, file: String, function: String, line: String) {
         LogViewer.log(text, file: file, function: function, line: line, color: LogViewer.errorColor)
     }
-    
+
     static func log(_ text: String, color: UIColor) {
         let attributedText = NSMutableAttributedString(string: "\n\(text)", attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: LogViewer.font])
         let oldText = NSMutableAttributedString(attributedString: (LogViewer.shared.viewController?.textView.attributedText)!)
         oldText.append(attributedText)
         LogViewer.shared.viewController?.textView.attributedText = oldText
     }
-    
+
     static func log(_ text: String, file: String, function: String, line: String, color: UIColor) {
-        let attributedText1 = NSMutableAttributedString(string: "\n\((file as NSString).lastPathComponent):\(line) \(function): ", attributes: [NSForegroundColorAttributeName: LogViewer.textColor, NSFontAttributeName: LogViewer.font])
-        let attributedText2 = NSMutableAttributedString(string: "\(text)", attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: LogViewer.font])
-        let oldText = NSMutableAttributedString(attributedString: (LogViewer.shared.viewController?.textView.attributedText)!)
-        oldText.append(attributedText1)
-        oldText.append(attributedText2)
-        LogViewer.shared.viewController?.textView.attributedText = oldText
+        DispatchQueue.main.async {
+            guard let viewController = LogViewer.shared.viewController else {
+                return
+            }
+            let attributedText1 = NSMutableAttributedString(string: "\n\((file as NSString).lastPathComponent):\(line) \(function): ", attributes: [NSForegroundColorAttributeName: LogViewer.textColor, NSFontAttributeName: LogViewer.font])
+            let attributedText2 = NSMutableAttributedString(string: "\(text)", attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: LogViewer.font])
+            let oldText = NSMutableAttributedString(attributedString: (viewController.textView.attributedText))
+            oldText.append(attributedText1)
+            oldText.append(attributedText2)
+            viewController.textView.attributedText = oldText
+        }
     }
-    
+
     func registerGestureRecognizer(_ notification: NSNotification) {
         // Add a gesture recognizer to the provided window
         if notification.object is UIWindow {
             let window = notification.object as! UIWindow
-            let gestureRecognizer = UIScreenEdgePanGestureRecognizer(target: LogViewer.shared, action: #selector(screenEdgeSwiped))
-            gestureRecognizer.edges = .right
-            window.addGestureRecognizer(gestureRecognizer)
+            // Add a gesture recognizer for each edge
+            let gestureRecognizerTop = UIScreenEdgePanGestureRecognizer(target: LogViewer.shared, action: #selector(screenEdgeSwiped))
+            let gestureRecognizerLeft = UIScreenEdgePanGestureRecognizer(target: LogViewer.shared, action: #selector(screenEdgeSwiped))
+            let gestureRecognizerBottom = UIScreenEdgePanGestureRecognizer(target: LogViewer.shared, action: #selector(screenEdgeSwiped))
+            let gestureRecognizerRight = UIScreenEdgePanGestureRecognizer(target: LogViewer.shared, action: #selector(screenEdgeSwiped))
+            gestureRecognizerTop.edges = .top
+            gestureRecognizerLeft.edges = .left
+            gestureRecognizerBottom.edges = .bottom
+            gestureRecognizerRight.edges = .right
+            window.addGestureRecognizer(gestureRecognizerTop)
+            window.addGestureRecognizer(gestureRecognizerLeft)
+            window.addGestureRecognizer(gestureRecognizerBottom)
+            window.addGestureRecognizer(gestureRecognizerRight)
         }
     }
-    
+
     func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        // Check if device orientation matches required recognizer
+        switch UIApplication.shared.statusBarOrientation {
+        case .landscapeLeft:
+            if recognizer.edges != .top {
+                return
+            }
+        case .portraitUpsideDown:
+            if recognizer.edges != .left {
+                return
+            }
+        case .landscapeRight:
+            if recognizer.edges != .bottom {
+                return
+            }
+        case .portrait:
+            if recognizer.edges != .right {
+                return
+            }
+        default:
+            return
+        }
         // Show the log viewer if gesture if performed at top right corner
         // 0 is the border between title bar and content
-        if recognizer.state == .recognized && recognizer.location(in: UIApplication.topViewController()?.view).y < 0 {
+        if recognizer.state == .recognized && recognizer.location(in: UIApplication.topViewController()?.view).y < 60 {
             self.show()
         }
     }
-    
+
     func createViewController() {
         // Create a new log view controller and present it
         //let viewController = LogViewController(nibName: "LogViewController", bundle: bundle)
-        guard let bundle = Bundle(identifier:"de.quinesoft.LogViewer") else {
+        guard let bundle = Bundle(identifier: "de.quinesoft.LogViewer") else {
             return
         }
         let viewController = LogViewController()
@@ -121,7 +158,7 @@ public class LogViewer: NSObject {
         viewController.extendedLayoutIncludesOpaqueBars = true
         self.viewController = viewController
     }
-    
+
     func show() {
         guard let viewController = self.viewController else {
             return
@@ -130,11 +167,11 @@ public class LogViewer: NSObject {
         navigationController.navigationBar.topItem?.title = "Log"
         UIApplication.topViewController()?.present(navigationController, animated: true, completion: nil)
     }
-    
+
     func back() {
         self.viewController?.dismiss(animated: true, completion: nil)
     }
-    
+
     func action(_ sender: UIBarButtonItem) {
         // Get attributed text
         guard let text = self.viewController?.textView.attributedText else {
@@ -162,13 +199,14 @@ public class LogViewer: NSObject {
             return
         }
     }
-    
+
 }
 
 // Get top view controller
 // Taken from https://stackoverflow.com/a/30858591/5804550
+
 extension UIApplication {
-    
+
     class func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let navigationController = controller as? UINavigationController {
             return topViewController(controller: navigationController.visibleViewController)
@@ -183,5 +221,5 @@ extension UIApplication {
         }
         return controller
     }
-    
+
 }
