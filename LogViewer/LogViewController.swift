@@ -11,6 +11,7 @@ import UIKit
 class LogViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
