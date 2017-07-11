@@ -32,46 +32,60 @@ public class LogViewer: NSObject {
         LogViewer.shared.createViewController()
     }
 
-    public static func logDebug(_ text: String) {
-        LogViewer.log(text, color: LogViewer.debugColor)
+    public static func logDebug<T>(_ object: T) {
+        LogViewer.log(object, color: LogViewer.debugColor)
     }
 
-    public static func logInfo(_ text: String) {
-        LogViewer.log(text, color: LogViewer.infoColor)
+    public static func logInfo<T>(_ object: T) {
+        LogViewer.log(object, color: LogViewer.infoColor)
     }
 
-    public static func logWarning(_ text: String) {
-        LogViewer.log(text, color: LogViewer.warningColor)
+    public static func logWarning<T>(_ object: T) {
+        LogViewer.log(object, color: LogViewer.warningColor)
     }
 
-    public static func logError(_ text: String) {
-        LogViewer.log(text, color: LogViewer.errorColor)
+    public static func logError<T>(_ object: T) {
+        LogViewer.log(object, color: LogViewer.errorColor)
     }
 
-    public static func logDebug(_ text: String, file: String, function: String, line: String) {
-        LogViewer.log(text, file: file, function: function, line: line, color: LogViewer.debugColor)
+    public static func logDebug<T>(_ object: T, file: String, function: String, line: String) {
+        LogViewer.log(object, file: file, function: function, line: line, color: LogViewer.debugColor)
     }
 
-    public static func logInfo(_ text: String, file: String, function: String, line: String) {
-        LogViewer.log(text, file: file, function: function, line: line, color: LogViewer.infoColor)
+    public static func logInfo<T>(_ object: T, file: String, function: String, line: String) {
+        LogViewer.log(object, file: file, function: function, line: line, color: LogViewer.infoColor)
     }
 
-    public static func logWarning(_ text: String, file: String, function: String, line: String) {
-        LogViewer.log(text, file: file, function: function, line: line, color: LogViewer.warningColor)
+    public static func logWarning<T>(_ object: T, file: String, function: String, line: String) {
+        LogViewer.log(object, file: file, function: function, line: line, color: LogViewer.warningColor)
     }
 
-    public static func logError(_ text: String, file: String, function: String, line: String) {
-        LogViewer.log(text, file: file, function: function, line: line, color: LogViewer.errorColor)
+    public static func logError<T>(_ object: T, file: String, function: String, line: String) {
+        LogViewer.log(object, file: file, function: function, line: line, color: LogViewer.errorColor)
     }
 
-    static func log(_ text: String, color: UIColor) {
+    static func log<T>(_ object: T, color: UIColor) {
+        var text = ""
+        if let objectString = object as? String {
+            text = objectString
+        } else {
+            let objectString = String(describing: object)
+            text = objectString
+        }
         let attributedText = NSMutableAttributedString(string: "\n\(text)", attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: LogViewer.font])
         let oldText = NSMutableAttributedString(attributedString: (LogViewer.shared.viewController?.textView.attributedText)!)
         oldText.append(attributedText)
         LogViewer.shared.viewController?.textView.attributedText = oldText
     }
 
-    static func log(_ text: String, file: String, function: String, line: String, color: UIColor) {
+    static func log<T>(_ object: T, file: String, function: String, line: String, color: UIColor) {
+        var text = ""
+        if let objectString = object as? String {
+            text = objectString
+        } else {
+            let objectString = String(describing: object)
+            text = objectString
+        }
         DispatchQueue.main.async {
             guard let viewController = LogViewer.shared.viewController else {
                 return
