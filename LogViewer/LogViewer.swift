@@ -23,13 +23,33 @@ public class LogViewer: NSObject {
     public static var infoColor = UIColor.green
     public static var warningColor = UIColor.yellow
     public static var errorColor = UIColor.red
+    public static var logPath: String?
 
     var viewController: LogViewController?
+    var logFileHandle: FileHandle?
 
     public static func enable() {
         // Register observer to be notified when a new window appears
         NotificationCenter.default.addObserver(LogViewer.shared, selector: #selector(registerGestureRecognizer), name: .UIWindowDidBecomeVisible, object: nil)
         LogViewer.shared.createViewController()
+        // Prepare log path
+        if LogViewer.logPath != nil {
+            let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
+            let logDirectoryPath = (LogViewer.logPath! as NSString).appendingPathComponent(appName)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let logFileName = dateFormatter.string(from: Date()) + ".log"
+            let logFilePath = (logDirectoryPath as NSString).appendingPathComponent(logFileName)
+            do {
+                try FileManager.default.createDirectory(atPath: logDirectoryPath, withIntermediateDirectories: true, attributes: nil)
+                if FileManager.default.createFile(atPath: logFilePath, contents: nil, attributes: nil) {
+                    if let logFileHandle = FileHandle(forWritingAtPath: logFilePath) {
+                        LogViewer.shared.logFileHandle = logFileHandle
+                    }
+                }
+            } catch {
+            }
+        }
     }
 
     public static func logDebug<T>(_ object: T) {
@@ -48,20 +68,20 @@ public class LogViewer: NSObject {
         LogViewer.log(object, color: LogViewer.errorColor)
     }
 
-    public static func logDebug<T>(_ object: T, file: String, function: String, line: String) {
-        LogViewer.log(object, file: file, function: function, line: line, color: LogViewer.debugColor)
+    public static func logDebug<T>(_ object: T, file: String, function: String, line: String, date: Date) {
+        LogViewer.log(object, file: file, function: function, line: line, date: date, color: LogViewer.debugColor)
     }
 
-    public static func logInfo<T>(_ object: T, file: String, function: String, line: String) {
-        LogViewer.log(object, file: file, function: function, line: line, color: LogViewer.infoColor)
+    public static func logInfo<T>(_ object: T, file: String, function: String, line: String, date: Date) {
+        LogViewer.log(object, file: file, function: function, line: line, date: date, color: LogViewer.infoColor)
     }
 
-    public static func logWarning<T>(_ object: T, file: String, function: String, line: String) {
-        LogViewer.log(object, file: file, function: function, line: line, color: LogViewer.warningColor)
+    public static func logWarning<T>(_ object: T, file: String, function: String, line: String, date: Date) {
+        LogViewer.log(object, file: file, function: function, line: line, date: date, color: LogViewer.warningColor)
     }
 
-    public static func logError<T>(_ object: T, file: String, function: String, line: String) {
-        LogViewer.log(object, file: file, function: function, line: line, color: LogViewer.errorColor)
+    public static func logError<T>(_ object: T, file: String, function: String, line: String, date: Date) {
+        LogViewer.log(object, file: file, function: function, line: line, date: date, color: LogViewer.errorColor)
     }
 
     static func log<T>(_ object: T, color: UIColor) {
@@ -78,7 +98,7 @@ public class LogViewer: NSObject {
         LogViewer.shared.viewController?.textView.attributedText = oldText
     }
 
-    static func log<T>(_ object: T, file: String, function: String, line: String, color: UIColor) {
+    static func log<T>(_ object: T, file: String, function: String, line: String, date: Date, color: UIColor) {
         var text = ""
         if let objectString = object as? String {
             text = objectString
@@ -90,7 +110,9 @@ public class LogViewer: NSObject {
             guard let viewController = LogViewer.shared.viewController else {
                 return
             }
-            let attributedText1 = NSMutableAttributedString(string: "\n\((file as NSString).lastPathComponent):\(line) \(function): ", attributes: [NSForegroundColorAttributeName: LogViewer.textColor, NSFontAttributeName: LogViewer.font])
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm:ss"
+            let attributedText1 = NSMutableAttributedString(string: "\n\(dateFormatter.string(from: date)): \((file as NSString).lastPathComponent):\(line) \(function): ", attributes: [NSForegroundColorAttributeName: LogViewer.textColor, NSFontAttributeName: LogViewer.font])
             let attributedText2 = NSMutableAttributedString(string: "\(text)", attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: LogViewer.font])
             let oldText = NSMutableAttributedString(attributedString: (viewController.textView.attributedText))
             oldText.append(attributedText1)
@@ -170,16 +192,27 @@ public class LogViewer: NSObject {
         viewController.navigationItem.rightBarButtonItem = actionButton
         // Allow scrolling if navigation bars are opaque (WTF Apple?)
         viewController.extendedLayoutIncludesOpaqueBars = true
+        viewController.tabBarItem = UITabBarItem(title: "Live", image: UIImage(), tag: 1)
         self.viewController = viewController
     }
-
+    
     func show() {
         guard let viewController = self.viewController else {
             return
         }
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.topItem?.title = "Log"
-        UIApplication.topViewController()?.present(navigationController, animated: true, completion: nil)
+        let tabBarController = UITabBarController()
+        let archiveViewController = UIViewController()
+        archiveViewController.tabBarItem = UITabBarItem(title: "Archive", image: UIImage(), tag: 2)
+        let archiveNavigationController = UINavigationController(rootViewController: archiveViewController)
+        archiveNavigationController.navigationBar.topItem?.title = "Archive"
+        let supportPackageViewController = UIViewController()
+        supportPackageViewController.tabBarItem = UITabBarItem(title: "Support Package", image: UIImage(), tag: 2)
+        let supportPackageNavigationController = UINavigationController(rootViewController: supportPackageViewController)
+        supportPackageNavigationController.navigationBar.topItem?.title = "Support Package"
+        tabBarController.viewControllers = [navigationController, archiveNavigationController, supportPackageNavigationController]
+        UIApplication.topViewController()?.present(tabBarController, animated: true, completion: nil)
     }
 
     func back() {
