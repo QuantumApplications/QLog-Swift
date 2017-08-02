@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F6392AF1F31FB5C00359C6E /* AppsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6392AD1F31FB5C00359C6E /* AppsTableViewController.swift */; };
+		9F6392B01F31FB5C00359C6E /* AppsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6392AE1F31FB5C00359C6E /* AppsTableViewController.xib */; };
+		9F6392B31F31FBD100359C6E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6392B11F31FBD100359C6E /* TableViewCell.swift */; };
+		9F6392B41F31FBD100359C6E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6392B21F31FBD100359C6E /* TableViewCell.xib */; };
+		9F6392B71F3206D200359C6E /* LogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6392B51F3206D200359C6E /* LogsTableViewController.swift */; };
+		9F6392B81F3206D200359C6E /* LogsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6392B61F3206D200359C6E /* LogsTableViewController.xib */; };
 		9FE85A051EFAA73700560920 /* LogViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE859FB1EFAA73600560920 /* LogViewer.framework */; };
 		9FE85A0A1EFAA73700560920 /* LogViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A091EFAA73700560920 /* LogViewerTests.swift */; };
 		9FE85A0C1EFAA73700560920 /* LogViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE859FE1EFAA73600560920 /* LogViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +32,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F6392AD1F31FB5C00359C6E /* AppsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsTableViewController.swift; sourceTree = "<group>"; };
+		9F6392AE1F31FB5C00359C6E /* AppsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsTableViewController.xib; sourceTree = "<group>"; };
+		9F6392B11F31FBD100359C6E /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		9F6392B21F31FBD100359C6E /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		9F6392B51F3206D200359C6E /* LogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogsTableViewController.swift; sourceTree = "<group>"; };
+		9F6392B61F3206D200359C6E /* LogsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogsTableViewController.xib; sourceTree = "<group>"; };
 		9FE859FB1EFAA73600560920 /* LogViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LogViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE859FE1EFAA73600560920 /* LogViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogViewer.h; sourceTree = "<group>"; };
 		9FE859FF1EFAA73600560920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +94,12 @@
 				9FE85A3E1EFAA85500560920 /* LogViewer.swift */,
 				9FE85A641EFACEB300560920 /* LogViewController.swift */,
 				9FE85A651EFACEB300560920 /* LogViewController.xib */,
+				9F6392AD1F31FB5C00359C6E /* AppsTableViewController.swift */,
+				9F6392AE1F31FB5C00359C6E /* AppsTableViewController.xib */,
+				9F6392B11F31FBD100359C6E /* TableViewCell.swift */,
+				9F6392B21F31FBD100359C6E /* TableViewCell.xib */,
+				9F6392B51F3206D200359C6E /* LogsTableViewController.swift */,
+				9F6392B61F3206D200359C6E /* LogsTableViewController.xib */,
 			);
 			path = LogViewer;
 			sourceTree = "<group>";
@@ -191,7 +209,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6392B81F3206D200359C6E /* LogsTableViewController.xib in Resources */,
 				9FE85A671EFACEB300560920 /* LogViewController.xib in Resources */,
+				9F6392B41F31FBD100359C6E /* TableViewCell.xib in Resources */,
+				9F6392B01F31FB5C00359C6E /* AppsTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +231,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FE85A3F1EFAA85500560920 /* LogViewer.swift in Sources */,
+				9F6392B31F31FBD100359C6E /* TableViewCell.swift in Sources */,
+				9F6392AF1F31FB5C00359C6E /* AppsTableViewController.swift in Sources */,
+				9F6392B71F3206D200359C6E /* LogsTableViewController.swift in Sources */,
 				9FE85A661EFACEB300560920 /* LogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
