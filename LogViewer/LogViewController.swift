@@ -14,8 +14,17 @@ class LogViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var textView: UITextView!
     
+    var log: URL?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let log = self.log {
+            do {
+                self.textView.text = try String(data: Data(contentsOf: log), encoding: .utf8)
+            }
+            catch {
+            }
+        }
     }
 
 }

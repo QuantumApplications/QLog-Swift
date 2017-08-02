@@ -23,7 +23,7 @@ public class LogViewer: NSObject {
     public static var infoColor = UIColor.green
     public static var warningColor = UIColor.yellow
     public static var errorColor = UIColor.red
-    public static var logPath: String?
+    public static var logUrl: URL?
 
     var viewController: LogViewController?
     var logFileHandle: FileHandle?
@@ -33,17 +33,17 @@ public class LogViewer: NSObject {
         NotificationCenter.default.addObserver(LogViewer.shared, selector: #selector(registerGestureRecognizer), name: .UIWindowDidBecomeVisible, object: nil)
         LogViewer.shared.createViewController()
         // Prepare log path
-        if LogViewer.logPath != nil {
+        if LogViewer.logUrl != nil {
             let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
-            let logDirectoryPath = (LogViewer.logPath! as NSString).appendingPathComponent(appName)
+            let logDirectoryUrl = LogViewer.logUrl!.appendingPathComponent(appName)
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             let logFileName = dateFormatter.string(from: Date()) + ".log"
-            let logFilePath = (logDirectoryPath as NSString).appendingPathComponent(logFileName)
+            let logFileUrl = logDirectoryUrl.appendingPathComponent(logFileName)
             do {
-                try FileManager.default.createDirectory(atPath: logDirectoryPath, withIntermediateDirectories: true, attributes: nil)
-                if FileManager.default.createFile(atPath: logFilePath, contents: nil, attributes: nil) {
-                    if let logFileHandle = FileHandle(forWritingAtPath: logFilePath) {
+                try FileManager.default.createDirectory(at: logDirectoryUrl, withIntermediateDirectories: true, attributes: nil)
+                if FileManager.default.createFile(atPath: logFileUrl.path, contents: nil, attributes: nil) {
+                    if let logFileHandle = FileHandle(forWritingAtPath: logFileUrl.path) {
                         LogViewer.shared.logFileHandle = logFileHandle
                     }
                 }
@@ -52,39 +52,24 @@ public class LogViewer: NSObject {
         }
     }
 
-    public static func logDebug<T>(_ object: T) {
-        LogViewer.log(object, color: LogViewer.debugColor)
-    }
-
-    public static func logInfo<T>(_ object: T) {
-        LogViewer.log(object, color: LogViewer.infoColor)
-    }
-
-    public static func logWarning<T>(_ object: T) {
-        LogViewer.log(object, color: LogViewer.warningColor)
-    }
-
-    public static func logError<T>(_ object: T) {
-        LogViewer.log(object, color: LogViewer.errorColor)
-    }
-
     public static func logDebug<T>(_ object: T, file: String, function: String, line: String, date: Date) {
-        LogViewer.log(object, file: file, function: function, line: line, date: date, color: LogViewer.debugColor)
+        LogViewer.log(object, file: file, function: function, line: line, date: date, logLevel: "DEBUG", color: LogViewer.debugColor)
     }
 
     public static func logInfo<T>(_ object: T, file: String, function: String, line: String, date: Date) {
-        LogViewer.log(object, file: file, function: function, line: line, date: date, color: LogViewer.infoColor)
+        LogViewer.log(object, file: file, function: function, line: line, date: date, logLevel: "INFO", color: LogViewer.infoColor)
     }
 
     public static func logWarning<T>(_ object: T, file: String, function: String, line: String, date: Date) {
-        LogViewer.log(object, file: file, function: function, line: line, date: date, color: LogViewer.warningColor)
+        LogViewer.log(object, file: file, function: function, line: line, date: date, logLevel: "WARNING", color: LogViewer.warningColor)
     }
 
     public static func logError<T>(_ object: T, file: String, function: String, line: String, date: Date) {
-        LogViewer.log(object, file: file, function: function, line: line, date: date, color: LogViewer.errorColor)
+        LogViewer.log(object, file: file, function: function, line: line, date: date, logLevel: "ERROR", color: LogViewer.errorColor)
     }
 
-    static func log<T>(_ object: T, color: UIColor) {
+    static func log<T>(_ object: T, file: String, function: String, line: String, date: Date, logLevel: String, color: UIColor) {
+        // Convert object to text
         var text = ""
         if let objectString = object as? String {
             text = objectString
@@ -92,33 +77,24 @@ public class LogViewer: NSObject {
             let objectString = String(describing: object)
             text = objectString
         }
-        let attributedText = NSMutableAttributedString(string: "\n\(text)", attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: LogViewer.font])
-        let oldText = NSMutableAttributedString(attributedString: (LogViewer.shared.viewController?.textView.attributedText)!)
-        oldText.append(attributedText)
-        LogViewer.shared.viewController?.textView.attributedText = oldText
-    }
-
-    static func log<T>(_ object: T, file: String, function: String, line: String, date: Date, color: UIColor) {
-        var text = ""
-        if let objectString = object as? String {
-            text = objectString
-        } else {
-            let objectString = String(describing: object)
-            text = objectString
-        }
+        // Create log text
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss"
+        let metaText = "\(dateFormatter.string(from: date)): \((file as NSString).lastPathComponent):\(line) \(function): "
+        // Log into view controller
         DispatchQueue.main.async {
             guard let viewController = LogViewer.shared.viewController else {
                 return
             }
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "HH:mm:ss"
-            let attributedText1 = NSMutableAttributedString(string: "\n\(dateFormatter.string(from: date)): \((file as NSString).lastPathComponent):\(line) \(function): ", attributes: [NSForegroundColorAttributeName: LogViewer.textColor, NSFontAttributeName: LogViewer.font])
-            let attributedText2 = NSMutableAttributedString(string: "\(text)", attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: LogViewer.font])
+            let attributedMetaText = NSMutableAttributedString(string: "\n\(metaText)", attributes: [NSForegroundColorAttributeName: LogViewer.textColor, NSFontAttributeName: LogViewer.font])
+            let attributedText = NSMutableAttributedString(string: "\(text)", attributes: [NSForegroundColorAttributeName: color, NSFontAttributeName: LogViewer.font])
             let oldText = NSMutableAttributedString(attributedString: (viewController.textView.attributedText))
-            oldText.append(attributedText1)
-            oldText.append(attributedText2)
+            oldText.append(attributedMetaText)
+            oldText.append(attributedText)
             viewController.textView.attributedText = oldText
         }
+        // Log into file
+        LogViewer.shared.logFileHandle?.write("\n\(logLevel): \(metaText)\(text)".data(using: .utf8)!)
     }
 
     func registerGestureRecognizer(_ notification: NSNotification) {
@@ -184,11 +160,10 @@ public class LogViewer: NSObject {
             return
         }
         viewController.view = nib[0] as! UIView
-        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(back))
-        backButton.tintColor = UIColor(colorLiteralRed: 0.921, green: 0.694, blue: 0.247, alpha: 1.000)
+        // Add bar buttons
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
+        viewController.navigationItem.leftBarButtonItem = cancelButton
         let actionButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(action))
-        actionButton.tintColor = UIColor(colorLiteralRed: 0.921, green: 0.694, blue: 0.247, alpha: 1.000)
-        viewController.navigationItem.leftBarButtonItem = backButton
         viewController.navigationItem.rightBarButtonItem = actionButton
         // Allow scrolling if navigation bars are opaque (WTF Apple?)
         viewController.extendedLayoutIncludesOpaqueBars = true
@@ -197,26 +172,37 @@ public class LogViewer: NSObject {
     }
     
     func show() {
+        // Prepare live log view controller
         guard let viewController = self.viewController else {
             return
         }
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.topItem?.title = "Log"
-        let tabBarController = UITabBarController()
-        let archiveViewController = UIViewController()
+        // Prepare archive log view controller
+        guard let bundle = Bundle(identifier: "de.quinesoft.LogViewer") else {
+            return
+        }
+        let archiveViewController = AppsTableViewController(nibName: "AppsTableViewController", bundle: bundle)
+        // Add bar buttons
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
+        archiveViewController.navigationItem.leftBarButtonItem = cancelButton
         archiveViewController.tabBarItem = UITabBarItem(title: "Archive", image: UIImage(), tag: 2)
         let archiveNavigationController = UINavigationController(rootViewController: archiveViewController)
         archiveNavigationController.navigationBar.topItem?.title = "Archive"
+        // Prepare support package view controller
         let supportPackageViewController = UIViewController()
-        supportPackageViewController.tabBarItem = UITabBarItem(title: "Support Package", image: UIImage(), tag: 2)
+        supportPackageViewController.tabBarItem = UITabBarItem(title: "Support Package", image: UIImage(), tag: 3)
         let supportPackageNavigationController = UINavigationController(rootViewController: supportPackageViewController)
         supportPackageNavigationController.navigationBar.topItem?.title = "Support Package"
+        // Create tab bar controller
+        let tabBarController = UITabBarController()
         tabBarController.viewControllers = [navigationController, archiveNavigationController, supportPackageNavigationController]
+        // Present tab bar controller
         UIApplication.topViewController()?.present(tabBarController, animated: true, completion: nil)
     }
 
     func back() {
-        self.viewController?.dismiss(animated: true, completion: nil)
+        UIApplication.topViewController()?.dismiss(animated: true, completion: nil)
     }
 
     func action(_ sender: UIBarButtonItem) {
