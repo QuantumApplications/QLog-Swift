@@ -8,20 +8,34 @@
 
 import UIKit
 
+protocol AppsTableViewControllerDelegate: class {
+
+    func back(_ appsTableViewController: AppsTableViewController)
+
+}
+
 class AppsTableViewController: UITableViewController {
-    
+
     let apps: [URL] = {
-        guard let url = LogViewer.logUrl else {
-            return [URL]()
-        }
         do {
-            return try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: []).filter({ $0.hasDirectoryPath })
-        }
-        catch {
+            return try FileManager.default.contentsOfDirectory(at: LogViewer.logUrl, includingPropertiesForKeys: nil, options: []).filter({ $0.hasDirectoryPath })
+        } catch {
             return [URL]()
         }
     }()
-    
+
+    weak var delegate: AppsTableViewControllerDelegate?
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        self.navigationItem.leftBarButtonItem =  UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
+        self.tabBarItem = UITabBarItem(title: "Archive", image: UIImage(), tag: 2)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Register table cell class from nib
@@ -40,7 +54,7 @@ class AppsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.apps.count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let app = self.apps[(indexPath as NSIndexPath).row]
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
@@ -50,14 +64,15 @@ class AppsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let app = self.apps[(indexPath as NSIndexPath).row]
-        guard let bundle = Bundle(identifier: "de.quinesoft.LogViewer") else {
-            return
-        }
-        let logsTableViewController = LogsTableViewController(nibName: "LogsTableViewController", bundle: bundle)
+        let logsTableViewController = LogsTableViewController()
         logsTableViewController.app = app
         self.show(logsTableViewController, sender: self)
     }
-    
+
     // MARK: - Navigation
-    
+
+    func back() {
+        self.delegate?.back(self)
+    }
+
 }

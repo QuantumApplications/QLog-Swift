@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F6392AF1F31FB5C00359C6E /* AppsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6392AD1F31FB5C00359C6E /* AppsTableViewController.swift */; };
-		9F6392B01F31FB5C00359C6E /* AppsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6392AE1F31FB5C00359C6E /* AppsTableViewController.xib */; };
-		9F6392B31F31FBD100359C6E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6392B11F31FBD100359C6E /* TableViewCell.swift */; };
-		9F6392B41F31FBD100359C6E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6392B21F31FBD100359C6E /* TableViewCell.xib */; };
-		9F6392B71F3206D200359C6E /* LogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6392B51F3206D200359C6E /* LogsTableViewController.swift */; };
-		9F6392B81F3206D200359C6E /* LogsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6392B61F3206D200359C6E /* LogsTableViewController.xib */; };
+		98C441B8DCC375B975F387B8 /* LogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C446ACEEDEEDE9E3462BC5 /* LogsTableViewController.swift */; };
+		98C446E935CBEF5765F7007D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C44C21EF09382A628C868A /* TableViewCell.swift */; };
+		98C447E6D0BD8EDF28AAE684 /* AppsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C44FECC530031877EC625A /* AppsTableViewController.swift */; };
+		98C44B283F8E054C02CE9F24 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98C446DD725BF0CE15FBEA6D /* TableViewCell.xib */; };
+		98C44D66CC9B368B2253C96D /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C441B8059A4FD38B6B3A3B /* LogViewController.swift */; };
+		9F0325911F7286E2008F2BEE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325901F7286E2008F2BEE /* Coordinator.swift */; };
+		9F0325931F728922008F2BEE /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325921F728922008F2BEE /* RootViewCoordinator.swift */; };
+		9F0325951F7289D4008F2BEE /* FrameworkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */; };
+		9F03259E1F72B312008F2BEE /* SupportPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */; };
 		9FE85A051EFAA73700560920 /* LogViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE859FB1EFAA73600560920 /* LogViewer.framework */; };
 		9FE85A0A1EFAA73700560920 /* LogViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A091EFAA73700560920 /* LogViewerTests.swift */; };
 		9FE85A0C1EFAA73700560920 /* LogViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE859FE1EFAA73600560920 /* LogViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FE85A3F1EFAA85500560920 /* LogViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A3E1EFAA85500560920 /* LogViewer.swift */; };
-		9FE85A661EFACEB300560920 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A641EFACEB300560920 /* LogViewController.swift */; };
 		9FE85A671EFACEB300560920 /* LogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE85A651EFACEB300560920 /* LogViewController.xib */; };
+		D2B472CA1F6ABBF700823E27 /* CornerSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,12 +35,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9F6392AD1F31FB5C00359C6E /* AppsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsTableViewController.swift; sourceTree = "<group>"; };
-		9F6392AE1F31FB5C00359C6E /* AppsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsTableViewController.xib; sourceTree = "<group>"; };
-		9F6392B11F31FBD100359C6E /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		9F6392B21F31FBD100359C6E /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		9F6392B51F3206D200359C6E /* LogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogsTableViewController.swift; sourceTree = "<group>"; };
-		9F6392B61F3206D200359C6E /* LogsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogsTableViewController.xib; sourceTree = "<group>"; };
+		98C441B8059A4FD38B6B3A3B /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		98C446ACEEDEEDE9E3462BC5 /* LogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogsTableViewController.swift; sourceTree = "<group>"; };
+		98C446DD725BF0CE15FBEA6D /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		98C44C21EF09382A628C868A /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		98C44D20BAEC41959EEEBFFC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = file.yml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		98C44FECC530031877EC625A /* AppsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsTableViewController.swift; sourceTree = "<group>"; };
+		9F0325901F7286E2008F2BEE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9F0325921F728922008F2BEE /* RootViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
+		9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameworkCoordinator.swift; sourceTree = "<group>"; };
+		9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportPackageViewController.swift; sourceTree = "<group>"; };
 		9FE859FB1EFAA73600560920 /* LogViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LogViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE859FE1EFAA73600560920 /* LogViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogViewer.h; sourceTree = "<group>"; };
 		9FE859FF1EFAA73600560920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,8 +52,8 @@
 		9FE85A091EFAA73700560920 /* LogViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewerTests.swift; sourceTree = "<group>"; };
 		9FE85A0B1EFAA73700560920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FE85A3E1EFAA85500560920 /* LogViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewer.swift; sourceTree = "<group>"; };
-		9FE85A641EFACEB300560920 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		9FE85A651EFACEB300560920 /* LogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogViewController.xib; sourceTree = "<group>"; };
+		D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerSwipeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +75,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F03258E1F728555008F2BEE /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				98C44FECC530031877EC625A /* AppsTableViewController.swift */,
+				98C446ACEEDEEDE9E3462BC5 /* LogsTableViewController.swift */,
+				98C44C21EF09382A628C868A /* TableViewCell.swift */,
+				98C446DD725BF0CE15FBEA6D /* TableViewCell.xib */,
+			);
+			name = Archive;
+			sourceTree = "<group>";
+		};
+		9F03258F1F728577008F2BEE /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				98C441B8059A4FD38B6B3A3B /* LogViewController.swift */,
+				9FE85A651EFACEB300560920 /* LogViewController.xib */,
+			);
+			name = Live;
+			sourceTree = "<group>";
+		};
+		9F0325961F728B37008F2BEE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F03258F1F728577008F2BEE /* Live */,
+				9F03258E1F728555008F2BEE /* Archive */,
+				9F03259C1F72B2ED008F2BEE /* Support Package */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9F0325971F728B4A008F2BEE /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				9F0325901F7286E2008F2BEE /* Coordinator.swift */,
+				9F0325921F728922008F2BEE /* RootViewCoordinator.swift */,
+				9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */,
+			);
+			name = Coordinators;
+			sourceTree = "<group>";
+		};
+		9F03259C1F72B2ED008F2BEE /* Support Package */ = {
+			isa = PBXGroup;
+			children = (
+				9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */,
+			);
+			name = "Support Package";
+			sourceTree = "<group>";
+		};
 		9FE859F11EFAA73600560920 = {
 			isa = PBXGroup;
 			children = (
 				9FE859FD1EFAA73600560920 /* LogViewer */,
 				9FE85A081EFAA73700560920 /* LogViewerTests */,
 				9FE859FC1EFAA73600560920 /* Products */,
+				98C44D20BAEC41959EEEBFFC /* .swiftlint.yml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,17 +145,12 @@
 		9FE859FD1EFAA73600560920 /* LogViewer */ = {
 			isa = PBXGroup;
 			children = (
+				9F0325971F728B4A008F2BEE /* Coordinators */,
+				9F0325961F728B37008F2BEE /* View Controllers */,
 				9FE859FE1EFAA73600560920 /* LogViewer.h */,
-				9FE859FF1EFAA73600560920 /* Info.plist */,
 				9FE85A3E1EFAA85500560920 /* LogViewer.swift */,
-				9FE85A641EFACEB300560920 /* LogViewController.swift */,
-				9FE85A651EFACEB300560920 /* LogViewController.xib */,
-				9F6392AD1F31FB5C00359C6E /* AppsTableViewController.swift */,
-				9F6392AE1F31FB5C00359C6E /* AppsTableViewController.xib */,
-				9F6392B11F31FBD100359C6E /* TableViewCell.swift */,
-				9F6392B21F31FBD100359C6E /* TableViewCell.xib */,
-				9F6392B51F3206D200359C6E /* LogsTableViewController.swift */,
-				9F6392B61F3206D200359C6E /* LogsTableViewController.xib */,
+				D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */,
+				9FE859FF1EFAA73600560920 /* Info.plist */,
 			);
 			path = LogViewer;
 			sourceTree = "<group>";
@@ -135,6 +186,7 @@
 				9FE859F71EFAA73600560920 /* Frameworks */,
 				9FE859F81EFAA73600560920 /* Headers */,
 				9FE859F91EFAA73600560920 /* Resources */,
+				9F0325AF1F731560008F2BEE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -209,10 +261,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F6392B81F3206D200359C6E /* LogsTableViewController.xib in Resources */,
 				9FE85A671EFACEB300560920 /* LogViewController.xib in Resources */,
-				9F6392B41F31FBD100359C6E /* TableViewCell.xib in Resources */,
-				9F6392B01F31FB5C00359C6E /* AppsTableViewController.xib in Resources */,
+				98C44B283F8E054C02CE9F24 /* TableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,16 +275,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9F0325AF1F731560008F2BEE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9FE859F61EFAA73600560920 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9FE85A3F1EFAA85500560920 /* LogViewer.swift in Sources */,
-				9F6392B31F31FBD100359C6E /* TableViewCell.swift in Sources */,
-				9F6392AF1F31FB5C00359C6E /* AppsTableViewController.swift in Sources */,
-				9F6392B71F3206D200359C6E /* LogsTableViewController.swift in Sources */,
-				9FE85A661EFACEB300560920 /* LogViewController.swift in Sources */,
+				D2B472CA1F6ABBF700823E27 /* CornerSwipeController.swift in Sources */,
+				98C447E6D0BD8EDF28AAE684 /* AppsTableViewController.swift in Sources */,
+				98C441B8DCC375B975F387B8 /* LogsTableViewController.swift in Sources */,
+				98C44D66CC9B368B2253C96D /* LogViewController.swift in Sources */,
+				98C446E935CBEF5765F7007D /* TableViewCell.swift in Sources */,
+				9F0325911F7286E2008F2BEE /* Coordinator.swift in Sources */,
+				9F0325951F7289D4008F2BEE /* FrameworkCoordinator.swift in Sources */,
+				9F0325931F728922008F2BEE /* RootViewCoordinator.swift in Sources */,
+				9F03259E1F72B312008F2BEE /* SupportPackageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

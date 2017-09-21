@@ -9,12 +9,13 @@
 import UIKit
 
 class LogsTableViewController: UITableViewController {
-    
+
     var app: URL!
     var logs: [URL] = [URL]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = app.lastPathComponent
         // Register table cell class from nib
         guard let bundle = Bundle(identifier: "de.quinesoft.LogViewer") else {
             return
@@ -27,40 +28,35 @@ class LogsTableViewController: UITableViewController {
             }
             do {
                 return try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: []).filter({ !$0.hasDirectoryPath })
-            }
-            catch {
+            } catch {
                 return [URL]()
             }
         }()
     }
-    
+
     // MARK: - Table view data source
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.logs.count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let log = self.logs[(indexPath as NSIndexPath).row]
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         cell.nameLabel.text = log.lastPathComponent
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let log = self.logs[(indexPath as NSIndexPath).row]
-        guard let bundle = Bundle(identifier: "de.quinesoft.LogViewer") else {
-            return
-        }
-        let logViewController = LogViewController(nibName: "LogViewController", bundle: bundle)
-        logViewController.log = log
+        let logViewController = LogViewController()
+        logViewController.showLog(self.logs[(indexPath as NSIndexPath).row])
         self.show(logViewController, sender: self)
     }
-    
+
     // MARK: - Navigation
-    
+
 }
