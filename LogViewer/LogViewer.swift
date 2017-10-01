@@ -73,6 +73,7 @@ public class LogViewer: NSObject {
     public static func enable() {
         // Add LogViewer to CornerSwipeController
         CornerSwipeController.topRightCornerHandler = { _ in LogViewer.shared.frameworkCoordinator.start() }
+        CornerSwipeController.enable()
         // Prepare log path
         let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
         let logDirectoryUrl = LogViewer.logUrl.appendingPathComponent(appName)
