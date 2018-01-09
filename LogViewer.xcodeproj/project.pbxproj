@@ -45,6 +45,7 @@
 		9F0325921F728922008F2BEE /* RootViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
 		9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameworkCoordinator.swift; sourceTree = "<group>"; };
 		9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportPackageViewController.swift; sourceTree = "<group>"; };
+		9FA0AD17200577EF00D4703B /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		9FE859FB1EFAA73600560920 /* LogViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LogViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE859FE1EFAA73600560920 /* LogViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogViewer.h; sourceTree = "<group>"; };
 		9FE859FF1EFAA73600560920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 				9FE85A081EFAA73700560920 /* LogViewerTests */,
 				9FE859FC1EFAA73600560920 /* Products */,
 				98C44D20BAEC41959EEEBFFC /* .swiftlint.yml */,
+				9FA0AD17200577EF00D4703B /* .travis.yml */,
 			);
 			sourceTree = "<group>";
 		};
