@@ -46,11 +46,11 @@ class LogViewController: UIViewController {
 
     // MARK: - Navigation
 
-    func back() {
+    @objc func back() {
         self.delegate?.back(self)
     }
 
-    func action(_ sender: UIBarButtonItem) {
+    @objc func action(_ sender: UIBarButtonItem) {
         self.delegate?.action(self, sender: sender)
     }
 

@@ -22,11 +22,11 @@ public class CornerSwipeController: NSObject {
     public static func enable() {
         // Register observer to be notified when a new window appears
         NotificationCenter.default.addObserver(CornerSwipeController.shared, selector: #selector(registerGestureRecognizer), name: .UIWindowDidBecomeVisible, object: nil)
-        CornerSwipeController.bottomLeftCornerHandler = { _ in  CornerSwipeController.bottomLeftCombination() }
-        CornerSwipeController.bottomRightCornerHandler = { _ in  CornerSwipeController.bottomRightCombination() }
+        CornerSwipeController.bottomLeftCornerHandler = { CornerSwipeController.bottomLeftCombination() }
+        CornerSwipeController.bottomRightCornerHandler = { CornerSwipeController.bottomRightCombination() }
     }
 
-    func registerGestureRecognizer(_ notification: NSNotification) {
+    @objc func registerGestureRecognizer(_ notification: NSNotification) {
         // Add a gesture recognizer to the provided window
         if notification.object is UIWindow {
             let window = notification.object as! UIWindow
@@ -46,7 +46,7 @@ public class CornerSwipeController: NSObject {
         }
     }
 
-    func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+    @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
         // Show the log viewer if gesture if performed at top right corner
         // 0 is the border between title bar and content
         guard let frame = UIApplication.topViewController()?.view.frame.size else {

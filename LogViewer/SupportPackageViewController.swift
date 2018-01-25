@@ -34,7 +34,7 @@ class SupportPackageViewController: UIViewController {
 
     // MARK: - Navigation
 
-    func back() {
+    @objc func back() {
         self.delegate?.back(self)
     }
 

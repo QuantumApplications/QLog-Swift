@@ -57,7 +57,7 @@ var documentInteractionController: UIDocumentInteractionController!
 // Needs to inherit from NSObject to allow selectors working properly
 public class LogViewer: NSObject {
 
-    static let font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFontWeightMedium)
+    static let font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
     static let shared = LogViewer()
 
     public static var textColor = UIColor.red
@@ -72,7 +72,7 @@ public class LogViewer: NSObject {
 
     public static func enable() {
         // Add LogViewer to CornerSwipeController
-        CornerSwipeController.topRightCornerHandler = { _ in LogViewer.shared.frameworkCoordinator.start() }
+        CornerSwipeController.topRightCornerHandler = { LogViewer.shared.frameworkCoordinator.start() }
         CornerSwipeController.enable()
         // Prepare log path
         let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
@@ -98,8 +98,8 @@ public class LogViewer: NSObject {
         // Log into view controller
         DispatchQueue.main.async {
             let viewController = LogViewer.shared.frameworkCoordinator.logViewController
-            let attributedMetaText = NSMutableAttributedString(string: "\n\(metaText)", attributes: [NSForegroundColorAttributeName: LogViewer.textColor, NSFontAttributeName: LogViewer.font])
-            let attributedText = NSMutableAttributedString(string: "\(text)", attributes: [NSForegroundColorAttributeName: logEntry.logLevel.color, NSFontAttributeName: LogViewer.font])
+            let attributedMetaText = NSMutableAttributedString(string: "\n\(metaText)", attributes: [NSAttributedStringKey.foregroundColor: LogViewer.textColor, NSAttributedStringKey.font: LogViewer.font])
+            let attributedText = NSMutableAttributedString(string: "\(text)", attributes: [NSAttributedStringKey.foregroundColor: logEntry.logLevel.color, NSAttributedStringKey.font: LogViewer.font])
             let oldText = NSMutableAttributedString(attributedString: (viewController.textView.attributedText))
             oldText.append(attributedMetaText)
             oldText.append(attributedText)

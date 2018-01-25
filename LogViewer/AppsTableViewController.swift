@@ -71,7 +71,7 @@ class AppsTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    func back() {
+    @objc func back() {
         self.delegate?.back(self)
     }
 

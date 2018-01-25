@@ -85,7 +85,7 @@ extension FrameworkCoordinator: LogViewControllerDelegate {
             return
         }
         // Convert attributed text to HTML
-        let documentAttributes = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+        let documentAttributes = [NSAttributedString.DocumentAttributeKey.documentType: NSAttributedString.DocumentType.html]
         let htmlData = (try? text.data(from: NSMakeRange(0, text.length), documentAttributes: documentAttributes)) ?? Data()
         // Save HTML to file
         let tempDirectory = NSTemporaryDirectory() as NSString
