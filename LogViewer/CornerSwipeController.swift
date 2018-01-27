@@ -79,9 +79,7 @@ public class CornerSwipeController: NSObject {
 
     static func bottomRightCombination() {
         switch CornerSwipeController.combination {
-        case 1:
-            fallthrough
-        case 2:
+        case 1, 2:
             CornerSwipeController.combination = 2
         default:
             CornerSwipeController.combination = 0
