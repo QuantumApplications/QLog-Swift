@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6EE8FBCB1187C57329FCD1AB6D3060A4D5E78F51",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6EE8FBCB1187C57329FCD1AB6D3060A4D5E78F51" : 9223372036854775807,
+    "4CE29DE56C08D5D4F2C846C0DEBFE4DC5C447613" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2CF287FF-660E-49A0-AADB-C2E406367BFD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6EE8FBCB1187C57329FCD1AB6D3060A4D5E78F51" : "QLog\/",
+    "4CE29DE56C08D5D4F2C846C0DEBFE4DC5C447613" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "QLog",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "QLog.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/forge.powerfolder.com\/git\/PFM-IOS",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4CE29DE56C08D5D4F2C846C0DEBFE4DC5C447613"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/powerfolder\/QLog.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6EE8FBCB1187C57329FCD1AB6D3060A4D5E78F51"
+    }
+  ]
+}

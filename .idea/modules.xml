@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/LogViewer.iml" filepath="$PROJECT_DIR$/.idea/LogViewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/QLog.iml" filepath="$PROJECT_DIR$/.idea/QLog.iml" />
     </modules>
   </component>
 </project>
