@@ -21,6 +21,11 @@
 		9FE85A0C1EFAA73700560920 /* QLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE859FE1EFAA73600560920 /* QLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FE85A3F1EFAA85500560920 /* QLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A3E1EFAA85500560920 /* QLog.swift */; };
 		9FE85A671EFACEB300560920 /* LogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE85A651EFACEB300560920 /* LogViewController.xib */; };
+		9FF41616202BB67A00566B93 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41615202BB67A00566B93 /* UIApplication.swift */; };
+		9FF4161B202BB90E00566B93 /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4161A202BB90E00566B93 /* LogEntry.swift */; };
+		9FF4161D202BBC7F00566B93 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4161C202BBC7F00566B93 /* Logger.swift */; };
+		9FF4161F202BBCBF00566B93 /* XcodeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4161E202BBCBF00566B93 /* XcodeLogger.swift */; };
+		9FF41621202BC71800566B93 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41620202BC71800566B93 /* LogLevel.swift */; };
 		D2B472CA1F6ABBF700823E27 /* CornerSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +58,11 @@
 		9FE85A0B1EFAA73700560920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FE85A3E1EFAA85500560920 /* QLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QLog.swift; sourceTree = "<group>"; };
 		9FE85A651EFACEB300560920 /* LogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogViewController.xib; sourceTree = "<group>"; };
+		9FF41615202BB67A00566B93 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		9FF4161A202BB90E00566B93 /* LogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntry.swift; sourceTree = "<group>"; };
+		9FF4161C202BBC7F00566B93 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		9FF4161E202BBCBF00566B93 /* XcodeLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLogger.swift; sourceTree = "<group>"; };
+		9FF41620202BC71800566B93 /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
 		D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerSwipeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,11 +155,13 @@
 		9FE859FD1EFAA73600560920 /* QLog */ = {
 			isa = PBXGroup;
 			children = (
+				9FF41617202BB73900566B93 /* Main */,
+				9FF41618202BB76100566B93 /* Controllers */,
 				9F0325971F728B4A008F2BEE /* Coordinators */,
+				9FF41619202BB90000566B93 /* Loggers */,
 				9F0325961F728B37008F2BEE /* View Controllers */,
+				9FF41614202BB65900566B93 /* Util */,
 				9FE859FE1EFAA73600560920 /* QLog.h */,
-				9FE85A3E1EFAA85500560920 /* QLog.swift */,
-				D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */,
 				9FE859FF1EFAA73600560920 /* Info.plist */,
 			);
 			path = QLog;
@@ -162,6 +174,41 @@
 				9FE85A0B1EFAA73700560920 /* Info.plist */,
 			);
 			path = QLogTests;
+			sourceTree = "<group>";
+		};
+		9FF41614202BB65900566B93 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9FF41615202BB67A00566B93 /* UIApplication.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		9FF41617202BB73900566B93 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9FE85A3E1EFAA85500560920 /* QLog.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		9FF41618202BB76100566B93 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9FF41619202BB90000566B93 /* Loggers */ = {
+			isa = PBXGroup;
+			children = (
+				9FF41620202BC71800566B93 /* LogLevel.swift */,
+				9FF4161A202BB90E00566B93 /* LogEntry.swift */,
+				9FF4161C202BBC7F00566B93 /* Logger.swift */,
+				9FF4161E202BBCBF00566B93 /* XcodeLogger.swift */,
+			);
+			name = Loggers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,13 +347,18 @@
 				9FE85A3F1EFAA85500560920 /* QLog.swift in Sources */,
 				D2B472CA1F6ABBF700823E27 /* CornerSwipeController.swift in Sources */,
 				98C447E6D0BD8EDF28AAE684 /* AppsTableViewController.swift in Sources */,
+				9FF41616202BB67A00566B93 /* UIApplication.swift in Sources */,
 				98C441B8DCC375B975F387B8 /* LogsTableViewController.swift in Sources */,
+				9FF4161B202BB90E00566B93 /* LogEntry.swift in Sources */,
 				98C44D66CC9B368B2253C96D /* LogViewController.swift in Sources */,
 				98C446E935CBEF5765F7007D /* TableViewCell.swift in Sources */,
 				9F0325911F7286E2008F2BEE /* Coordinator.swift in Sources */,
+				9FF4161D202BBC7F00566B93 /* Logger.swift in Sources */,
 				9F0325951F7289D4008F2BEE /* FrameworkCoordinator.swift in Sources */,
 				9F0325931F728922008F2BEE /* RootViewCoordinator.swift in Sources */,
 				9F03259E1F72B312008F2BEE /* SupportPackageViewController.swift in Sources */,
+				9FF41621202BC71800566B93 /* LogLevel.swift in Sources */,
+				9FF4161F202BBCBF00566B93 /* XcodeLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

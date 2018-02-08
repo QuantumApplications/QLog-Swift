@@ -9,22 +9,6 @@
 import QLog
 import UIKit
 
-public func QLogDebug<T>(_ object: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line, _ date: Date = Date()) {
-    QLog.log(LogEntry(object: object, file: file, function: function, line: line, date: date, logLevel: LogEntry.LogLevel.debug))
-}
-
-public func QLogInfo<T>(_ object: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line, _ date: Date = Date()) {
-    QLog.log(LogEntry(object: object, file: file, function: function, line: line, date: date, logLevel: LogEntry.LogLevel.info))
-}
-
-public func QLogWarning<T>(_ object: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line, _ date: Date = Date()) {
-    QLog.log(LogEntry(object: object, file: file, function: function, line: line, date: date, logLevel: LogEntry.LogLevel.warning))
-}
-
-public func QLogError<T>(_ object: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line, _ date: Date = Date()) {
-    QLog.log(LogEntry(object: object, file: file, function: function, line: line, date: date, logLevel: LogEntry.LogLevel.error))
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
