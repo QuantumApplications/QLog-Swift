@@ -13,7 +13,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         for _ in 1..<100 {
-            QLogDebug("Test")
+            QLogWarning("Warning")
+            QLogDebug("Debug")
         }
         super.viewDidLoad()
     }

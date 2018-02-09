@@ -6,7 +6,7 @@
 //  Copyright © 2018 Quantum. All rights reserved.
 //
 
-class Logger {
+public class Logger {
 
     let logLevel: LogLevel
 

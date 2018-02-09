@@ -16,13 +16,16 @@ protocol AppsTableViewControllerDelegate: class {
 
 class AppsTableViewController: UITableViewController {
 
-    let apps: [URL] = {
+    var apps: [URL] {
+        guard let logUrl = UiLogger.shared?.logUrl else {
+            return [URL]()
+        }
         do {
-            return try FileManager.default.contentsOfDirectory(at: QLog.logUrl, includingPropertiesForKeys: nil, options: []).filter({ $0.hasDirectoryPath })
+            return try FileManager.default.contentsOfDirectory(at: logUrl, includingPropertiesForKeys: nil, options: []).filter({ $0.hasDirectoryPath })
         } catch {
             return [URL]()
         }
-    }()
+    }
 
     weak var delegate: AppsTableViewControllerDelegate?
 

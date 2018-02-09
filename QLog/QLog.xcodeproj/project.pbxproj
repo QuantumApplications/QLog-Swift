@@ -26,6 +26,8 @@
 		9FF4161D202BBC7F00566B93 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4161C202BBC7F00566B93 /* Logger.swift */; };
 		9FF4161F202BBCBF00566B93 /* XcodeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4161E202BBCBF00566B93 /* XcodeLogger.swift */; };
 		9FF41621202BC71800566B93 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41620202BC71800566B93 /* LogLevel.swift */; };
+		9FF41642202E00A400566B93 /* FileLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41641202E00A400566B93 /* FileLogger.swift */; };
+		9FF41644202E012100566B93 /* UiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41643202E012100566B93 /* UiLogger.swift */; };
 		D2B472CA1F6ABBF700823E27 /* CornerSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		9FF4161C202BBC7F00566B93 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		9FF4161E202BBCBF00566B93 /* XcodeLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLogger.swift; sourceTree = "<group>"; };
 		9FF41620202BC71800566B93 /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
+		9FF41641202E00A400566B93 /* FileLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLogger.swift; sourceTree = "<group>"; };
+		9FF41643202E012100566B93 /* UiLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiLogger.swift; sourceTree = "<group>"; };
 		D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerSwipeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +211,8 @@
 				9FF4161A202BB90E00566B93 /* LogEntry.swift */,
 				9FF4161C202BBC7F00566B93 /* Logger.swift */,
 				9FF4161E202BBCBF00566B93 /* XcodeLogger.swift */,
+				9FF41641202E00A400566B93 /* FileLogger.swift */,
+				9FF41643202E012100566B93 /* UiLogger.swift */,
 			);
 			name = Loggers;
 			sourceTree = "<group>";
@@ -355,6 +361,8 @@
 				9F0325911F7286E2008F2BEE /* Coordinator.swift in Sources */,
 				9FF4161D202BBC7F00566B93 /* Logger.swift in Sources */,
 				9F0325951F7289D4008F2BEE /* FrameworkCoordinator.swift in Sources */,
+				9FF41642202E00A400566B93 /* FileLogger.swift in Sources */,
+				9FF41644202E012100566B93 /* UiLogger.swift in Sources */,
 				9F0325931F728922008F2BEE /* RootViewCoordinator.swift in Sources */,
 				9F03259E1F72B312008F2BEE /* SupportPackageViewController.swift in Sources */,
 				9FF41621202BC71800566B93 /* LogLevel.swift in Sources */,

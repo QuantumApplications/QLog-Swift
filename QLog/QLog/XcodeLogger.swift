@@ -11,19 +11,23 @@ extension LogLevel {
     var emoji: String {
         switch self {
         case .debug:
-            return "💙"
+            return "🌀"
         case .info:
-            return "💚"
+            return "📗"
         case .warning:
-            return "💛"
+            return "⚠️"
         case .error:
-            return "❤️"
+            return "⛔️"
         }
     }
 
 }
 
-class XcodeLogger: Logger {
+public class XcodeLogger: Logger {
+
+    public override init(logLevel: LogLevel = .debug) {
+        super.init(logLevel: logLevel)
+    }
 
     override func doLog(_ logEntry: LogEntry) {
         print("\(logEntry.metaText)\(logEntry.logLevel.emoji)\(logEntry.text)\(logEntry.logLevel.emoji)")
