@@ -12,9 +12,12 @@ import UIKit
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
-        for _ in 1..<100 {
-            QLogWarning("Warning")
+        for _ in 1..<10 {
+            QLogHighlight("Highlight")
             QLogDebug("Debug")
+            QLogInfo("Info")
+            QLogWarning("Warning")
+            QLogError("Error")
         }
         super.viewDidLoad()
     }

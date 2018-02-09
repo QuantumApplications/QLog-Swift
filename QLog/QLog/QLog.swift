@@ -6,6 +6,10 @@
 //  Copyright © 2017 Quantum. All rights reserved.
 //
 
+public func QLogHighlight<T>(date: Date = Date(), file: String = #file, function: String = #function, line: Int = #line, _ object: T) {
+    QLog.log(LogEntry(date: date, file: file, function: function, line: line, logLevel: LogLevel.highlight, text: "\(object)"))
+}
+
 public func QLogDebug<T>(date: Date = Date(), file: String = #file, function: String = #function, line: Int = #line, _ object: T) {
     QLog.log(LogEntry(date: date, file: file, function: function, line: line, logLevel: LogLevel.debug, text: "\(object)"))
 }
@@ -24,12 +28,6 @@ public func QLogError<T>(date: Date = Date(), file: String = #file, function: St
 
 // Needs to inherit from NSObject to allow selectors working properly
 public class QLog: NSObject {
-
-    public static var textColor = UIColor.black
-    public static var debugColor = UIColor.blue
-    public static var infoColor = UIColor.green
-    public static var warningColor = UIColor.yellow
-    public static var errorColor = UIColor.red
 
     public static var loggers = [Logger]()
 
