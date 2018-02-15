@@ -21,7 +21,7 @@ class AppsTableViewController: UITableViewController {
             return [URL]()
         }
         do {
-            return try FileManager.default.contentsOfDirectory(at: logUrl, includingPropertiesForKeys: nil, options: []).filter({ $0.hasDirectoryPath })
+            return try FileManager.default.contentsOfDirectory(at: logUrl, includingPropertiesForKeys: nil, options: []).filter { $0.hasDirectoryPath }
         } catch {
             return [URL]()
         }

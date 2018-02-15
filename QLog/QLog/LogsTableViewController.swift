@@ -27,7 +27,7 @@ class LogsTableViewController: UITableViewController {
                 return [URL]()
             }
             do {
-                return try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: []).filter({ !$0.hasDirectoryPath })
+                return try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: []).filter { !$0.hasDirectoryPath }
             } catch {
                 return [URL]()
             }
