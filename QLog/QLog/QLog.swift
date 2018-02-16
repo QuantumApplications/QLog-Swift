@@ -26,8 +26,7 @@ public func QLogError<T>(date: Date = Date(), file: String = #file, function: St
     QLog.log(LogEntry(date: date, file: file, function: function, line: line, logLevel: LogLevel.error, text: "\(object)"))
 }
 
-// Needs to inherit from NSObject to allow selectors working properly
-public class QLog: NSObject {
+public class QLog {
 
     public static var loggers = [Logger]()
 
