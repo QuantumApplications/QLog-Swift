@@ -40,11 +40,13 @@ public class FileLogger: Logger {
         let logFileName = dateFormatter.string(from: Date()) + ".log"
         let logFileUrl = logDirectoryUrl.appendingPathComponent(logFileName)
         try? FileManager.default.createDirectory(at: logDirectoryUrl, withIntermediateDirectories: true, attributes: nil)
-        if FileManager.default.createFile(atPath: logFileUrl.path, contents: nil, attributes: nil) {
-            if let logFileHandle = FileHandle(forWritingAtPath: logFileUrl.path) {
-                self.logFileHandle = logFileHandle
-            }
+        guard FileManager.default.createFile(atPath: logFileUrl.path, contents: nil, attributes: nil) else {
+            return
         }
+        guard let logFileHandle = FileHandle(forWritingAtPath: logFileUrl.path) else {
+            return
+        }
+        self.logFileHandle = logFileHandle
     }
 
     override func doLog(_ logEntry: LogEntry) {
