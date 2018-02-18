@@ -27,11 +27,14 @@ extension LogLevel {
 
 public class FileLogger: Logger {
 
+    public var logLevel: LogLevel = .info
+
     let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")
+
     var logFileHandle: FileHandle?
 
-    public override init(logLevel: LogLevel = .debug) {
-        super.init(logLevel: logLevel)
+    public init(logLevel: LogLevel = .info) {
+        self.logLevel = logLevel
         // Prepare log path
         let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
         let logDirectoryUrl = self.logUrl.appendingPathComponent(appName)
@@ -49,7 +52,7 @@ public class FileLogger: Logger {
         self.logFileHandle = logFileHandle
     }
 
-    override func doLog(_ logEntry: LogEntry) {
+    public func doLog(_ logEntry: LogEntry) {
         self.logFileHandle?.write("\n\(logEntry.logLevel.text) \(logEntry.metaText)\(logEntry.text)".data(using: .utf8)!)
     }
 

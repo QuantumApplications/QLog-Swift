@@ -6,21 +6,22 @@
 //  Copyright © 2018 Quantum. All rights reserved.
 //
 
-public class Logger {
+public protocol Logger: class {
 
-    let logLevel: LogLevel
+    var logLevel: LogLevel { get set }
 
-    init(logLevel: LogLevel) {
-        self.logLevel = logLevel
-    }
+    func log(_ logEntry: LogEntry)
+
+    func doLog(_ logEntry: LogEntry)
+
+}
+
+public extension Logger {
 
     func log(_ logEntry: LogEntry) {
         if logEntry.logLevel.rawValue <= self.logLevel.rawValue {
             self.doLog(logEntry)
         }
-    }
-
-    func doLog(_ logEntry: LogEntry) {
     }
 
 }

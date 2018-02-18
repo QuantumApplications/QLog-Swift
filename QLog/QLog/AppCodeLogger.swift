@@ -37,17 +37,19 @@ extension LogLevel {
 
 public class AppCodeLogger: Logger {
 
+    public var logLevel: LogLevel = .highlight
+
     let ansiTextColor = "37m"
 
     var ansiTextSequence: String {
         return "\(escape)[\(ansiTextColor)"
     }
 
-    public override init(logLevel: LogLevel = .highlight) {
-        super.init(logLevel: logLevel)
+    public init(logLevel: LogLevel = .highlight) {
+        self.logLevel = logLevel
     }
 
-    override func doLog(_ logEntry: LogEntry) {
+    public func doLog(_ logEntry: LogEntry) {
         print("\(ansiBoldSequence)\(ansiTextSequence)\(logEntry.metaText)\(ansiBoldSequence)\(logEntry.logLevel.ansiColorSequence)\(logEntry.text)\(ansiResetSequence)")
     }
 

@@ -32,19 +32,27 @@ public class UiLogger: Logger {
 
     static var shared: UiLogger?
 
+    public var logLevel: LogLevel = .info
+
     let font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
     let frameworkCoordinator: FrameworkCoordinator = FrameworkCoordinator()
     let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")
     let textColor = UIColor.black
 
-    override init(logLevel: LogLevel = .warning) {
-        super.init(logLevel: logLevel)
-        // Add QLog to CornerSwipeController
+    public static func getShared(logLevel: LogLevel = .info) -> UiLogger {
+        if UiLogger.shared == nil {
+            UiLogger.shared = UiLogger(logLevel: logLevel)
+        }
+        return UiLogger.shared!
+    }
+
+    public init(logLevel: LogLevel = .info) {
+        self.logLevel = logLevel        // Add QLog to CornerSwipeController
         CornerSwipeController.topRightCornerHandler = { self.frameworkCoordinator.start() }
         CornerSwipeController.enable()
     }
 
-    override func doLog(_ logEntry: LogEntry) {
+    public func doLog(_ logEntry: LogEntry) {
         DispatchQueue.main.async {
             let viewController = self.frameworkCoordinator.logViewController
             let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedStringKey.foregroundColor: self.textColor, NSAttributedStringKey.font: self.font])
@@ -54,13 +62,6 @@ public class UiLogger: Logger {
             oldText.append(attributedText)
             viewController.textView.attributedText = oldText
         }
-    }
-
-    public static func getShared(logLevel: LogLevel = .warning) -> UiLogger {
-        if UiLogger.shared == nil {
-            UiLogger.shared = UiLogger(logLevel: logLevel)
-        }
-        return UiLogger.shared!
     }
 
 }

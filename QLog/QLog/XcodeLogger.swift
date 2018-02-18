@@ -27,11 +27,13 @@ extension LogLevel {
 
 public class XcodeLogger: Logger {
 
-    public override init(logLevel: LogLevel = .highlight) {
-        super.init(logLevel: logLevel)
+    public var logLevel: LogLevel = .highlight
+
+    public init(logLevel: LogLevel = .highlight) {
+        self.logLevel = logLevel
     }
 
-    override func doLog(_ logEntry: LogEntry) {
+    public func doLog(_ logEntry: LogEntry) {
         print("\(logEntry.logLevel.emoji) \(logEntry.metaText)\(logEntry.text)")
     }
 
