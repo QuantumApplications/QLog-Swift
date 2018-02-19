@@ -17,7 +17,7 @@
 		9F0325951F7289D4008F2BEE /* FrameworkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */; };
 		9F03259E1F72B312008F2BEE /* SupportPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */; };
 		9FE85A051EFAA73700560920 /* QLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE859FB1EFAA73600560920 /* QLog.framework */; };
-		9FE85A0A1EFAA73700560920 /* QLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A091EFAA73700560920 /* QLogTests.swift */; };
+		9FE85A0A1EFAA73700560920 /* LogEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A091EFAA73700560920 /* LogEntryTests.swift */; };
 		9FE85A0C1EFAA73700560920 /* QLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE859FE1EFAA73600560920 /* QLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FE85A3F1EFAA85500560920 /* QLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A3E1EFAA85500560920 /* QLog.swift */; };
 		9FE85A671EFACEB300560920 /* LogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE85A651EFACEB300560920 /* LogViewController.xib */; };
@@ -57,7 +57,7 @@
 		9FE859FE1EFAA73600560920 /* QLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLog.h; sourceTree = "<group>"; };
 		9FE859FF1EFAA73600560920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FE85A041EFAA73700560920 /* QLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FE85A091EFAA73700560920 /* QLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QLogTests.swift; sourceTree = "<group>"; };
+		9FE85A091EFAA73700560920 /* LogEntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryTests.swift; sourceTree = "<group>"; };
 		9FE85A0B1EFAA73700560920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FE85A3E1EFAA85500560920 /* QLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QLog.swift; sourceTree = "<group>"; };
 		9FE85A651EFACEB300560920 /* LogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogViewController.xib; sourceTree = "<group>"; };
@@ -139,6 +139,14 @@
 			name = "Support Package";
 			sourceTree = "<group>";
 		};
+		9F64F8A2203B730000328249 /* Loggers */ = {
+			isa = PBXGroup;
+			children = (
+				9FE85A091EFAA73700560920 /* LogEntryTests.swift */,
+			);
+			name = Loggers;
+			sourceTree = "<group>";
+		};
 		9FE859F11EFAA73600560920 = {
 			isa = PBXGroup;
 			children = (
@@ -176,7 +184,7 @@
 		9FE85A081EFAA73700560920 /* QLogTests */ = {
 			isa = PBXGroup;
 			children = (
-				9FE85A091EFAA73700560920 /* QLogTests.swift */,
+				9F64F8A2203B730000328249 /* Loggers */,
 				9FE85A0B1EFAA73700560920 /* Info.plist */,
 			);
 			path = QLogTests;
@@ -378,7 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FE85A0A1EFAA73700560920 /* QLogTests.swift in Sources */,
+				9FE85A0A1EFAA73700560920 /* LogEntryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,7 +566,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qa.quantum.QLogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -572,7 +580,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qa.quantum.QLogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
