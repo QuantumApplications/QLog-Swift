@@ -25,7 +25,7 @@ class LogEntryTests: XCTestCase {
         let text = "Text"
         let logEntry = LogEntry(date: date, file: path, function: function, line: line, logLevel: logLevel, text: text)
 
-        // 3. Assertdate
+        // 3. Assert
         XCTAssertEqual(logEntry.metaText, "\(dateString): \(file):\(line) \(function): ")
     }
 
