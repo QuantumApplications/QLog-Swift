@@ -11,15 +11,15 @@ extension LogLevel {
     var color: UIColor {
         switch self {
         case .highlight:
-            return UIColor.purple
+            return QLog.colorHighlight
         case .debug:
-            return UIColor.blue
+            return QLog.colorDebug
         case .info:
-            return UIColor.green
+            return QLog.colorInfo
         case .warning:
-            return UIColor.orange
+            return QLog.colorWarning
         case .error:
-            return UIColor.red
+            return QLog.colorError
         }
     }
 
@@ -37,7 +37,6 @@ public class UiLogger: Logger {
     let font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
     let frameworkCoordinator: FrameworkCoordinator = FrameworkCoordinator()
     let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")
-    let textColor = UIColor.black
 
     public static func getShared(logLevel: LogLevel = .info) -> UiLogger {
         if UiLogger.shared == nil {
@@ -55,7 +54,7 @@ public class UiLogger: Logger {
     public func doLog(_ logEntry: LogEntry) {
         DispatchQueue.main.async {
             let viewController = self.frameworkCoordinator.logViewController
-            let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedStringKey.foregroundColor: self.textColor, NSAttributedStringKey.font: self.font])
+            let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedStringKey.foregroundColor: QLog.colorText, NSAttributedStringKey.font: self.font])
             let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedStringKey.foregroundColor: logEntry.logLevel.color, NSAttributedStringKey.font: self.font])
             let oldText = NSMutableAttributedString(attributedString: (viewController.textView.attributedText))
             oldText.append(attributedMetaText)
