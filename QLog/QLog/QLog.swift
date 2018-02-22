@@ -29,6 +29,12 @@ public func QLogError<T>(date: Date = Date(), file: String = #file, function: St
 public class QLog {
 
     public static var loggers = [Logger]()
+    public static var colorHighlight = UIColor.purple
+    public static var colorDebug = UIColor.blue
+    public static var colorInfo = UIColor.green
+    public static var colorWarning = UIColor.orange
+    public static var colorError = UIColor.red
+    public static var colorText = UIColor.black
 
     static func log(_ logEntry: LogEntry) {
         for logger in QLog.loggers {
