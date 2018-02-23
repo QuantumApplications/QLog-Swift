@@ -33,9 +33,11 @@ public class FileLogger: Logger {
 
     var logFileHandle: FileHandle?
 
-    public init(logLevel: LogLevel = .info, logUrl: URL) {
+    public init(logLevel: LogLevel = .info, logUrl: URL? = nil) {
         self.logLevel = logLevel
-        self.logUrl = logUrl
+        if let logUrl = logUrl {
+            self.logUrl = logUrl
+        }
         // Prepare log path
         let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
         let logDirectoryUrl = self.logUrl.appendingPathComponent(appName)
