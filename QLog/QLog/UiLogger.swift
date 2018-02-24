@@ -36,17 +36,21 @@ public class UiLogger: Logger {
 
     let font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
     let frameworkCoordinator: FrameworkCoordinator = FrameworkCoordinator()
-    let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")
+    var logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")
 
-    public static func getShared(logLevel: LogLevel = .info) -> UiLogger {
+    public static func getShared(logLevel: LogLevel = .info, logUrl: URL? = nil) -> UiLogger {
         if UiLogger.shared == nil {
-            UiLogger.shared = UiLogger(logLevel: logLevel)
+            UiLogger.shared = UiLogger(logLevel: logLevel, logUrl: logUrl)
         }
         return UiLogger.shared!
     }
 
-    public init(logLevel: LogLevel = .info) {
-        self.logLevel = logLevel        // Add QLog to CornerSwipeController
+    public init(logLevel: LogLevel = .info, logUrl: URL? = nil) {
+        self.logLevel = logLevel
+        if let logUrl = logUrl {
+            self.logUrl = logUrl
+        }
+        // Add QLog to CornerSwipeController
         CornerSwipeController.topRightCornerHandler = { self.frameworkCoordinator.start() }
         CornerSwipeController.enable()
     }
