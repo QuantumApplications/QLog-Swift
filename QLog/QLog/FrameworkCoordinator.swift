@@ -42,7 +42,7 @@ class FrameworkCoordinator: RootViewCoordinator {
         let viewController = self.logViewController
         viewController.delegate = self
         let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.navigationBar.topItem?.title = "Log"
+        navigationController.navigationBar.topItem?.title = QLog.Texts.live
         var viewControllers = self.tabbarController.viewControllers ?? [UIViewController]()
         viewControllers.append(navigationController)
         self.tabbarController.viewControllers = viewControllers
@@ -52,7 +52,7 @@ class FrameworkCoordinator: RootViewCoordinator {
         let viewController = AppsTableViewController()
         viewController.delegate = self
         let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.navigationBar.topItem?.title = "Archive"
+        navigationController.navigationBar.topItem?.title = QLog.Texts.archive
         var viewControllers = self.tabbarController.viewControllers ?? [UIViewController]()
         viewControllers.append(navigationController)
         self.tabbarController.viewControllers = viewControllers
@@ -62,7 +62,7 @@ class FrameworkCoordinator: RootViewCoordinator {
         let viewController = SupportPackageViewController()
         viewController.delegate = self
         let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.navigationBar.topItem?.title = "Support Package"
+        navigationController.navigationBar.topItem?.title = QLog.Texts.supportPackage
         var viewControllers = self.tabbarController.viewControllers ?? [UIViewController]()
         viewControllers.append(navigationController)
         self.tabbarController.viewControllers = viewControllers

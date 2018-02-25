@@ -28,6 +28,14 @@ public func QLogError<T>(date: Date = Date(), file: String = #file, function: St
 
 public class QLog {
 
+    public struct Texts {
+
+        public static var archive = "Archive"
+        public static var live = "Live"
+        public static var supportPackage = "Support Package"
+
+    }
+
     public static var loggers = [Logger]()
     public static var colorHighlight = UIColor.purple
     public static var colorDebug = UIColor.blue

@@ -35,7 +35,7 @@ public class UiLogger: Logger {
     public var logLevel: LogLevel = .info
 
     let font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
-    let frameworkCoordinator: FrameworkCoordinator = FrameworkCoordinator()
+    lazy var frameworkCoordinator: FrameworkCoordinator = FrameworkCoordinator()
     var logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")
 
     public static func getShared(logLevel: LogLevel = .info, logUrl: URL? = nil) -> UiLogger {

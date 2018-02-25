@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // QLog settings
+        QLog.Texts.archive = "Archive".localized
+        QLog.Texts.live = "Live".localized
+        QLog.Texts.supportPackage = "Support Package".localized
         QLog.loggers = [AppCodeLogger(), XcodeLogger(), FileLogger(), UiLogger.getShared()]
         return true
     }

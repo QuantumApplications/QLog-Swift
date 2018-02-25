@@ -21,7 +21,7 @@ class SupportPackageViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         self.navigationItem.leftBarButtonItem =  UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
-        self.tabBarItem = UITabBarItem(title: "Support Package", image: UIImage(), tag: 3)
+        self.tabBarItem = UITabBarItem(title: QLog.Texts.supportPackage, image: UIImage(), tag: 3)
     }
 
     required init?(coder aDecoder: NSCoder) {

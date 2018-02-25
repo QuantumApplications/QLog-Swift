@@ -32,7 +32,7 @@ class AppsTableViewController: UITableViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         self.navigationItem.leftBarButtonItem =  UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
-        self.tabBarItem = UITabBarItem(title: "Archive", image: UIImage(), tag: 2)
+        self.tabBarItem = UITabBarItem(title: QLog.Texts.archive, image: UIImage(), tag: 2)
     }
 
     required init?(coder aDecoder: NSCoder) {

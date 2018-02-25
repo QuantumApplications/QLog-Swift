@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9F2D6860202B4CD100145E52 /* QLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2D685F202B4CD100145E52 /* QLog.framework */; };
 		9F2D6861202B4CD100145E52 /* QLog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2D685F202B4CD100145E52 /* QLog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F56D22420434D3C0051A25F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F56D22620434D3C0051A25F /* Localizable.strings */; };
+		9F56D22920434D580051A25F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56D22820434D580051A25F /* Strings.swift */; };
 		9F6AAAA32017E20100DB49A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6AAAA22017E20100DB49A0 /* AppDelegate.swift */; };
 		9F6AAAA52017E20100DB49A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6AAAA42017E20100DB49A0 /* ViewController.swift */; };
 		9F6AAAA82017E20100DB49A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6AAAA62017E20100DB49A0 /* Main.storyboard */; };
@@ -32,6 +34,9 @@
 
 /* Begin PBXFileReference section */
 		9F2D685F202B4CD100145E52 /* QLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F56D22520434D3C0051A25F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9F56D22720434D410051A25F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9F56D22820434D580051A25F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		9F6AAA9F2017E20100DB49A0 /* QLogExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QLogExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6AAAA22017E20100DB49A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F6AAAA42017E20100DB49A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,10 +80,12 @@
 			children = (
 				9F6AAAA22017E20100DB49A0 /* AppDelegate.swift */,
 				9F6AAAA42017E20100DB49A0 /* ViewController.swift */,
+				9F56D22820434D580051A25F /* Strings.swift */,
 				9F6AAAAB2017E20100DB49A0 /* LaunchScreen.storyboard */,
 				9F6AAAA62017E20100DB49A0 /* Main.storyboard */,
 				9F6AAAA92017E20100DB49A0 /* Assets.xcassets */,
 				9F6AAAAE2017E20100DB49A0 /* Info.plist */,
+				9F56D22620434D3C0051A25F /* Localizable.strings */,
 			);
 			path = QLogExample;
 			sourceTree = "<group>";
@@ -125,7 +132,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 9F6AAA962017E20100DB49A0;
@@ -144,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F6AAAAD2017E20100DB49A0 /* LaunchScreen.storyboard in Resources */,
+				9F56D22420434D3C0051A25F /* Localizable.strings in Resources */,
 				9F6AAAAA2017E20100DB49A0 /* Assets.xcassets in Resources */,
 				9F6AAAA82017E20100DB49A0 /* Main.storyboard in Resources */,
 			);
@@ -157,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F6AAAA52017E20100DB49A0 /* ViewController.swift in Sources */,
+				9F56D22920434D580051A25F /* Strings.swift in Sources */,
 				9F6AAAA32017E20100DB49A0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +172,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		9F56D22620434D3C0051A25F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F56D22520434D3C0051A25F /* de */,
+				9F56D22720434D410051A25F /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		9F6AAAA62017E20100DB49A0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -187,6 +204,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -244,6 +262,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

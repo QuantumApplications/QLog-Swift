@@ -33,7 +33,7 @@ class LogViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(action))
         // Allow scrolling if navigation bars are opaque (WTF Apple?)
         self.extendedLayoutIncludesOpaqueBars = true
-        self.tabBarItem = UITabBarItem(title: "Live", image: UIImage(), tag: 1)
+        self.tabBarItem = UITabBarItem(title: QLog.Texts.live, image: UIImage(), tag: 1)
     }
 
     required init?(coder aDecoder: NSCoder) {
