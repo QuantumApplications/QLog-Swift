@@ -28,6 +28,14 @@ public func QLogError<T>(date: Date = Date(), file: String = #file, function: St
 
 public class QLog {
 
+    public struct Images {
+
+        public static var archive = UIImage()
+        public static var live = UIImage()
+        public static var supportPackage = UIImage()
+
+    }
+
     public struct Texts {
 
         public static var archive = "Archive"
