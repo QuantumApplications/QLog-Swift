@@ -39,18 +39,16 @@ public class AppCodeLogger: Logger {
 
     public var logLevel: LogLevel = .highlight
 
-    let ansiTextColor = "37m"
+    static let ansiTextColor = "37m"
 
-    var ansiTextSequence: String {
-        return "\(escape)[\(ansiTextColor)"
-    }
+    static let ansiTextSequence = "\(escape)[\(ansiTextColor)"
 
     public init(logLevel: LogLevel = .highlight) {
         self.logLevel = logLevel
     }
 
     public func doLog(_ logEntry: LogEntry) {
-        print("\(ansiBoldSequence)\(ansiTextSequence)\(logEntry.metaText)\(ansiBoldSequence)\(logEntry.logLevel.ansiColorSequence)\(logEntry.text)\(ansiResetSequence)")
+        print("\(ansiBoldSequence)\(AppCodeLogger.ansiTextSequence)\(logEntry.metaText)\(ansiBoldSequence)\(logEntry.logLevel.ansiColorSequence)\(logEntry.text)\(ansiResetSequence)")
     }
 
 }
