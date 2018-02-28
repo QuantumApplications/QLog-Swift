@@ -32,6 +32,7 @@
 		9FF41644202E012100566B93 /* UiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41643202E012100566B93 /* UiLogger.swift */; };
 		9FF41646202E14A500566B93 /* AppCodeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41645202E14A400566B93 /* AppCodeLogger.swift */; };
 		9FFD182520460C6700C1814E /* AppCodeLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD182420460C6700C1814E /* AppCodeLoggerTests.swift */; };
+		9FFD18272047629200C1814E /* FileLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD18262047629100C1814E /* FileLoggerTests.swift */; };
 		D2B472CA1F6ABBF700823E27 /* CornerSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		9FF41643202E012100566B93 /* UiLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiLogger.swift; sourceTree = "<group>"; };
 		9FF41645202E14A400566B93 /* AppCodeLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCodeLogger.swift; sourceTree = "<group>"; };
 		9FFD182420460C6700C1814E /* AppCodeLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCodeLoggerTests.swift; sourceTree = "<group>"; };
+		9FFD18262047629100C1814E /* FileLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLoggerTests.swift; sourceTree = "<group>"; };
 		D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerSwipeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 				9F64F8C2203CD16E00328249 /* LoggerTests.swift */,
 				9FFD182420460C6700C1814E /* AppCodeLoggerTests.swift */,
 				9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */,
+				9FFD18262047629100C1814E /* FileLoggerTests.swift */,
 			);
 			name = Loggers;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F64F8C5203E253F00328249 /* XcodeLoggerTests.swift in Sources */,
+				9FFD18272047629200C1814E /* FileLoggerTests.swift in Sources */,
 				9FE85A0A1EFAA73700560920 /* LogEntryTests.swift in Sources */,
 				9FFD182520460C6700C1814E /* AppCodeLoggerTests.swift in Sources */,
 				9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */,

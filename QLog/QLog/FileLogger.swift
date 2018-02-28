@@ -39,7 +39,9 @@ public class FileLogger: Logger {
             self.logUrl = logUrl
         }
         // Prepare log path
-        let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
+        guard let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String else {
+            return
+        }
         let logDirectoryUrl = self.logUrl.appendingPathComponent(appName)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
