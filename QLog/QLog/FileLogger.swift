@@ -35,9 +35,7 @@ public class FileLogger: Logger {
 
     public init(logLevel: LogLevel = .info, logUrl: URL? = nil) {
         self.logLevel = logLevel
-        if let logUrl = logUrl {
-            self.logUrl = logUrl
-        }
+        self.logUrl = logUrl ?? self.logUrl
         // Prepare log path
         guard let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String else {
             return
