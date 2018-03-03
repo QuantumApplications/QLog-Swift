@@ -1,0 +1,3 @@
+[submodule "Frameworks/Cuckoo"]
+	path = Frameworks/Cuckoo
+	url = https://github.com/Brightify/Cuckoo
