@@ -15,10 +15,14 @@ public struct LogEntry {
     let logLevel: LogLevel
     let text: String
 
-    var metaText: String {
+    static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm:ss"
-        return "\(dateFormatter.string(from: self.date)): \((self.file as NSString).lastPathComponent):\(self.line) \(self.function): "
+        return dateFormatter
+    }()
+
+    var metaText: String {
+        return "\(LogEntry.dateFormatter.string(from: self.date)): \(URL(fileURLWithPath: self.file).lastPathComponent):\(self.line) \(self.function): "
     }
 
 }
