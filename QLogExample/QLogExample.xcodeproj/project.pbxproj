@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9F2D6860202B4CD100145E52 /* QLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2D685F202B4CD100145E52 /* QLog.framework */; };
 		9F2D6861202B4CD100145E52 /* QLog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2D685F202B4CD100145E52 /* QLog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F4E7F052050853A00892524 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F4E7F042050853A00892524 /* Default-568h@2x.png */; };
 		9F56D22420434D3C0051A25F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F56D22620434D3C0051A25F /* Localizable.strings */; };
 		9F56D22920434D580051A25F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56D22820434D580051A25F /* Strings.swift */; };
 		9F6AAAA32017E20100DB49A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6AAAA22017E20100DB49A0 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		9F2D685F202B4CD100145E52 /* QLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F4E7F042050853A00892524 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9F56D22520434D3C0051A25F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9F56D22720434D410051A25F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9F56D22820434D580051A25F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		9F6AAA962017E20100DB49A0 = {
 			isa = PBXGroup;
 			children = (
+				9F4E7F042050853A00892524 /* Default-568h@2x.png */,
 				9F6AAAA12017E20100DB49A0 /* QLogExample */,
 				9F6AAAA02017E20100DB49A0 /* Products */,
 				9F2D685F202B4CD100145E52 /* QLog.framework */,
@@ -145,6 +148,7 @@
 			files = (
 				9F56D22420434D3C0051A25F /* Localizable.strings in Resources */,
 				9F6AAAAA2017E20100DB49A0 /* Assets.xcassets in Resources */,
+				9F4E7F052050853A00892524 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
