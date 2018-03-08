@@ -14,7 +14,6 @@
 		9F56D22920434D580051A25F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56D22820434D580051A25F /* Strings.swift */; };
 		9F6AAAA32017E20100DB49A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6AAAA22017E20100DB49A0 /* AppDelegate.swift */; };
 		9F6AAAA52017E20100DB49A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6AAAA42017E20100DB49A0 /* ViewController.swift */; };
-		9F6AAAAA2017E20100DB49A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6AAAA92017E20100DB49A0 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,7 +39,6 @@
 		9F6AAA9F2017E20100DB49A0 /* QLogExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QLogExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6AAAA22017E20100DB49A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F6AAAA42017E20100DB49A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9F6AAAA92017E20100DB49A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F6AAAAE2017E20100DB49A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,7 +78,6 @@
 				9F6AAAA22017E20100DB49A0 /* AppDelegate.swift */,
 				9F6AAAA42017E20100DB49A0 /* ViewController.swift */,
 				9F56D22820434D580051A25F /* Strings.swift */,
-				9F6AAAA92017E20100DB49A0 /* Assets.xcassets */,
 				9F6AAAAE2017E20100DB49A0 /* Info.plist */,
 				9F56D22620434D3C0051A25F /* Localizable.strings */,
 			);
@@ -147,7 +144,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F56D22420434D3C0051A25F /* Localizable.strings in Resources */,
-				9F6AAAAA2017E20100DB49A0 /* Assets.xcassets in Resources */,
 				9F4E7F052050853A00892524 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +288,6 @@
 		9F6AAAB22017E20100DB49A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HK9FBL7C9X;
 				INFOPLIST_FILE = "$(SRCROOT)/QLogExample/Info.plist";
@@ -307,7 +302,6 @@
 		9F6AAAB32017E20100DB49A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HK9FBL7C9X;
 				INFOPLIST_FILE = "$(SRCROOT)/QLogExample/Info.plist";
