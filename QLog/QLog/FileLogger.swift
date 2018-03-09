@@ -29,30 +29,25 @@ public class FileLogger: Logger {
 
     public var logLevel: LogLevel = .info
 
-    var logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")
-
-    var logFileHandle: FileHandle?
-
-    public init(logLevel: LogLevel = .info, logUrl: URL? = nil) {
-        self.logLevel = logLevel
-        self.logUrl = logUrl ?? self.logUrl
-        // Prepare log path
-        guard let appName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String else {
-            return
-        }
-        let logDirectoryUrl = self.logUrl.appendingPathComponent(appName)
+    static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let logFileName = dateFormatter.string(from: Date()) + ".log"
+        return dateFormatter
+    }()
+    static let targetName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Application"
+
+    let logFileHandle: FileHandle?
+    let logUrl: URL
+
+    public init(logLevel: LogLevel = .info, logUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")) {
+        self.logLevel = logLevel
+        self.logUrl = logUrl
+        let logDirectoryUrl = self.logUrl.appendingPathComponent(FileLogger.targetName)
+        let logFileName = FileLogger.dateFormatter.string(from: Date()) + ".log"
         let logFileUrl = logDirectoryUrl.appendingPathComponent(logFileName)
         try? FileManager.default.createDirectory(at: logDirectoryUrl, withIntermediateDirectories: true, attributes: nil)
-        guard FileManager.default.createFile(atPath: logFileUrl.path, contents: nil, attributes: nil) else {
-            return
-        }
-        guard let logFileHandle = FileHandle(forWritingAtPath: logFileUrl.path) else {
-            return
-        }
-        self.logFileHandle = logFileHandle
+        FileManager.default.createFile(atPath: logFileUrl.path, contents: nil, attributes: nil)
+        self.logFileHandle = FileHandle(forWritingAtPath: logFileUrl.path)
     }
 
     public func doLog(_ logEntry: LogEntry) {
