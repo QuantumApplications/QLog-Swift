@@ -23,6 +23,8 @@ class FileLoggerTests: XCTestCase {
     func testInit() {
         // 3. Assert
         XCTAssertEqual(FileLogger().logLevel, .info)
+        XCTAssertNotNil(FileLogger().logFileHandle)
+        XCTAssertEqual(FileLogger().logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
     }
 
     func testInitWithLogLevel() {

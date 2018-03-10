@@ -20,17 +20,82 @@ class UiLoggerTests: XCTestCase {
         XCTAssertEqual(LogLevel.error.color, QLog.colorError)
     }
 
+    func testGetShared() {
+        // 1. Arrange
+        UiLogger.shared = nil
+
+        // 3. Assert
+        XCTAssertTrue(UiLogger.getShared() === UiLogger.shared!)
+        XCTAssertTrue(UiLogger.getShared() === UiLogger.shared!)
+        XCTAssertEqual(UiLogger.getShared().logLevel, .info)
+        XCTAssertEqual(UiLogger.getShared().logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
+        XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
+    }
+
+    func testGetSharedWithLogLevel() {
+        // 1. Arrange
+        UiLogger.shared = nil
+
+        // 3. Assert
+        XCTAssertTrue(UiLogger.getShared(logLevel: .error) === UiLogger.shared!)
+        XCTAssertEqual(UiLogger.getShared().logLevel, .error)
+        XCTAssertEqual(UiLogger.getShared().logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
+        XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
+    }
+
+    func testGetSharedWithLogUrl() {
+        // 1. Arrange
+        UiLogger.shared = nil
+        let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("test")
+
+        // 3. Assert
+        XCTAssertTrue(UiLogger.getShared(logUrl: logUrl) === UiLogger.shared!)
+        XCTAssertEqual(UiLogger.getShared().logLevel, .info)
+        XCTAssertEqual(UiLogger.getShared().logUrl, logUrl)
+        XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
+    }
+
     func testInit() {
         // 3. Assert
         XCTAssertEqual(UiLogger().logLevel, .info)
+        XCTAssertEqual(UiLogger().logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
+        XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
     }
 
-    func testInitWithData() {
+    func testInitWithLogLevel() {
         // 1. Arrange
         let uiLogger = UiLogger(logLevel: .error)
 
         // 3. Assert
         XCTAssertEqual(uiLogger.logLevel, .error)
+        XCTAssertEqual(uiLogger.logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
+        XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
+    }
+
+    func testInitWithLogUrl() {
+        // 1. Arrange
+        let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("test")
+
+        // 2. Action
+        let uiLogger = UiLogger(logUrl: logUrl)
+
+        // 3. Assert
+        XCTAssertEqual(uiLogger.logLevel, .info)
+        XCTAssertEqual(uiLogger.logUrl, logUrl)
+        XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
+    }
+
+    func testInitWithWrongLogUrl() {
+        // 1. Arrange
+        let logUrl = URL(string: "file://")!
+
+        // 2. Action
+        let uiLogger = UiLogger(logUrl: logUrl)
+
+        // 3. Assert
+        XCTAssertEqual(uiLogger.logLevel, .info)
+        XCTAssertEqual(uiLogger.logUrl, logUrl)
+        XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
     }
 
     func testDoLog() {

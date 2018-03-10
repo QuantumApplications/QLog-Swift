@@ -72,6 +72,9 @@ class FrameworkCoordinator: RootViewCoordinator {
 
 // MARK: - LogViewControllerDelegate
 
+/// Needs to be global, otherwise the controller will be destroyed when the file is handed over to target application
+var documentInteractionController: UIDocumentInteractionController!
+
 extension FrameworkCoordinator: LogViewControllerDelegate {
 
     func back(_ logViewController: LogViewController) {

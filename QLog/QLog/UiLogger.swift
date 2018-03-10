@@ -25,31 +25,28 @@ extension LogLevel {
 
 }
 
-/// Needs to be global, otherwise the controller will be destroyed when the file is handed over to target application
-var documentInteractionController: UIDocumentInteractionController!
-
 public class UiLogger: Logger {
-
-    static var shared: UiLogger?
 
     public var logLevel: LogLevel = .info
 
-    let font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
-    lazy var frameworkCoordinator: FrameworkCoordinator = FrameworkCoordinator()
-    var logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")
+    static var shared: UiLogger?
 
-    public static func getShared(logLevel: LogLevel = .info, logUrl: URL? = nil) -> UiLogger {
+    let font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
+
+    let logUrl: URL
+
+    lazy var frameworkCoordinator: FrameworkCoordinator = FrameworkCoordinator()
+
+    public static func getShared(logLevel: LogLevel = .info, logUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")) -> UiLogger {
         if UiLogger.shared == nil {
             UiLogger.shared = UiLogger(logLevel: logLevel, logUrl: logUrl)
         }
         return UiLogger.shared!
     }
 
-    public init(logLevel: LogLevel = .info, logUrl: URL? = nil) {
+    init(logLevel: LogLevel = .info, logUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")) {
         self.logLevel = logLevel
-        if let logUrl = logUrl {
-            self.logUrl = logUrl
-        }
+        self.logUrl = logUrl
         // Add QLog to CornerSwipeController
         CornerSwipeController.topRightCornerHandler = { self.frameworkCoordinator.start() }
         CornerSwipeController.enable()
