@@ -18,6 +18,9 @@
 		9F03259E1F72B312008F2BEE /* SupportPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */; };
 		9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C2203CD16E00328249 /* LoggerTests.swift */; };
 		9F64F8C5203E253F00328249 /* XcodeLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */; };
+		9FA687482055DA3900CD877D /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA6873E2055D9B800CD877D /* Cuckoo.framework */; };
+		9FA6874A2055DB3900CD877D /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA687492055DB3800CD877D /* GeneratedMocks.swift */; };
+		9FA6874E2055DC0A00CD877D /* QLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6874D2055DC0A00CD877D /* QLogTests.swift */; };
 		9FE85A051EFAA73700560920 /* QLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE859FB1EFAA73600560920 /* QLog.framework */; };
 		9FE85A0A1EFAA73700560920 /* LogEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A091EFAA73700560920 /* LogEntryTests.swift */; };
 		9FE85A0C1EFAA73700560920 /* QLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE859FE1EFAA73600560920 /* QLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,6 +41,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9FA6873D2055D9B800CD877D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18E2A28D1FBB1CFC0058FEC5;
+			remoteInfo = "Cuckoo-iOS";
+		};
+		9FA6873F2055D9B800CD877D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18E2A2B61FBB211F0058FEC5;
+			remoteInfo = Cuckoo_iOSTests;
+		};
+		9FA687412055D9B800CD877D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18E2A29B1FBB1D400058FEC5;
+			remoteInfo = "Cuckoo-macOS";
+		};
+		9FA687432055D9B800CD877D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18E2A2A71FBB20830058FEC5;
+			remoteInfo = Cuckoo_macOSTests;
+		};
+		9FA687452055D9C400CD877D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 18E2A28C1FBB1CFC0058FEC5;
+			remoteInfo = "Cuckoo-iOS";
+		};
 		9FE85A061EFAA73700560920 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9FE859F21EFAA73600560920 /* Project object */;
@@ -60,6 +98,9 @@
 		9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportPackageViewController.swift; sourceTree = "<group>"; };
 		9F64F8C2203CD16E00328249 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
 		9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLoggerTests.swift; sourceTree = "<group>"; };
+		9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cuckoo.xcodeproj; path = ../../Frameworks/Cuckoo/Cuckoo.xcodeproj; sourceTree = "<group>"; };
+		9FA687492055DB3800CD877D /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
+		9FA6874D2055DC0A00CD877D /* QLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QLogTests.swift; sourceTree = "<group>"; };
 		9FE859FB1EFAA73600560920 /* QLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE859FE1EFAA73600560920 /* QLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLog.h; sourceTree = "<group>"; };
 		9FE859FF1EFAA73600560920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA687482055DA3900CD877D /* Cuckoo.framework in Frameworks */,
 				9FE85A051EFAA73700560920 /* QLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,11 +204,32 @@
 			name = Loggers;
 			sourceTree = "<group>";
 		};
+		9FA687342055D99600CD877D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */,
+			);
+			name = Frameworks;
+			path = QLog;
+			sourceTree = "<group>";
+		};
+		9FA687362055D9B800CD877D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FA6873E2055D9B800CD877D /* Cuckoo.framework */,
+				9FA687402055D9B800CD877D /* Cuckoo_iOSTests.xctest */,
+				9FA687422055D9B800CD877D /* Cuckoo.framework */,
+				9FA687442055D9B800CD877D /* Cuckoo_macOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9FE859F11EFAA73600560920 = {
 			isa = PBXGroup;
 			children = (
 				9FE859FD1EFAA73600560920 /* QLog */,
 				9FE85A081EFAA73700560920 /* QLogTests */,
+				9FA687342055D99600CD877D /* Frameworks */,
 				9FE859FC1EFAA73600560920 /* Products */,
 				98C44D20BAEC41959EEEBFFC /* .swiftlint.yml */,
 			);
@@ -199,7 +262,9 @@
 		9FE85A081EFAA73700560920 /* QLogTests */ = {
 			isa = PBXGroup;
 			children = (
+				9FA6874D2055DC0A00CD877D /* QLogTests.swift */,
 				9F64F8A2203B730000328249 /* Loggers */,
+				9FA687492055DB3800CD877D /* GeneratedMocks.swift */,
 				9FE85A0B1EFAA73700560920 /* Info.plist */,
 			);
 			path = QLogTests;
@@ -280,6 +345,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FE85A121EFAA73700560920 /* Build configuration list for PBXNativeTarget "QLogTests" */;
 			buildPhases = (
+				9FA687472055DA0700CD877D /* ShellScript */,
 				9FE85A001EFAA73700560920 /* Sources */,
 				9FE85A011EFAA73700560920 /* Frameworks */,
 				9FE85A021EFAA73700560920 /* Resources */,
@@ -287,6 +353,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9FA687462055D9C400CD877D /* PBXTargetDependency */,
 				9FE85A071EFAA73700560920 /* PBXTargetDependency */,
 			);
 			name = QLogTests;
@@ -328,6 +395,12 @@
 			mainGroup = 9FE859F11EFAA73600560920;
 			productRefGroup = 9FE859FC1EFAA73600560920 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9FA687362055D9B800CD877D /* Products */;
+					ProjectRef = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9FE859FA1EFAA73600560920 /* QLog */,
@@ -335,6 +408,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9FA6873E2055D9B800CD877D /* Cuckoo.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cuckoo.framework;
+			remoteRef = 9FA6873D2055D9B800CD877D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9FA687402055D9B800CD877D /* Cuckoo_iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Cuckoo_iOSTests.xctest;
+			remoteRef = 9FA6873F2055D9B800CD877D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9FA687422055D9B800CD877D /* Cuckoo.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Cuckoo.framework;
+			remoteRef = 9FA687412055D9B800CD877D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9FA687442055D9B800CD877D /* Cuckoo_macOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Cuckoo_macOSTests.xctest;
+			remoteRef = 9FA687432055D9B800CD877D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9FE859F91EFAA73600560920 /* Resources */ = {
@@ -369,6 +473,22 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		9FA687472055DA0700CD877D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/QLog/QLog.swift",
+				"$(SRCROOT)/QLog/Logger.swift",
+				"$(SRCROOT)/QLog/XcodeLogger.swift",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/QLogTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n${PROJECT_DIR}/../Frameworks/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -401,6 +521,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FA6874E2055DC0A00CD877D /* QLogTests.swift in Sources */,
+				9FA6874A2055DB3900CD877D /* GeneratedMocks.swift in Sources */,
 				9F64F8C5203E253F00328249 /* XcodeLoggerTests.swift in Sources */,
 				9FFD18272047629200C1814E /* FileLoggerTests.swift in Sources */,
 				9FE85A0A1EFAA73700560920 /* LogEntryTests.swift in Sources */,
@@ -413,6 +535,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9FA687462055D9C400CD877D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Cuckoo-iOS";
+			targetProxy = 9FA687452055D9C400CD877D /* PBXContainerItemProxy */;
+		};
 		9FE85A071EFAA73700560920 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9FE859FA1EFAA73600560920 /* QLog */;
