@@ -10,22 +10,22 @@
 import Cuckoo
 import XCTest
 
+class TestLogger: Logger {
+
+    public var logLevel: LogLevel = .highlight
+
+    var logged = false
+
+    func doLog(_ logEntry: LogEntry) {
+        self.logged = true
+    }
+
+}
+
 class QLogTests: XCTestCase {
 
     func testGetCalls() {
         // 1. Arrange
-        class TestLogger: Logger {
-
-            public var logLevel: LogLevel = .highlight
-
-            var logged = false
-
-            func doLog(_ logEntry: LogEntry) {
-                self.logged = true
-            }
-
-        }
-
         let testLogger = TestLogger()
         QLog.loggers = [testLogger]
 
