@@ -21,6 +21,7 @@
 		9FA687482055DA3900CD877D /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA6873E2055D9B800CD877D /* Cuckoo.framework */; };
 		9FA6874A2055DB3900CD877D /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA687492055DB3800CD877D /* GeneratedMocks.swift */; };
 		9FA6874E2055DC0A00CD877D /* QLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6874D2055DC0A00CD877D /* QLogTests.swift */; };
+		9FDE3CA52064522C00928FCF /* LogViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CA42064522C00928FCF /* LogViewControllerTests.swift */; };
 		9FE85A051EFAA73700560920 /* QLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE859FB1EFAA73600560920 /* QLog.framework */; };
 		9FE85A0A1EFAA73700560920 /* LogEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A091EFAA73700560920 /* LogEntryTests.swift */; };
 		9FE85A0C1EFAA73700560920 /* QLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE859FE1EFAA73600560920 /* QLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -101,6 +102,7 @@
 		9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cuckoo.xcodeproj; path = ../../Frameworks/Cuckoo/Cuckoo.xcodeproj; sourceTree = "<group>"; };
 		9FA687492055DB3800CD877D /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		9FA6874D2055DC0A00CD877D /* QLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QLogTests.swift; sourceTree = "<group>"; };
+		9FDE3CA42064522C00928FCF /* LogViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewControllerTests.swift; sourceTree = "<group>"; };
 		9FE859FB1EFAA73600560920 /* QLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE859FE1EFAA73600560920 /* QLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLog.h; sourceTree = "<group>"; };
 		9FE859FF1EFAA73600560920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -224,6 +226,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9FDE3CA2206451F900928FCF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9FDE3CA32064520A00928FCF /* Live */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9FDE3CA32064520A00928FCF /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				9FDE3CA42064522C00928FCF /* LogViewControllerTests.swift */,
+			);
+			name = Live;
+			sourceTree = "<group>";
+		};
 		9FE859F11EFAA73600560920 = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +282,7 @@
 			children = (
 				9FA6874D2055DC0A00CD877D /* QLogTests.swift */,
 				9F64F8A2203B730000328249 /* Loggers */,
+				9FDE3CA2206451F900928FCF /* View Controllers */,
 				9FA687492055DB3800CD877D /* GeneratedMocks.swift */,
 				9FE85A0B1EFAA73700560920 /* Info.plist */,
 			);
@@ -482,6 +501,7 @@
 				"$(SRCROOT)/QLog/QLog.swift",
 				"$(SRCROOT)/QLog/Logger.swift",
 				"$(SRCROOT)/QLog/XcodeLogger.swift",
+				"$(SRCROOT)/QLog/LogViewController.swift",
 			);
 			outputPaths = (
 			);
@@ -528,6 +548,7 @@
 				9FE85A0A1EFAA73700560920 /* LogEntryTests.swift in Sources */,
 				9FFD182520460C6700C1814E /* AppCodeLoggerTests.swift in Sources */,
 				9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */,
+				9FDE3CA52064522C00928FCF /* LogViewControllerTests.swift in Sources */,
 				9FFD18292048B22D00C1814E /* UiLoggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
