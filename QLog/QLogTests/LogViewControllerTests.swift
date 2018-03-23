@@ -12,6 +12,24 @@ import XCTest
 
 class LogViewControllerTests: XCTestCase {
 
+    func showLog() {
+        // 1. Arrange
+        let logViewController = LogViewController()
+        let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log.test")
+        FileManager.default.createFile(atPath: logUrl.path, contents: nil, attributes: nil)
+        let logFileHandle = FileHandle(forWritingAtPath: logUrl.path)
+        logFileHandle?.write("test".data(using: .utf8)!)
+
+        // 2. Action
+        logViewController.showLog(logUrl)
+
+        // 3. Assert
+        XCTAssertEqual(logViewController.textView.text, "test")
+
+        // 4. Annihilate
+        try? FileManager.default.removeItem(at: logUrl)
+    }
+
     func testBack() {
         // 1. Arrange
         let logViewControllerDelegate = MockLogViewControllerDelegate()
@@ -24,7 +42,6 @@ class LogViewControllerTests: XCTestCase {
         // 2. Action
         logViewController.back()
 
-        // 3. Assert
         verify(logViewControllerDelegate).back(equal(to: logViewController))
         verifyNoMoreInteractions(logViewControllerDelegate)
     }
