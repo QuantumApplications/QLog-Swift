@@ -12,7 +12,18 @@ import XCTest
 
 class LogViewControllerTests: XCTestCase {
 
-    func showLog() {
+    func testInitWithCoder() {
+        // 1. Arrange
+        let archiver = NSKeyedArchiver(forWritingWith: NSMutableData())
+
+        // 2. Action
+        let logViewController = LogViewController(coder: archiver)
+
+        // 3. Assert
+        XCTAssertNil(logViewController)
+    }
+
+    func testShowLog() {
         // 1. Arrange
         let logViewController = LogViewController()
         let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log.test")
