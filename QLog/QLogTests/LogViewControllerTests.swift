@@ -41,6 +41,18 @@ class LogViewControllerTests: XCTestCase {
         try? FileManager.default.removeItem(at: logUrl)
     }
 
+    func testShowLogWrongLogUrl() {
+        // 1. Arrange
+        let logViewController = LogViewController()
+        let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log.test")
+
+        // 2. Action
+        logViewController.showLog(logUrl)
+
+        // 3. Assert
+        XCTAssertEqual(logViewController.textView.text, "")
+    }
+
     func testBack() {
         // 1. Arrange
         let logViewControllerDelegate = MockLogViewControllerDelegate()
