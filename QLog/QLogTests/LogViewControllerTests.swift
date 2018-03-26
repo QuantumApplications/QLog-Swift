@@ -12,6 +12,36 @@ import XCTest
 
 class LogViewControllerTests: XCTestCase {
 
+    func testInit() {
+        // 2. Action
+        let logViewController = LogViewController()
+
+        // 3. Assert
+        XCTAssertNil(logViewController.navigationItem.leftBarButtonItem)
+        XCTAssertEqual(logViewController.navigationItem.rightBarButtonItem?.target as? LogViewController, logViewController)
+        XCTAssertEqual(logViewController.navigationItem.rightBarButtonItem?.action, #selector(LogViewController.action))
+        XCTAssertTrue(logViewController.extendedLayoutIncludesOpaqueBars)
+        XCTAssertEqual(logViewController.tabBarItem.title, QLog.Texts.live)
+        XCTAssertEqual(logViewController.tabBarItem.image, QLog.Images.live)
+        XCTAssertEqual(logViewController.tabBarItem.tag, 1)
+    }
+
+    func testInitWithCancelButton() {
+        // 2. Action
+        let logViewController = LogViewController(cancelButton: true)
+
+        // 3. Assert
+        XCTAssertEqual(logViewController.navigationItem.leftBarButtonItem?.target as? LogViewController, logViewController)
+        XCTAssertEqual(logViewController.navigationItem.leftBarButtonItem?.action, #selector(LogViewController.back))
+        XCTAssertEqual(logViewController.navigationItem.rightBarButtonItem?.target as? LogViewController, logViewController)
+        XCTAssertEqual(logViewController.navigationItem.rightBarButtonItem?.action, #selector(LogViewController.action))
+        XCTAssertTrue(logViewController.extendedLayoutIncludesOpaqueBars)
+        XCTAssertEqual(logViewController.tabBarItem.title, QLog.Texts.live)
+        XCTAssertEqual(logViewController.tabBarItem.image, QLog.Images.live)
+        XCTAssertEqual(logViewController.tabBarItem.tag, 1)
+    }
+
+
     func testInitWithCoder() {
         // 1. Arrange
         let archiver = NSKeyedArchiver(forWritingWith: NSMutableData())
