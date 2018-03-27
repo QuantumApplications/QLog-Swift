@@ -41,7 +41,6 @@ class LogViewControllerTests: XCTestCase {
         XCTAssertEqual(logViewController.tabBarItem.tag, 1)
     }
 
-
     func testInitWithCoder() {
         // 1. Arrange
         let archiver = NSKeyedArchiver(forWritingWith: NSMutableData())

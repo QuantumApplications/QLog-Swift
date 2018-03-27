@@ -56,10 +56,15 @@ class UiLoggerTests: XCTestCase {
     }
 
     func testInit() {
+        // 2. Action
+        let uiLogger = UiLogger()
+        CornerSwipeController.topRightCornerHandler?()
+
         // 3. Assert
-        XCTAssertEqual(UiLogger().logLevel, .info)
-        XCTAssertEqual(UiLogger().logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
+        XCTAssertEqual(uiLogger.logLevel, .info)
+        XCTAssertEqual(uiLogger.logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
         XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
+        XCTAssertTrue(uiLogger.frameworkCoordinator.shown)
     }
 
     func testInitWithLogLevel() {
