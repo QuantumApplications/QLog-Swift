@@ -25,7 +25,7 @@ class SupportPackageViewController: UIViewController {
     }
 
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        return nil
     }
 
     override func viewDidLoad() {
