@@ -28,10 +28,6 @@ class SupportPackageViewController: UIViewController {
         return nil
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     // MARK: - Navigation
 
     @objc func back() {

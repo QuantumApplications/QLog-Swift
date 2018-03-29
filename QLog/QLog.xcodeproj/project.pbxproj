@@ -513,6 +513,7 @@
 				"$(SRCROOT)/QLog/Logger.swift",
 				"$(SRCROOT)/QLog/XcodeLogger.swift",
 				"$(SRCROOT)/QLog/LogViewController.swift",
+				"$(SRCROOT)/QLog/SupportPackageViewController.swift",
 			);
 			outputPaths = (
 			);

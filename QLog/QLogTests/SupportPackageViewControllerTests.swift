@@ -23,4 +23,20 @@ class SupportPackageViewControllerTests: XCTestCase {
         XCTAssertNil(supportPackageViewController)
     }
 
+    func testBack() {
+        // 1. Arrange
+        let supportPackageViewControllerDelegate = MockSupportPackageViewControllerDelegate()
+        stub(supportPackageViewControllerDelegate) { supportPackageViewControllerDelegate in
+            when(supportPackageViewControllerDelegate).back(any()).thenDoNothing()
+        }
+        let supportPackageViewController = SupportPackageViewController()
+        supportPackageViewController.delegate = supportPackageViewControllerDelegate
+
+        // 2. Action
+        supportPackageViewController.back()
+
+        verify(supportPackageViewControllerDelegate).back(equal(to: supportPackageViewController))
+        verifyNoMoreInteractions(supportPackageViewControllerDelegate)
+    }
+
 }
