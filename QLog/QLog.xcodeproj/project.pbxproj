@@ -23,6 +23,7 @@
 		9FA6874E2055DC0A00CD877D /* QLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6874D2055DC0A00CD877D /* QLogTests.swift */; };
 		9FDE3CA52064522C00928FCF /* LogViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CA42064522C00928FCF /* LogViewControllerTests.swift */; };
 		9FDE3CB9206C342900928FCF /* SupportPackageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CB8206C342900928FCF /* SupportPackageViewControllerTests.swift */; };
+		9FDE3CBC206EE1C800928FCF /* AppsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CBB206EE1C800928FCF /* AppsTableViewControllerTests.swift */; };
 		9FE85A051EFAA73700560920 /* QLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE859FB1EFAA73600560920 /* QLog.framework */; };
 		9FE85A0A1EFAA73700560920 /* LogEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A091EFAA73700560920 /* LogEntryTests.swift */; };
 		9FE85A0C1EFAA73700560920 /* QLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE859FE1EFAA73600560920 /* QLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -105,6 +106,7 @@
 		9FA6874D2055DC0A00CD877D /* QLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QLogTests.swift; sourceTree = "<group>"; };
 		9FDE3CA42064522C00928FCF /* LogViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewControllerTests.swift; sourceTree = "<group>"; };
 		9FDE3CB8206C342900928FCF /* SupportPackageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPackageViewControllerTests.swift; sourceTree = "<group>"; };
+		9FDE3CBB206EE1C800928FCF /* AppsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		9FE859FB1EFAA73600560920 /* QLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE859FE1EFAA73600560920 /* QLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLog.h; sourceTree = "<group>"; };
 		9FE859FF1EFAA73600560920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				9FDE3CA32064520A00928FCF /* Live */,
+				9FDE3CBA206EE1A200928FCF /* Archive */,
 				9FDE3CB7206C341000928FCF /* Support Package */,
 			);
 			name = "View Controllers";
@@ -251,6 +254,14 @@
 				9FDE3CB8206C342900928FCF /* SupportPackageViewControllerTests.swift */,
 			);
 			name = "Support Package";
+			sourceTree = "<group>";
+		};
+		9FDE3CBA206EE1A200928FCF /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				9FDE3CBB206EE1C800928FCF /* AppsTableViewControllerTests.swift */,
+			);
+			name = Archive;
 			sourceTree = "<group>";
 		};
 		9FE859F11EFAA73600560920 = {
@@ -514,6 +525,7 @@
 				"$(SRCROOT)/QLog/XcodeLogger.swift",
 				"$(SRCROOT)/QLog/LogViewController.swift",
 				"$(SRCROOT)/QLog/SupportPackageViewController.swift",
+				"$(SRCROOT)/QLog/AppsTableViewController.swift",
 			);
 			outputPaths = (
 			);
@@ -558,6 +570,7 @@
 				9FA6874A2055DB3900CD877D /* GeneratedMocks.swift in Sources */,
 				9F64F8C5203E253F00328249 /* XcodeLoggerTests.swift in Sources */,
 				9FFD18272047629200C1814E /* FileLoggerTests.swift in Sources */,
+				9FDE3CBC206EE1C800928FCF /* AppsTableViewControllerTests.swift in Sources */,
 				9FE85A0A1EFAA73700560920 /* LogEntryTests.swift in Sources */,
 				9FFD182520460C6700C1814E /* AppCodeLoggerTests.swift in Sources */,
 				9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */,
