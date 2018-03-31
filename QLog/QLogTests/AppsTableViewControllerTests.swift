@@ -11,6 +11,17 @@ import XCTest
 
 class AppsTableViewControllerTests: XCTestCase {
 
+    func testInitWithCoder() {
+        // 1. Arrange
+        let archiver = NSKeyedArchiver(forWritingWith: NSMutableData())
+
+        // 2. Action
+        let appsTableViewController = AppsTableViewController(coder: archiver)
+
+        // 3. Assert
+        XCTAssertNil(appsTableViewController)
+    }
+
     func testBack() {
         // 1. Arrange
         let appsTableViewControllerDelegate = MockAppsTableViewControllerDelegate()
