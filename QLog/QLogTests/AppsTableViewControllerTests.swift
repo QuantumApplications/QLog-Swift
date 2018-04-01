@@ -22,6 +22,14 @@ class AppsTableViewControllerTests: XCTestCase {
         XCTAssertNil(appsTableViewController)
     }
 
+    func testNumberOfSections() {
+        // 1. Arrange
+        let appsTableViewController = AppsTableViewController()
+
+        // 3. Assert
+        XCTAssertEqual(appsTableViewController.numberOfSections(in: appsTableViewController.tableView), 1)
+    }
+
     func testBack() {
         // 1. Arrange
         let appsTableViewControllerDelegate = MockAppsTableViewControllerDelegate()
