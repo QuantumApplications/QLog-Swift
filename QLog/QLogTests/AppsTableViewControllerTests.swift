@@ -11,6 +11,19 @@ import XCTest
 
 class AppsTableViewControllerTests: XCTestCase {
 
+    func testInitWithCancelButton() {
+        // 2. Action
+        let appsTableViewController = AppsTableViewController()
+
+        // 3. Assert
+        XCTAssertEqual(appsTableViewController.navigationItem.leftBarButtonItem?.target as? AppsTableViewController, appsTableViewController)
+        XCTAssertEqual(appsTableViewController.navigationItem.leftBarButtonItem?.action, #selector(AppsTableViewController.back))
+        XCTAssertNil(appsTableViewController.navigationItem.rightBarButtonItem)
+        XCTAssertEqual(appsTableViewController.tabBarItem.title, QLog.Texts.archive)
+        XCTAssertEqual(appsTableViewController.tabBarItem.image, QLog.Images.archive)
+        XCTAssertEqual(appsTableViewController.tabBarItem.tag, 2)
+    }
+
     func testInitWithCoder() {
         // 1. Arrange
         let archiver = NSKeyedArchiver(forWritingWith: NSMutableData())
