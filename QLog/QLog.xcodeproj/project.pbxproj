@@ -18,6 +18,7 @@
 		9F03259E1F72B312008F2BEE /* SupportPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */; };
 		9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C2203CD16E00328249 /* LoggerTests.swift */; };
 		9F64F8C5203E253F00328249 /* XcodeLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */; };
+		9F8D33EB207572C5001657DA /* LogsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */; };
 		9FA687482055DA3900CD877D /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA6873E2055D9B800CD877D /* Cuckoo.framework */; };
 		9FA6874A2055DB3900CD877D /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA687492055DB3800CD877D /* GeneratedMocks.swift */; };
 		9FA6874E2055DC0A00CD877D /* QLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6874D2055DC0A00CD877D /* QLogTests.swift */; };
@@ -101,6 +102,7 @@
 		9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportPackageViewController.swift; sourceTree = "<group>"; };
 		9F64F8C2203CD16E00328249 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
 		9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLoggerTests.swift; sourceTree = "<group>"; };
+		9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cuckoo.xcodeproj; path = ../../Frameworks/Cuckoo/Cuckoo.xcodeproj; sourceTree = "<group>"; };
 		9FA687492055DB3800CD877D /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		9FA6874D2055DC0A00CD877D /* QLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QLogTests.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				9FDE3CBB206EE1C800928FCF /* AppsTableViewControllerTests.swift */,
+				9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */,
 			);
 			name = Archive;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F8D33EB207572C5001657DA /* LogsTableViewControllerTests.swift in Sources */,
 				9FA6874E2055DC0A00CD877D /* QLogTests.swift in Sources */,
 				9FDE3CB9206C342900928FCF /* SupportPackageViewControllerTests.swift in Sources */,
 				9FA6874A2055DB3900CD877D /* GeneratedMocks.swift in Sources */,

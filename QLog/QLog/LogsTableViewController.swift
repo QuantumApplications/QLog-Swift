@@ -15,7 +15,7 @@ class LogsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = app.lastPathComponent
+        self.title = app?.lastPathComponent ?? ""
         // Register table cell class from nib
         guard let bundle = Bundle(identifier: "qa.quantum.QLog") else {
             return
