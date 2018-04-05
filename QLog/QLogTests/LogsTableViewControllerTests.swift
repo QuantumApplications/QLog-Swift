@@ -20,4 +20,12 @@ class LogsTableViewControllerTests: XCTestCase {
         XCTAssertEqual(logsTableViewController.numberOfSections(in: logsTableViewController.tableView), 1)
     }
 
+    func testNumberOfRowsInSection() {
+        // 1. Arrange
+        let logsTableViewController = LogsTableViewController()
+
+        // 3. Assert
+        XCTAssertEqual(logsTableViewController.tableView(logsTableViewController.tableView, numberOfRowsInSection: 0), 0)
+    }
+
 }
