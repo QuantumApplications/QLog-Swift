@@ -43,6 +43,14 @@ class AppsTableViewControllerTests: XCTestCase {
         XCTAssertEqual(appsTableViewController.numberOfSections(in: appsTableViewController.tableView), 1)
     }
 
+    func testNumberOfRowsInSection() {
+        // 1. Arrange
+        let appsTableViewController = AppsTableViewController()
+
+        // 3. Assert
+        XCTAssertEqual(appsTableViewController.tableView(appsTableViewController.tableView, numberOfRowsInSection: 0), 0)
+    }
+
     func testBack() {
         // 1. Arrange
         let appsTableViewControllerDelegate = MockAppsTableViewControllerDelegate()
