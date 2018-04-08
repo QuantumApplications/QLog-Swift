@@ -30,6 +30,7 @@
 		9FE85A0C1EFAA73700560920 /* QLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE859FE1EFAA73600560920 /* QLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FE85A3F1EFAA85500560920 /* QLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A3E1EFAA85500560920 /* QLog.swift */; };
 		9FE85A671EFACEB300560920 /* LogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE85A651EFACEB300560920 /* LogViewController.xib */; };
+		9FF13ED8207AA89B00E5583B /* FrameworkCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF13ED7207AA89B00E5583B /* FrameworkCoordinatorTests.swift */; };
 		9FF41616202BB67A00566B93 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41615202BB67A00566B93 /* UIApplication.swift */; };
 		9FF4161B202BB90E00566B93 /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4161A202BB90E00566B93 /* LogEntry.swift */; };
 		9FF4161D202BBC7F00566B93 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4161C202BBC7F00566B93 /* Logger.swift */; };
@@ -117,6 +118,7 @@
 		9FE85A0B1EFAA73700560920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FE85A3E1EFAA85500560920 /* QLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QLog.swift; sourceTree = "<group>"; };
 		9FE85A651EFACEB300560920 /* LogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogViewController.xib; sourceTree = "<group>"; };
+		9FF13ED7207AA89B00E5583B /* FrameworkCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkCoordinatorTests.swift; sourceTree = "<group>"; };
 		9FF41615202BB67A00566B93 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		9FF4161A202BB90E00566B93 /* LogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntry.swift; sourceTree = "<group>"; };
 		9FF4161C202BBC7F00566B93 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -197,6 +199,14 @@
 				9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */,
 			);
 			name = "Support Package";
+			sourceTree = "<group>";
+		};
+		9F3CF4CF207AA84400D7B737 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				9FF13ED7207AA89B00E5583B /* FrameworkCoordinatorTests.swift */,
+			);
+			name = Coordinators;
 			sourceTree = "<group>";
 		};
 		9F64F8A2203B730000328249 /* Loggers */ = {
@@ -306,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				9FA6874D2055DC0A00CD877D /* QLogTests.swift */,
+				9F3CF4CF207AA84400D7B737 /* Coordinators */,
 				9F64F8A2203B730000328249 /* Loggers */,
 				9FDE3CA2206451F900928FCF /* View Controllers */,
 				9FA687492055DB3800CD877D /* GeneratedMocks.swift */,
@@ -577,6 +588,7 @@
 				9FDE3CBC206EE1C800928FCF /* AppsTableViewControllerTests.swift in Sources */,
 				9FE85A0A1EFAA73700560920 /* LogEntryTests.swift in Sources */,
 				9FFD182520460C6700C1814E /* AppCodeLoggerTests.swift in Sources */,
+				9FF13ED8207AA89B00E5583B /* FrameworkCoordinatorTests.swift in Sources */,
 				9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */,
 				9FDE3CA52064522C00928FCF /* LogViewControllerTests.swift in Sources */,
 				9FFD18292048B22D00C1814E /* UiLoggerTests.swift in Sources */,
