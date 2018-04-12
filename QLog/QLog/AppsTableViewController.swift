@@ -42,9 +42,7 @@ class AppsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Register table cell class from nib
-        guard let bundle = Bundle(identifier: "qa.quantum.QLog") else {
-            return
-        }
+        let bundle = Bundle(identifier: "qa.quantum.QLog")!
         self.tableView.register(UINib(nibName: "TableViewCell", bundle: bundle), forCellReuseIdentifier: "TableViewCell")
     }
 
