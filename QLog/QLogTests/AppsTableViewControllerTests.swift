@@ -11,6 +11,11 @@ import XCTest
 
 class AppsTableViewControllerTests: XCTestCase {
 
+    func testAppsEmptyLogUrl() {
+        // 3. Assert
+        XCTAssertEqual(AppsTableViewController().apps, [URL]())
+    }
+
     func testInitWithCancelButton() {
         // 2. Action
         let appsTableViewController = AppsTableViewController()
