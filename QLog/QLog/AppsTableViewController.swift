@@ -18,13 +18,10 @@ class AppsTableViewController: UITableViewController {
 
     var apps: [URL] {
         guard let logUrl = UiLogger.shared?.logUrl else {
-            return [URL]()
+            return []
         }
-        do {
-            return try FileManager.default.contentsOfDirectory(at: logUrl, includingPropertiesForKeys: nil, options: []).filter { $0.hasDirectoryPath }
-        } catch {
-            return [URL]()
-        }
+        return (try? FileManager.default.contentsOfDirectory(at: logUrl, includingPropertiesForKeys: nil, options: []).filter { $0.hasDirectoryPath }) ?? []
+
     }
 
     weak var delegate: AppsTableViewControllerDelegate?

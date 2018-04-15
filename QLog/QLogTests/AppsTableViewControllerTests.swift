@@ -11,6 +11,22 @@ import XCTest
 
 class AppsTableViewControllerTests: XCTestCase {
 
+    func testApps() {
+        // 1. Arrange
+        let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("logTest")
+        let logDirectoryUrl = logUrl.appendingPathComponent("logDirectory")
+        try? FileManager.default.createDirectory(at: logUrl, withIntermediateDirectories: true, attributes: nil)
+        try? FileManager.default.createDirectory(at: logDirectoryUrl, withIntermediateDirectories: true, attributes: nil)
+        _ = UiLogger.getShared(logUrl: logUrl)
+
+        // 3. Assert
+        XCTAssertEqual(AppsTableViewController().apps.map { $0.absoluteString }, [logDirectoryUrl.absoluteString + "/"])
+
+        // 4. Annihilate
+        try? FileManager.default.removeItem(at: logDirectoryUrl)
+        try? FileManager.default.removeItem(at: logUrl)
+    }
+
     func testAppsEmptyLogUrl() {
         // 3. Assert
         XCTAssertEqual(AppsTableViewController().apps, [URL]())
