@@ -17,20 +17,14 @@ class LogsTableViewController: UITableViewController {
         super.viewDidLoad()
         self.title = app?.lastPathComponent ?? ""
         // Register table cell class from nib
-        guard let bundle = Bundle(identifier: "qa.quantum.QLog") else {
-            return
-        }
+        let bundle = Bundle(identifier: "qa.quantum.QLog")!
         self.tableView.register(UINib(nibName: "TableViewCell", bundle: bundle), forCellReuseIdentifier: "TableViewCell")
         // Load logs
         self.logs = {
             guard let url = self.app else {
-                return [URL]()
+                return []
             }
-            do {
-                return try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: []).filter { !$0.hasDirectoryPath }
-            } catch {
-                return [URL]()
-            }
+            return (try? FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: []).filter { !$0.hasDirectoryPath }) ?? []
         }()
     }
 
