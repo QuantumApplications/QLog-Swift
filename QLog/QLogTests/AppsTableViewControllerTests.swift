@@ -28,6 +28,9 @@ class AppsTableViewControllerTests: XCTestCase {
     }
 
     func testAppsEmptyLogUrl() {
+        // 1. Arrange
+        UiLogger.shared = nil
+
         // 3. Assert
         XCTAssertEqual(AppsTableViewController().apps, [URL]())
     }
