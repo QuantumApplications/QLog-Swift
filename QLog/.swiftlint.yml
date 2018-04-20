@@ -3,13 +3,23 @@ disabled_rules:
 - force_cast
 - identifier_name
 opt_in_rules:
+- file_header
 - cyclomatic_complexity
 excluded:
 - QLogTests/GeneratedMocks.swift
 
+file_header:
+  required_pattern: |
+                    \/\/
+                    \/\/  .*?\.swift
+                    \/\/  QLog
+                    \/\/
+                    \/\/  Created by .*? on \d{1,2}\.\d{1,2}\.\d{2}\.
+                    \/\/  Copyright © \d{4} Quantum\. All rights reserved\.
+                    \/\/
 file_length:
-warning: 500
-error: 1200
+  warning: 500
+  error: 1200
 function_body_length: 15
 cyclomatic_complexity: 5
 function_parameter_count: 4
