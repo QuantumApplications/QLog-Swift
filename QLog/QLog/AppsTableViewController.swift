@@ -38,6 +38,7 @@ class AppsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: 15)
         // Register table cell class from nib
         let bundle = Bundle(identifier: "qa.quantum.QLog")!
         self.tableView.register(UINib(nibName: "TableViewCell", bundle: bundle), forCellReuseIdentifier: "TableViewCell")
@@ -57,6 +58,8 @@ class AppsTableViewController: UITableViewController {
         let app = self.apps[(indexPath as NSIndexPath).row]
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         cell.nameLabel.text = app.lastPathComponent
+        cell.separatorInset = UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: 15)
+        cell.layoutMargins = UIEdgeInsets.init(top: 0, left: -15, bottom: 0, right: 15)
         return cell
     }
 
