@@ -11,15 +11,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        for _ in 1..<10 {
-            QLogHighlight("Highlight")
-            QLogDebug("Debug")
-            QLogInfo("Info")
-            QLogWarning("Warning")
-            QLogError("Error")
+    func log() {
+        QLogHighlight("Highlight")
+        QLogDebug("Debug")
+        QLogInfo("Info")
+        QLogWarning("Warning")
+        QLogError("Error")
+    }
+
+    func run() {
+        self.log()
+        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 1.0) {
+            self.run()
         }
+    }
+
+    override func viewDidLoad() {
         super.viewDidLoad()
+        self.run()
     }
 
 }

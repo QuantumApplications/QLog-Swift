@@ -19,6 +19,8 @@ class LogViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var logLevelSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var logLevelSegmentedControlHeight: NSLayoutConstraint!
     @IBOutlet weak var textView: UITextView!
 
     weak var delegate: LogViewControllerDelegate?
@@ -34,6 +36,8 @@ class LogViewController: UIViewController {
         // Allow scrolling if navigation bars are opaque (WTF Apple?)
         self.extendedLayoutIncludesOpaqueBars = true
         self.tabBarItem = UITabBarItem(title: QLog.Texts.live, image: QLog.Images.live, tag: 1)
+        // Set segmented control
+        self.logLevelSegmentedControl.selectedSegmentIndex = UiLogger.getShared().logLevel.rawValue
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -41,10 +45,16 @@ class LogViewController: UIViewController {
     }
 
     func showLog(_ logUrl: URL) {
+        self.logLevelSegmentedControl.isHidden = true
+        self.logLevelSegmentedControlHeight.constant = 0
         self.textView.text = String(data: (try? Data(contentsOf: logUrl)) ?? Data(), encoding: .utf8)
     }
 
     // MARK: - Navigation
+
+    @IBAction func logLevelSegmentedControlValueChanged(_ sender: Any) {
+        UiLogger.getShared().logLevel = LogLevel(rawValue: self.logLevelSegmentedControl.selectedSegmentIndex) ?? UiLogger.getShared().logLevel
+    }
 
     @objc func back() {
         self.delegate?.back(self)
