@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,17 +19,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdg-7G-Nd3">
-                        <rect key="frame" x="16" y="11" width="288" height="22"/>
+                        <rect key="frame" x="15" y="5" width="290" height="33.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="kdg-7G-Nd3" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="02F-Iz-nKX"/>
-                    <constraint firstItem="kdg-7G-Nd3" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Hk0-eK-NyS"/>
-                    <constraint firstItem="kdg-7G-Nd3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="qBQ-MY-bLw"/>
-                    <constraint firstItem="kdg-7G-Nd3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="qgK-qm-JE8"/>
+                    <constraint firstItem="kdg-7G-Nd3" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" constant="-5" id="02F-Iz-nKX"/>
+                    <constraint firstItem="kdg-7G-Nd3" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" constant="-15" id="Hk0-eK-NyS"/>
+                    <constraint firstItem="kdg-7G-Nd3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="qBQ-MY-bLw"/>
+                    <constraint firstItem="kdg-7G-Nd3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="qgK-qm-JE8"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
