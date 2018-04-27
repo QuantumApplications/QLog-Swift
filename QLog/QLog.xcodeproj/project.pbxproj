@@ -95,12 +95,13 @@
 		98C446ACEEDEEDE9E3462BC5 /* LogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogsTableViewController.swift; sourceTree = "<group>"; };
 		98C446DD725BF0CE15FBEA6D /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		98C44C21EF09382A628C868A /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		98C44D20BAEC41959EEEBFFC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = file.yml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		98C44FECC530031877EC625A /* AppsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsTableViewController.swift; sourceTree = "<group>"; };
 		9F0325901F7286E2008F2BEE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9F0325921F728922008F2BEE /* RootViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
 		9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameworkCoordinator.swift; sourceTree = "<group>"; };
 		9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportPackageViewController.swift; sourceTree = "<group>"; };
+		9F4BC0E32093CB7B00BDA8EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		9F4BC0E72093CB9B00BDA8EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9F64F8C2203CD16E00328249 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
 		9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLoggerTests.swift; sourceTree = "<group>"; };
 		9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsTableViewControllerTests.swift; sourceTree = "<group>"; };
@@ -284,7 +285,6 @@
 				9FE85A081EFAA73700560920 /* QLogTests */,
 				9FA687342055D99600CD877D /* Frameworks */,
 				9FE859FC1EFAA73600560920 /* Products */,
-				98C44D20BAEC41959EEEBFFC /* .swiftlint.yml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -308,6 +308,7 @@
 				9FF41614202BB65900566B93 /* Util */,
 				9FE859FE1EFAA73600560920 /* QLog.h */,
 				9FE859FF1EFAA73600560920 /* Info.plist */,
+				9F4BC0E32093CB7B00BDA8EB /* .swiftlint.yml */,
 			);
 			path = QLog;
 			sourceTree = "<group>";
@@ -321,6 +322,7 @@
 				9FDE3CA2206451F900928FCF /* View Controllers */,
 				9FA687492055DB3800CD877D /* GeneratedMocks.swift */,
 				9FE85A0B1EFAA73700560920 /* Info.plist */,
+				9F4BC0E72093CB9B00BDA8EB /* .swiftlint.yml */,
 			);
 			path = QLogTests;
 			sourceTree = "<group>";
@@ -404,6 +406,7 @@
 				9FE85A001EFAA73700560920 /* Sources */,
 				9FE85A011EFAA73700560920 /* Frameworks */,
 				9FE85A021EFAA73700560920 /* Resources */,
+				9F4BC0E82093CD6A00BDA8EB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -526,7 +529,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\ncd QLog\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		9F4BC0E82093CD6A00BDA8EB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\ncd QLogTests\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		9FA687472055DA0700CD877D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

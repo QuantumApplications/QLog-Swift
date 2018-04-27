@@ -6,13 +6,13 @@ opt_in_rules:
 - file_header
 - cyclomatic_complexity
 excluded:
-- QLogTests/GeneratedMocks.swift
+- GeneratedMocks.swift
 
 file_header:
   required_pattern: |
                     \/\/
                     \/\/  .*?\.swift
-                    \/\/  QLog
+                    \/\/  QLogTests
                     \/\/
                     \/\/  Created by .*? on \d{1,2}\.\d{1,2}\.\d{2}\.
                     \/\/  Copyright © \d{4} Quantum\. All rights reserved\.
