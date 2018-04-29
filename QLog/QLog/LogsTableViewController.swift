@@ -49,9 +49,9 @@ class LogsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let logViewController = LogViewController()
-        logViewController.showLog(self.logs[(indexPath as NSIndexPath).row])
-        self.show(logViewController, sender: self)
+        let archiveLogViewController = ArchiveLogViewController()
+        archiveLogViewController.showLog(self.logs[(indexPath as NSIndexPath).row])
+        self.show(archiveLogViewController, sender: self)
     }
 
     // MARK: - Navigation

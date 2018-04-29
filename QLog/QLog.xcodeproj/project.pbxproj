@@ -12,6 +12,8 @@
 		98C447E6D0BD8EDF28AAE684 /* AppsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C44FECC530031877EC625A /* AppsTableViewController.swift */; };
 		98C44B283F8E054C02CE9F24 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98C446DD725BF0CE15FBEA6D /* TableViewCell.xib */; };
 		98C44D66CC9B368B2253C96D /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C441B8059A4FD38B6B3A3B /* LogViewController.swift */; };
+		9F0255E220966AA3002C1BDE /* ArchiveLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0255E020966AA3002C1BDE /* ArchiveLogViewController.swift */; };
+		9F0255E320966AA3002C1BDE /* ArchiveLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F0255E120966AA3002C1BDE /* ArchiveLogViewController.xib */; };
 		9F0325911F7286E2008F2BEE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325901F7286E2008F2BEE /* Coordinator.swift */; };
 		9F0325931F728922008F2BEE /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325921F728922008F2BEE /* RootViewCoordinator.swift */; };
 		9F0325951F7289D4008F2BEE /* FrameworkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */; };
@@ -96,6 +98,8 @@
 		98C446DD725BF0CE15FBEA6D /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		98C44C21EF09382A628C868A /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		98C44FECC530031877EC625A /* AppsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsTableViewController.swift; sourceTree = "<group>"; };
+		9F0255E020966AA3002C1BDE /* ArchiveLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveLogViewController.swift; sourceTree = "<group>"; };
+		9F0255E120966AA3002C1BDE /* ArchiveLogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchiveLogViewController.xib; sourceTree = "<group>"; };
 		9F0325901F7286E2008F2BEE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9F0325921F728922008F2BEE /* RootViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
 		9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameworkCoordinator.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 				98C446ACEEDEEDE9E3462BC5 /* LogsTableViewController.swift */,
 				98C44C21EF09382A628C868A /* TableViewCell.swift */,
 				98C446DD725BF0CE15FBEA6D /* TableViewCell.xib */,
+				9F0255E020966AA3002C1BDE /* ArchiveLogViewController.swift */,
+				9F0255E120966AA3002C1BDE /* ArchiveLogViewController.xib */,
 			);
 			name = Archive;
 			sourceTree = "<group>";
@@ -504,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FE85A671EFACEB300560920 /* LogViewController.xib in Resources */,
+				9F0255E320966AA3002C1BDE /* ArchiveLogViewController.xib in Resources */,
 				98C44B283F8E054C02CE9F24 /* TableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +585,7 @@
 				9FF4161B202BB90E00566B93 /* LogEntry.swift in Sources */,
 				98C44D66CC9B368B2253C96D /* LogViewController.swift in Sources */,
 				98C446E935CBEF5765F7007D /* TableViewCell.swift in Sources */,
+				9F0255E220966AA3002C1BDE /* ArchiveLogViewController.swift in Sources */,
 				9F0325911F7286E2008F2BEE /* Coordinator.swift in Sources */,
 				9FF4161D202BBC7F00566B93 /* Logger.swift in Sources */,
 				9F0325951F7289D4008F2BEE /* FrameworkCoordinator.swift in Sources */,
