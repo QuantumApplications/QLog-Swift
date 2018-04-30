@@ -31,8 +31,6 @@ public class UiLogger: Logger {
 
     static var shared: UiLogger?
 
-    let font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
-
     let logUrl: URL
 
     lazy var frameworkCoordinator: FrameworkCoordinator = FrameworkCoordinator()
@@ -54,13 +52,7 @@ public class UiLogger: Logger {
 
     public func doLog(_ logEntry: LogEntry) {
         DispatchQueue.main.async {
-            let viewController = self.frameworkCoordinator.logViewController
-            let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedStringKey.foregroundColor: QLog.colorText, NSAttributedStringKey.font: self.font])
-            let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedStringKey.foregroundColor: logEntry.logLevel.color, NSAttributedStringKey.font: self.font])
-            let oldText = NSMutableAttributedString(attributedString: (viewController.textView.attributedText))
-            oldText.append(attributedMetaText)
-            oldText.append(attributedText)
-            viewController.textView.attributedText = oldText
+            self.frameworkCoordinator.logViewController.log(logEntry)
         }
     }
 

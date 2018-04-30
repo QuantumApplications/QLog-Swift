@@ -17,6 +17,8 @@ protocol LogViewControllerDelegate: class {
 
 class LogViewController: UIViewController {
 
+    static let font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
+
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var logLevelSegmentedControl: UISegmentedControl!
@@ -42,6 +44,15 @@ class LogViewController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) {
         return nil
+    }
+
+    func log(_ logEntry: LogEntry) {
+        let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedStringKey.foregroundColor: QLog.colorText, NSAttributedStringKey.font: LogViewController.font])
+        let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedStringKey.foregroundColor: logEntry.logLevel.color, NSAttributedStringKey.font: LogViewController.font])
+        let oldText = NSMutableAttributedString(attributedString: (self.textView.attributedText))
+        oldText.append(attributedMetaText)
+        oldText.append(attributedText)
+        self.textView.attributedText = oldText
     }
 
     func showLog(_ logUrl: URL) {
