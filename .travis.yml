@@ -1,5 +1,5 @@
 language: objective-c
 osx_image: xcode9.2
-script: cd QLog; xcodebuild clean && xcodebuild build test -project QLog.xcodeproj -scheme QLog -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.2'
+script: cd QLog; xcodebuild clean && xcodebuild build test -project QLog.xcodeproj -scheme QLog -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.3'
 after_success:
 - bash <(curl -s https://codecov.io/bash)
