@@ -53,12 +53,20 @@ class LogViewController: UIViewController {
         oldText.append(attributedMetaText)
         oldText.append(attributedText)
         self.textView.attributedText = oldText
+        self.scroll()
     }
 
     func showLog(_ logUrl: URL) {
         self.logLevelSegmentedControl.isHidden = true
         self.logLevelSegmentedControlHeight.constant = 0
         self.textView.text = String(data: (try? Data(contentsOf: logUrl)) ?? Data(), encoding: .utf8)
+    }
+
+    func scroll() {
+        if self.textView.bounds.size.height > self.view.bounds.size.height {
+            let bottom = CGPoint(x: 0, y: self.scrollView.contentSize.height - self.scrollView.bounds.size.height)
+            self.scrollView.setContentOffset(bottom, animated: true)
+        }
     }
 
     // MARK: - Navigation
