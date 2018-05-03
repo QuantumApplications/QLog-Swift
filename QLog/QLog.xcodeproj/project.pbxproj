@@ -17,7 +17,6 @@
 		9F0325911F7286E2008F2BEE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325901F7286E2008F2BEE /* Coordinator.swift */; };
 		9F0325931F728922008F2BEE /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325921F728922008F2BEE /* RootViewCoordinator.swift */; };
 		9F0325951F7289D4008F2BEE /* FrameworkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */; };
-		9F03259E1F72B312008F2BEE /* SupportPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */; };
 		9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C2203CD16E00328249 /* LoggerTests.swift */; };
 		9F64F8C5203E253F00328249 /* XcodeLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */; };
 		9F8D33EB207572C5001657DA /* LogsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */; };
@@ -44,6 +43,9 @@
 		9FFD182520460C6700C1814E /* AppCodeLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD182420460C6700C1814E /* AppCodeLoggerTests.swift */; };
 		9FFD18272047629200C1814E /* FileLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD18262047629100C1814E /* FileLoggerTests.swift */; };
 		9FFD18292048B22D00C1814E /* UiLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD18282048B22D00C1814E /* UiLoggerTests.swift */; };
+		D270AF642099B0DF0059AE0F /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D270AF592099B0C10059AE0F /* Zip.framework */; };
+		D270AF6A2099B1AD0059AE0F /* SupportPackageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D270AF682099B1AD0059AE0F /* SupportPackageViewController.xib */; };
+		D270AF6B2099B1AD0059AE0F /* SupportPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D270AF692099B1AD0059AE0F /* SupportPackageViewController.swift */; };
 		D2B472CA1F6ABBF700823E27 /* CornerSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,48 @@
 			remoteGlobalIDString = 9FE859FA1EFAA73600560920;
 			remoteInfo = QLog;
 		};
+		D270AF582099B0C10059AE0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 347E3A741C1DFFB500A11FD3;
+			remoteInfo = Zip;
+		};
+		D270AF5A2099B0C10059AE0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 347E3A7E1C1DFFB500A11FD3;
+			remoteInfo = ZipTests;
+		};
+		D270AF5C2099B0C10059AE0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 343F50FF1C8DAEEC0028C434;
+			remoteInfo = "Zip OSX";
+		};
+		D270AF5E2099B0C10059AE0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 343F51081C8DAEEC0028C434;
+			remoteInfo = "Zip OSXTests";
+		};
+		D270AF602099B0C10059AE0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 342545B51CE525B200336074;
+			remoteInfo = "Zip tvOS";
+		};
+		D270AF622099B0D20059AE0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 347E3A731C1DFFB500A11FD3;
+			remoteInfo = Zip;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -103,7 +147,6 @@
 		9F0325901F7286E2008F2BEE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9F0325921F728922008F2BEE /* RootViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
 		9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameworkCoordinator.swift; sourceTree = "<group>"; };
-		9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportPackageViewController.swift; sourceTree = "<group>"; };
 		9F4BC0E32093CB7B00BDA8EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9F4BC0E72093CB9B00BDA8EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9F64F8C2203CD16E00328249 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
@@ -135,6 +178,9 @@
 		9FFD182420460C6700C1814E /* AppCodeLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCodeLoggerTests.swift; sourceTree = "<group>"; };
 		9FFD18262047629100C1814E /* FileLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLoggerTests.swift; sourceTree = "<group>"; };
 		9FFD18282048B22D00C1814E /* UiLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiLoggerTests.swift; sourceTree = "<group>"; };
+		D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Zip.xcodeproj; path = ../../Frameworks/Zip/Zip.xcodeproj; sourceTree = "<group>"; };
+		D270AF682099B1AD0059AE0F /* SupportPackageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupportPackageViewController.xib; sourceTree = "<group>"; };
+		D270AF692099B1AD0059AE0F /* SupportPackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPackageViewController.swift; sourceTree = "<group>"; };
 		D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerSwipeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D270AF642099B0DF0059AE0F /* Zip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +250,8 @@
 		9F03259C1F72B2ED008F2BEE /* Support Package */ = {
 			isa = PBXGroup;
 			children = (
-				9F03259D1F72B312008F2BEE /* SupportPackageViewController.swift */,
+				D270AF692099B1AD0059AE0F /* SupportPackageViewController.swift */,
+				D270AF682099B1AD0059AE0F /* SupportPackageViewController.xib */,
 			);
 			name = "Support Package";
 			sourceTree = "<group>";
@@ -233,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */,
+				D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */,
 			);
 			name = Frameworks;
 			path = QLog;
@@ -371,6 +420,18 @@
 			name = Loggers;
 			sourceTree = "<group>";
 		};
+		D270AF4E2099B0C10059AE0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D270AF592099B0C10059AE0F /* Zip.framework */,
+				D270AF5B2099B0C10059AE0F /* ZipTests.xctest */,
+				D270AF5D2099B0C10059AE0F /* Zip.framework */,
+				D270AF5F2099B0C10059AE0F /* Zip OSXTests.xctest */,
+				D270AF612099B0C10059AE0F /* Zip.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -398,6 +459,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D270AF632099B0D20059AE0F /* PBXTargetDependency */,
 			);
 			name = QLog;
 			productName = QLog;
@@ -464,6 +526,10 @@
 					ProductGroup = 9FA687362055D9B800CD877D /* Products */;
 					ProjectRef = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
 				},
+				{
+					ProductGroup = D270AF4E2099B0C10059AE0F /* Products */;
+					ProjectRef = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -502,6 +568,41 @@
 			remoteRef = 9FA687432055D9B800CD877D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		D270AF592099B0C10059AE0F /* Zip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Zip.framework;
+			remoteRef = D270AF582099B0C10059AE0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D270AF5B2099B0C10059AE0F /* ZipTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZipTests.xctest;
+			remoteRef = D270AF5A2099B0C10059AE0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D270AF5D2099B0C10059AE0F /* Zip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Zip.framework;
+			remoteRef = D270AF5C2099B0C10059AE0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D270AF5F2099B0C10059AE0F /* Zip OSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Zip OSXTests.xctest";
+			remoteRef = D270AF5E2099B0C10059AE0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D270AF612099B0C10059AE0F /* Zip.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Zip.framework;
+			remoteRef = D270AF602099B0C10059AE0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -511,6 +612,7 @@
 			files = (
 				9FE85A671EFACEB300560920 /* LogViewController.xib in Resources */,
 				9F0255E320966AA3002C1BDE /* ArchiveLogViewController.xib in Resources */,
+				D270AF6A2099B1AD0059AE0F /* SupportPackageViewController.xib in Resources */,
 				98C44B283F8E054C02CE9F24 /* TableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,6 +688,7 @@
 				98C44D66CC9B368B2253C96D /* LogViewController.swift in Sources */,
 				98C446E935CBEF5765F7007D /* TableViewCell.swift in Sources */,
 				9F0255E220966AA3002C1BDE /* ArchiveLogViewController.swift in Sources */,
+				D270AF6B2099B1AD0059AE0F /* SupportPackageViewController.swift in Sources */,
 				9F0325911F7286E2008F2BEE /* Coordinator.swift in Sources */,
 				9FF4161D202BBC7F00566B93 /* Logger.swift in Sources */,
 				9F0325951F7289D4008F2BEE /* FrameworkCoordinator.swift in Sources */,
@@ -593,7 +696,6 @@
 				9FF41646202E14A500566B93 /* AppCodeLogger.swift in Sources */,
 				9FF41644202E012100566B93 /* UiLogger.swift in Sources */,
 				9F0325931F728922008F2BEE /* RootViewCoordinator.swift in Sources */,
-				9F03259E1F72B312008F2BEE /* SupportPackageViewController.swift in Sources */,
 				9FF41621202BC71800566B93 /* LogLevel.swift in Sources */,
 				9FF4161F202BBCBF00566B93 /* XcodeLogger.swift in Sources */,
 			);
@@ -631,6 +733,11 @@
 			isa = PBXTargetDependency;
 			target = 9FE859FA1EFAA73600560920 /* QLog */;
 			targetProxy = 9FE85A061EFAA73700560920 /* PBXContainerItemProxy */;
+		};
+		D270AF632099B0D20059AE0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Zip;
+			targetProxy = D270AF622099B0D20059AE0F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
