@@ -11,6 +11,7 @@ import UIKit
 protocol SupportPackageViewControllerDelegate: class {
 
     func back(_ supportPackageViewController: SupportPackageViewController)
+    func generateSupportPackage(_ supportPackageViewController: SupportPackageViewController)
 
 }
 
@@ -19,7 +20,8 @@ class SupportPackageViewController: UIViewController {
     weak var delegate: SupportPackageViewControllerDelegate?
 
     init() {
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "SupportPackageViewController", bundle: Bundle(identifier: "qa.quantum.QLog")!)
+        self.loadView()
         self.navigationItem.leftBarButtonItem =  UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
         self.tabBarItem = UITabBarItem(title: QLog.Texts.supportPackage, image: QLog.Images.supportPackage, tag: 3)
     }
@@ -34,4 +36,8 @@ class SupportPackageViewController: UIViewController {
         self.delegate?.back(self)
     }
 
+    @IBAction func generateSupportPackage(_ sender: Any) {
+        self.delegate?.generateSupportPackage(self)
+    }
+    
 }

@@ -9,6 +9,7 @@
 import Foundation
 import MobileCoreServices
 import UIKit
+import Zip
 
 class FrameworkCoordinator: RootViewCoordinator {
 
@@ -122,9 +123,32 @@ extension FrameworkCoordinator: AppsTableViewControllerDelegate {
 
 extension FrameworkCoordinator: SupportPackageViewControllerDelegate {
 
+    static let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return dateFormatter
+    }()
+    static let targetName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Application"
+
     func back(_ supportPackageViewController: SupportPackageViewController) {
         self.shown = false
         supportPackageViewController.dismiss(animated: true, completion: nil)
     }
 
+    func generateSupportPackage(_ supportPackageViewController: SupportPackageViewController) {
+        // Zip log files
+        let zipDirectoryUrl = URL(fileURLWithPath: NSTemporaryDirectory())
+        let zipFileUrl = zipDirectoryUrl.appendingPathComponent("Support Package \(FrameworkCoordinator.targetName) \(FrameworkCoordinator.dateFormatter.string(from: Date())).zip")
+        let logPathUrl = UiLogger.getShared().logUrl
+        guard (try? Zip.zipFiles(paths: [logPathUrl], zipFilePath: zipFileUrl, password: nil, progress: { progress in
+            print(progress)
+        })) != nil else {
+            return
+        }
+        // Share zip file
+        documentInteractionController = UIDocumentInteractionController()
+        documentInteractionController.url = zipFileUrl
+        documentInteractionController.uti = String(kUTTypeZipArchive)
+        documentInteractionController.presentOptionsMenu(from: CGRect(x: 0, y: 0, width: 0, height: 0), in: logViewController.view, animated: true)
+    }
 }
