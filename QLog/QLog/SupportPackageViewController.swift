@@ -39,5 +39,5 @@ class SupportPackageViewController: UIViewController {
     @IBAction func generateSupportPackage(_ sender: Any) {
         self.delegate?.generateSupportPackage(self)
     }
-    
+
 }
