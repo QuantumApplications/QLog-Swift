@@ -54,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F2F51AE209FADF700199E81 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9F56D22820434D580051A25F /* Strings.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		9F6AAA962017E20100DB49A0 = {
 			isa = PBXGroup;
 			children = (
@@ -75,13 +83,29 @@
 		9F6AAAA12017E20100DB49A0 /* QLogExample */ = {
 			isa = PBXGroup;
 			children = (
-				9F6AAAA22017E20100DB49A0 /* AppDelegate.swift */,
-				9F6AAAA42017E20100DB49A0 /* ViewController.swift */,
-				9F56D22820434D580051A25F /* Strings.swift */,
-				9F6AAAAE2017E20100DB49A0 /* Info.plist */,
+				9FAC408A209FAE8F0037B2DC /* Main */,
+				9F2F51AE209FADF700199E81 /* Util */,
+				9FEBC207209FAE4500108158 /* View Controllers */,
 				9F56D22620434D3C0051A25F /* Localizable.strings */,
+				9F6AAAAE2017E20100DB49A0 /* Info.plist */,
 			);
 			path = QLogExample;
+			sourceTree = "<group>";
+		};
+		9FAC408A209FAE8F0037B2DC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9F6AAAA22017E20100DB49A0 /* AppDelegate.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		9FEBC207209FAE4500108158 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F6AAAA42017E20100DB49A0 /* ViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
