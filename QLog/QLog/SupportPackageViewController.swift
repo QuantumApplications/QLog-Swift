@@ -17,6 +17,7 @@ protocol SupportPackageViewControllerDelegate: class {
 
 class SupportPackageViewController: UIViewController {
 
+    @IBOutlet weak var generateSupportPackageButton: UIButton!
     weak var delegate: SupportPackageViewControllerDelegate?
 
     init() {
@@ -24,6 +25,8 @@ class SupportPackageViewController: UIViewController {
         self.loadView()
         self.navigationItem.leftBarButtonItem =  UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
         self.tabBarItem = UITabBarItem(title: QLog.Texts.supportPackage, image: QLog.Images.supportPackage, tag: 3)
+        // Localization
+        self.generateSupportPackageButton.setTitle(QLog.Texts.generateSupportPackage, for: .normal)
     }
 
     required init?(coder aDecoder: NSCoder) {

@@ -41,6 +41,7 @@ public class QLog {
         public static var archive = "Archive"
         public static var live = "Live"
         public static var supportPackage = "Support Package"
+        public static var generateSupportPackage = "Generate Support Package"
 
     }
 
