@@ -135,7 +135,7 @@ extension FrameworkCoordinator: SupportPackageViewControllerDelegate {
         supportPackageViewController.dismiss(animated: true, completion: nil)
     }
 
-    func generateSupportPackage(_ supportPackageViewController: SupportPackageViewController) {
+    func generateSupportPackage(_ supportPackageViewController: SupportPackageViewController, rect: CGRect) {
         // Zip log files
         let zipDirectoryUrl = URL(fileURLWithPath: NSTemporaryDirectory())
         let zipFileUrl = zipDirectoryUrl.appendingPathComponent("Support Package \(FrameworkCoordinator.targetName) \(FrameworkCoordinator.dateFormatter.string(from: Date())).zip")
@@ -149,6 +149,6 @@ extension FrameworkCoordinator: SupportPackageViewControllerDelegate {
         documentInteractionController = UIDocumentInteractionController()
         documentInteractionController.url = zipFileUrl
         documentInteractionController.uti = String(kUTTypeZipArchive)
-        documentInteractionController.presentOptionsMenu(from: CGRect(x: 0, y: 0, width: 0, height: 0), in: logViewController.view, animated: true)
+        documentInteractionController.presentOptionsMenu(from: rect, in: logViewController.view, animated: true)
     }
 }
