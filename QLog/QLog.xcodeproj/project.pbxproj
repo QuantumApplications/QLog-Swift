@@ -298,6 +298,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9FAC408B20A39CC70037B2DC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9FA6874D2055DC0A00CD877D /* QLogTests.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		9FDE3CA2206451F900928FCF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,7 +379,7 @@
 		9FE85A081EFAA73700560920 /* QLogTests */ = {
 			isa = PBXGroup;
 			children = (
-				9FA6874D2055DC0A00CD877D /* QLogTests.swift */,
+				9FAC408B20A39CC70037B2DC /* Main */,
 				9F3CF4CF207AA84400D7B737 /* Coordinators */,
 				9F64F8A2203B730000328249 /* Loggers */,
 				9FDE3CA2206451F900928FCF /* View Controllers */,
