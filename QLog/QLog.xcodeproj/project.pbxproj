@@ -23,6 +23,7 @@
 		9FA687482055DA3900CD877D /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA6873E2055D9B800CD877D /* Cuckoo.framework */; };
 		9FA6874A2055DB3900CD877D /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA687492055DB3800CD877D /* GeneratedMocks.swift */; };
 		9FA6874E2055DC0A00CD877D /* QLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6874D2055DC0A00CD877D /* QLogTests.swift */; };
+		9FAC409420A4E2EC0037B2DC /* ArchiveLogViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC409320A4E2EC0037B2DC /* ArchiveLogViewControllerTests.swift */; };
 		9FDE3CA52064522C00928FCF /* LogViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CA42064522C00928FCF /* LogViewControllerTests.swift */; };
 		9FDE3CB9206C342900928FCF /* SupportPackageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CB8206C342900928FCF /* SupportPackageViewControllerTests.swift */; };
 		9FDE3CBC206EE1C800928FCF /* AppsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CBB206EE1C800928FCF /* AppsTableViewControllerTests.swift */; };
@@ -155,6 +156,7 @@
 		9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cuckoo.xcodeproj; path = ../../Frameworks/Cuckoo/Cuckoo.xcodeproj; sourceTree = "<group>"; };
 		9FA687492055DB3800CD877D /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		9FA6874D2055DC0A00CD877D /* QLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QLogTests.swift; sourceTree = "<group>"; };
+		9FAC409320A4E2EC0037B2DC /* ArchiveLogViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveLogViewControllerTests.swift; sourceTree = "<group>"; };
 		9FDE3CA42064522C00928FCF /* LogViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewControllerTests.swift; sourceTree = "<group>"; };
 		9FDE3CB8206C342900928FCF /* SupportPackageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPackageViewControllerTests.swift; sourceTree = "<group>"; };
 		9FDE3CBB206EE1C800928FCF /* AppsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsTableViewControllerTests.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 			children = (
 				9FDE3CBB206EE1C800928FCF /* AppsTableViewControllerTests.swift */,
 				9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */,
+				9FAC409320A4E2EC0037B2DC /* ArchiveLogViewControllerTests.swift */,
 			);
 			name = Archive;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				9FF13ED8207AA89B00E5583B /* FrameworkCoordinatorTests.swift in Sources */,
 				9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */,
 				9FDE3CA52064522C00928FCF /* LogViewControllerTests.swift in Sources */,
+				9FAC409420A4E2EC0037B2DC /* ArchiveLogViewControllerTests.swift in Sources */,
 				9FFD18292048B22D00C1814E /* UiLoggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
