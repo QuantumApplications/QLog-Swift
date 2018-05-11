@@ -23,11 +23,6 @@ class ArchiveLogViewController: UIViewController {
         return nil
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.webView.scalesPageToFit = true
-    }
-
     func showLog(_ logUrl: URL) {
         self.webView.stopLoading()
         self.webView.loadRequest(URLRequest(url: logUrl))
