@@ -11,7 +11,7 @@ import UIKit
 protocol SupportPackageViewControllerDelegate: class {
 
     func back(_ supportPackageViewController: SupportPackageViewController)
-    func generateSupportPackage(_ supportPackageViewController: SupportPackageViewController, rect: CGRect)
+    func generateSupportPackage(_ supportPackageViewController: SupportPackageViewController)
 
 }
 
@@ -40,8 +40,7 @@ class SupportPackageViewController: UIViewController {
     }
 
     @IBAction func generateSupportPackage(_ sender: Any) {
-        let rect = CGRect(x: self.view.frame.width / 2, y: self.view.frame.height / 2, width: 0, height: 0)
-        self.delegate?.generateSupportPackage(self, rect: rect)
+        self.delegate?.generateSupportPackage(self)
     }
 
 }
