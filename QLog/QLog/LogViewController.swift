@@ -27,13 +27,11 @@ class LogViewController: UIViewController {
 
     weak var delegate: LogViewControllerDelegate?
 
-    init(cancelButton: Bool = false) {
+    init() {
         super.init(nibName: "LogViewController", bundle: Bundle(identifier: "qa.quantum.QLog")!)
         self.loadView()
         // Add bar buttons
-        if cancelButton {
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
-        }
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(action))
         // Allow scrolling if navigation bars are opaque (WTF Apple?)
         self.extendedLayoutIncludesOpaqueBars = true

@@ -13,7 +13,7 @@ import Zip
 
 class FrameworkCoordinator: RootViewCoordinator {
 
-    let logViewController = LogViewController(cancelButton: true)
+    let logViewController = LogViewController()
 
     var rootViewController: UIViewController {
         return self.tabbarController
