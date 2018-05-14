@@ -151,4 +151,5 @@ extension FrameworkCoordinator: SupportPackageViewControllerDelegate {
         documentInteractionController.uti = String(kUTTypeZipArchive)
         documentInteractionController.presentOptionsMenu(from: logViewController.view.frame, in: logViewController.view, animated: true)
     }
+
 }

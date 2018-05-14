@@ -28,22 +28,24 @@ public class CornerSwipeController: NSObject {
 
     @objc func registerGestureRecognizer(_ notification: NSNotification) {
         // Add a gesture recognizer to the provided window
-        if notification.object is UIWindow {
-            let window = notification.object as! UIWindow
-            // Add a gesture recognizer for each edge
-            let gestureRecognizerTop = UIScreenEdgePanGestureRecognizer(target: CornerSwipeController.shared, action: #selector(screenEdgeSwiped))
-            let gestureRecognizerLeft = UIScreenEdgePanGestureRecognizer(target: CornerSwipeController.shared, action: #selector(screenEdgeSwiped))
-            let gestureRecognizerBottom = UIScreenEdgePanGestureRecognizer(target: CornerSwipeController.shared, action: #selector(screenEdgeSwiped))
-            let gestureRecognizerRight = UIScreenEdgePanGestureRecognizer(target: CornerSwipeController.shared, action: #selector(screenEdgeSwiped))
-            gestureRecognizerTop.edges = .top
-            gestureRecognizerLeft.edges = .left
-            gestureRecognizerBottom.edges = .bottom
-            gestureRecognizerRight.edges = .right
-            window.addGestureRecognizer(gestureRecognizerTop)
-            window.addGestureRecognizer(gestureRecognizerLeft)
-            window.addGestureRecognizer(gestureRecognizerBottom)
-            window.addGestureRecognizer(gestureRecognizerRight)
+        guard notification.object is UIWindow  else {
+            return }
+        guard let window = notification.object as? UIWindow else {
+            return
         }
+        // Add a gesture recognizer for each edge
+        let gestureRecognizerTop = UIScreenEdgePanGestureRecognizer(target: CornerSwipeController.shared, action: #selector(screenEdgeSwiped))
+        let gestureRecognizerLeft = UIScreenEdgePanGestureRecognizer(target: CornerSwipeController.shared, action: #selector(screenEdgeSwiped))
+        let gestureRecognizerBottom = UIScreenEdgePanGestureRecognizer(target: CornerSwipeController.shared, action: #selector(screenEdgeSwiped))
+        let gestureRecognizerRight = UIScreenEdgePanGestureRecognizer(target: CornerSwipeController.shared, action: #selector(screenEdgeSwiped))
+        gestureRecognizerTop.edges = .top
+        gestureRecognizerLeft.edges = .left
+        gestureRecognizerBottom.edges = .bottom
+        gestureRecognizerRight.edges = .right
+        window.addGestureRecognizer(gestureRecognizerTop)
+        window.addGestureRecognizer(gestureRecognizerLeft)
+        window.addGestureRecognizer(gestureRecognizerBottom)
+        window.addGestureRecognizer(gestureRecognizerRight)
     }
 
     @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {

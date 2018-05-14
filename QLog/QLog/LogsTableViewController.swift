@@ -41,7 +41,7 @@ class LogsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let log = self.logs[(indexPath as NSIndexPath).row]
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell ?? TableViewCell(style: .default, reuseIdentifier: "TableViewCell")
         cell.nameLabel.text = log.lastPathComponent
         cell.separatorInset = UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: 15)
         cell.layoutMargins = UIEdgeInsets.init(top: 0, left: -15, bottom: 0, right: 15)
