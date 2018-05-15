@@ -42,28 +42,24 @@ class FrameworkCoordinator: RootViewCoordinator {
     private func addLogViewController() {
         let viewController = self.logViewController
         viewController.delegate = self
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.navigationBar.topItem?.title = QLog.Texts.live
-        var viewControllers = self.tabbarController.viewControllers ?? [UIViewController]()
-        viewControllers.append(navigationController)
-        self.tabbarController.viewControllers = viewControllers
+        self.addViewController(viewController: viewController, title: QLog.Texts.live)
     }
 
     private func addArchiveViewController() {
         let viewController = AppsTableViewController()
         viewController.delegate = self
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.navigationBar.topItem?.title = QLog.Texts.archive
-        var viewControllers = self.tabbarController.viewControllers ?? [UIViewController]()
-        viewControllers.append(navigationController)
-        self.tabbarController.viewControllers = viewControllers
+        self.addViewController(viewController: viewController, title: QLog.Texts.archive)
     }
 
     private func addSupportPackageViewController() {
         let viewController = SupportPackageViewController()
         viewController.delegate = self
+        self.addViewController(viewController: viewController, title: QLog.Texts.supportPackage)
+    }
+
+    private func addViewController(viewController: UIViewController, title: String) {
         let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.navigationBar.topItem?.title = QLog.Texts.supportPackage
+        navigationController.navigationBar.topItem?.title = title
         var viewControllers = self.tabbarController.viewControllers ?? [UIViewController]()
         viewControllers.append(navigationController)
         self.tabbarController.viewControllers = viewControllers
