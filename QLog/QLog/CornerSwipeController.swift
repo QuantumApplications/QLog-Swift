@@ -28,8 +28,6 @@ public class CornerSwipeController: NSObject {
 
     @objc func registerGestureRecognizer(_ notification: NSNotification) {
         // Add a gesture recognizer to the provided window
-        guard notification.object is UIWindow  else {
-            return }
         guard let window = notification.object as? UIWindow else {
             return
         }
