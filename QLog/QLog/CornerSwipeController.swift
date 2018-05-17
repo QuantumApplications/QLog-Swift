@@ -27,11 +27,7 @@ public class CornerSwipeController: NSObject {
     }
 
     @objc func registerGestureRecognizer(_ notification: NSNotification) {
-        // Add a gesture recognizer to the provided window
-        guard let window = notification.object as? UIWindow else {
-            return
-        }
-        // Add a gesture recognizer for each edge
+        // Create a gesture recognizer for each edge
         let gestureRecognizerTop = UIScreenEdgePanGestureRecognizer(target: CornerSwipeController.shared, action: #selector(screenEdgeSwiped))
         let gestureRecognizerLeft = UIScreenEdgePanGestureRecognizer(target: CornerSwipeController.shared, action: #selector(screenEdgeSwiped))
         let gestureRecognizerBottom = UIScreenEdgePanGestureRecognizer(target: CornerSwipeController.shared, action: #selector(screenEdgeSwiped))
@@ -40,6 +36,10 @@ public class CornerSwipeController: NSObject {
         gestureRecognizerLeft.edges = .left
         gestureRecognizerBottom.edges = .bottom
         gestureRecognizerRight.edges = .right
+        // Add the gesture recognizers to the provided window
+        guard let window = notification.object as? UIWindow else {
+            return
+        }
         window.addGestureRecognizer(gestureRecognizerTop)
         window.addGestureRecognizer(gestureRecognizerLeft)
         window.addGestureRecognizer(gestureRecognizerBottom)
