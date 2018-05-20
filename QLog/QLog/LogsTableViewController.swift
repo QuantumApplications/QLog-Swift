@@ -54,6 +54,10 @@ class LogsTableViewController: UITableViewController {
         self.show(archiveLogViewController, sender: self)
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
+    }
+
     // MARK: - Navigation
 
 }

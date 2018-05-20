@@ -70,6 +70,10 @@ class AppsTableViewController: UITableViewController {
         self.show(logsTableViewController, sender: self)
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
+    }
+
     // MARK: - Navigation
 
     @objc func back() {
