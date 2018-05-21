@@ -11,7 +11,7 @@
 		98C446E935CBEF5765F7007D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C44C21EF09382A628C868A /* TableViewCell.swift */; };
 		98C447E6D0BD8EDF28AAE684 /* AppsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C44FECC530031877EC625A /* AppsTableViewController.swift */; };
 		98C44B283F8E054C02CE9F24 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98C446DD725BF0CE15FBEA6D /* TableViewCell.xib */; };
-		98C44D66CC9B368B2253C96D /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C441B8059A4FD38B6B3A3B /* LogViewController.swift */; };
+		98C44D66CC9B368B2253C96D /* LiveLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C441B8059A4FD38B6B3A3B /* LiveLogViewController.swift */; };
 		9F0255E220966AA3002C1BDE /* ArchiveLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0255E020966AA3002C1BDE /* ArchiveLogViewController.swift */; };
 		9F0255E320966AA3002C1BDE /* ArchiveLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F0255E120966AA3002C1BDE /* ArchiveLogViewController.xib */; };
 		9F0325911F7286E2008F2BEE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325901F7286E2008F2BEE /* Coordinator.swift */; };
@@ -31,7 +31,7 @@
 		9FE85A0A1EFAA73700560920 /* LogEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A091EFAA73700560920 /* LogEntryTests.swift */; };
 		9FE85A0C1EFAA73700560920 /* QLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE859FE1EFAA73600560920 /* QLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FE85A3F1EFAA85500560920 /* QLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A3E1EFAA85500560920 /* QLog.swift */; };
-		9FE85A671EFACEB300560920 /* LogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE85A651EFACEB300560920 /* LogViewController.xib */; };
+		9FE85A671EFACEB300560920 /* LiveLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE85A651EFACEB300560920 /* LiveLogViewController.xib */; };
 		9FF13ED8207AA89B00E5583B /* FrameworkCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF13ED7207AA89B00E5583B /* FrameworkCoordinatorTests.swift */; };
 		9FF41616202BB67A00566B93 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41615202BB67A00566B93 /* UIApplication.swift */; };
 		9FF4161B202BB90E00566B93 /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4161A202BB90E00566B93 /* LogEntry.swift */; };
@@ -138,7 +138,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		98C441B8059A4FD38B6B3A3B /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		98C441B8059A4FD38B6B3A3B /* LiveLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveLogViewController.swift; sourceTree = "<group>"; };
 		98C446ACEEDEEDE9E3462BC5 /* LogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogsTableViewController.swift; sourceTree = "<group>"; };
 		98C446DD725BF0CE15FBEA6D /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		98C44C21EF09382A628C868A /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 		9FE85A091EFAA73700560920 /* LogEntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryTests.swift; sourceTree = "<group>"; };
 		9FE85A0B1EFAA73700560920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FE85A3E1EFAA85500560920 /* QLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QLog.swift; sourceTree = "<group>"; };
-		9FE85A651EFACEB300560920 /* LogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogViewController.xib; sourceTree = "<group>"; };
+		9FE85A651EFACEB300560920 /* LiveLogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveLogViewController.xib; sourceTree = "<group>"; };
 		9FF13ED7207AA89B00E5583B /* FrameworkCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkCoordinatorTests.swift; sourceTree = "<group>"; };
 		9FF41615202BB67A00566B93 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		9FF4161A202BB90E00566B93 /* LogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntry.swift; sourceTree = "<group>"; };
@@ -223,8 +223,8 @@
 		9F03258F1F728577008F2BEE /* Live */ = {
 			isa = PBXGroup;
 			children = (
-				98C441B8059A4FD38B6B3A3B /* LogViewController.swift */,
-				9FE85A651EFACEB300560920 /* LogViewController.xib */,
+				98C441B8059A4FD38B6B3A3B /* LiveLogViewController.swift */,
+				9FE85A651EFACEB300560920 /* LiveLogViewController.xib */,
 			);
 			name = Live;
 			sourceTree = "<group>";
@@ -621,7 +621,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FE85A671EFACEB300560920 /* LogViewController.xib in Resources */,
+				9FE85A671EFACEB300560920 /* LiveLogViewController.xib in Resources */,
 				9F0255E320966AA3002C1BDE /* ArchiveLogViewController.xib in Resources */,
 				D270AF6A2099B1AD0059AE0F /* SupportPackageViewController.xib in Resources */,
 				98C44B283F8E054C02CE9F24 /* TableViewCell.xib in Resources */,
@@ -696,7 +696,7 @@
 				9FF41616202BB67A00566B93 /* UIApplication.swift in Sources */,
 				98C441B8DCC375B975F387B8 /* LogsTableViewController.swift in Sources */,
 				9FF4161B202BB90E00566B93 /* LogEntry.swift in Sources */,
-				98C44D66CC9B368B2253C96D /* LogViewController.swift in Sources */,
+				98C44D66CC9B368B2253C96D /* LiveLogViewController.swift in Sources */,
 				98C446E935CBEF5765F7007D /* TableViewCell.swift in Sources */,
 				9F0255E220966AA3002C1BDE /* ArchiveLogViewController.swift in Sources */,
 				D270AF6B2099B1AD0059AE0F /* SupportPackageViewController.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  LogViewController.swift
+//  LiveLogViewController.swift
 //  QLog
 //
 //  Created by Christian Oberdörfer on 21.06.17.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol LogViewControllerDelegate: class {
+protocol LiveLogViewControllerDelegate: class {
 
-    func back(_ logViewController: LogViewController)
-    func action(_ logViewController: LogViewController, sender: UIBarButtonItem)
+    func back(_ liveLogViewController: LiveLogViewController)
+    func action(_ liveLogViewController: LiveLogViewController, sender: UIBarButtonItem)
 
 }
 
-class LogViewController: UIViewController {
+class LiveLogViewController: UIViewController {
 
     static let font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
 
@@ -25,10 +25,10 @@ class LogViewController: UIViewController {
     @IBOutlet weak var logLevelSegmentedControlHeight: NSLayoutConstraint!
     @IBOutlet weak var textView: UITextView!
 
-    weak var delegate: LogViewControllerDelegate?
+    weak var delegate: LiveLogViewControllerDelegate?
 
     init() {
-        super.init(nibName: "LogViewController", bundle: Bundle(identifier: "qa.quantum.QLog")!)
+        super.init(nibName: "LiveLogViewController", bundle: Bundle(identifier: "qa.quantum.QLog")!)
         self.loadView()
         // Add bar buttons
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
@@ -45,8 +45,8 @@ class LogViewController: UIViewController {
     }
 
     func log(_ logEntry: LogEntry) {
-        let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedStringKey.foregroundColor: QLog.colorText, NSAttributedStringKey.font: LogViewController.font])
-        let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedStringKey.foregroundColor: logEntry.logLevel.color, NSAttributedStringKey.font: LogViewController.font])
+        let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedStringKey.foregroundColor: QLog.colorText, NSAttributedStringKey.font: LiveLogViewController.font])
+        let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedStringKey.foregroundColor: logEntry.logLevel.color, NSAttributedStringKey.font: LiveLogViewController.font])
         let oldText = NSMutableAttributedString(attributedString: (self.textView.attributedText))
         oldText.append(attributedMetaText)
         oldText.append(attributedText)

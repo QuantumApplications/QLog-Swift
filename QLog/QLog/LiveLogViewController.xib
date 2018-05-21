@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogViewController" customModule="QLog" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LiveLogViewController" customModule="QLog" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="adZ-1x-kVX" id="Rpk-75-Aab"/>
                 <outlet property="logLevelSegmentedControl" destination="N2N-fD-lSh" id="L1B-Uw-1U3"/>

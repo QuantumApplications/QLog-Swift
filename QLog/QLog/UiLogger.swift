@@ -52,7 +52,7 @@ public class UiLogger: Logger {
 
     public func doLog(_ logEntry: LogEntry) {
         DispatchQueue.main.async {
-            self.frameworkCoordinator.logViewController.log(logEntry)
+            self.frameworkCoordinator.liveLogViewController.log(logEntry)
         }
     }
 

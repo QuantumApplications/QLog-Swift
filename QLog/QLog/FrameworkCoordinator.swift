@@ -13,7 +13,7 @@ import Zip
 
 class FrameworkCoordinator: RootViewCoordinator {
 
-    let logViewController = LogViewController()
+    let liveLogViewController = LiveLogViewController()
 
     var rootViewController: UIViewController {
         return self.tabbarController
@@ -40,7 +40,7 @@ class FrameworkCoordinator: RootViewCoordinator {
     }
 
     private func addLogViewController() {
-        let viewController = self.logViewController
+        let viewController = self.liveLogViewController
         viewController.delegate = self
         self.addViewController(viewController: viewController, title: QLog.Texts.live)
     }
@@ -72,16 +72,16 @@ class FrameworkCoordinator: RootViewCoordinator {
 /// Needs to be global, otherwise the controller will be destroyed when the file is handed over to target application
 var documentInteractionController: UIDocumentInteractionController!
 
-extension FrameworkCoordinator: LogViewControllerDelegate {
+extension FrameworkCoordinator: LiveLogViewControllerDelegate {
 
-    func back(_ logViewController: LogViewController) {
+    func back(_ liveLogViewController: LiveLogViewController) {
         self.shown = false
-        logViewController.dismiss(animated: true, completion: nil)
+        liveLogViewController.dismiss(animated: true, completion: nil)
     }
 
-    func action(_ logViewController: LogViewController, sender: UIBarButtonItem) {
+    func action(_ liveLogViewController: LiveLogViewController, sender: UIBarButtonItem) {
         // Get attributed text
-        guard let text = logViewController.textView.attributedText else {
+        guard let text = liveLogViewController.textView.attributedText else {
             return
         }
         // Convert attributed text to HTML
@@ -145,7 +145,7 @@ extension FrameworkCoordinator: SupportPackageViewControllerDelegate {
         documentInteractionController = UIDocumentInteractionController()
         documentInteractionController.url = zipFileUrl
         documentInteractionController.uti = String(kUTTypeZipArchive)
-        documentInteractionController.presentOptionsMenu(from: logViewController.view.frame, in: logViewController.view, animated: true)
+        documentInteractionController.presentOptionsMenu(from: liveLogViewController.view.frame, in: liveLogViewController.view, animated: true)
     }
 
 }
