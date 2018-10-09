@@ -511,7 +511,7 @@
 					9FE859FA1EFAA73600560920 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = HK9FBL7C9X;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					9FE85A031EFAA73700560920 = {
@@ -891,6 +891,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -911,6 +912,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = qa.quantum.QLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

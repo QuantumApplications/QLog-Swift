@@ -21,7 +21,7 @@ public class CornerSwipeController: NSObject {
 
     public static func enable() {
         // Register observer to be notified when a new window appears
-        NotificationCenter.default.addObserver(CornerSwipeController.shared, selector: #selector(registerGestureRecognizer), name: .UIWindowDidBecomeVisible, object: nil)
+        NotificationCenter.default.addObserver(CornerSwipeController.shared, selector: #selector(registerGestureRecognizer), name: UIWindow.didBecomeVisibleNotification, object: nil)
         CornerSwipeController.bottomLeftCornerHandler = { CornerSwipeController.bottomLeftCombination() }
         CornerSwipeController.bottomRightCornerHandler = { CornerSwipeController.bottomRightCombination() }
     }
