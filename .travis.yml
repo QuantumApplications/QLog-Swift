@@ -1,5 +1,5 @@
 language: objective-c
 osx_image: xcode10.1
-script: cd QLog; xcodebuild clean && xcodebuild build test -project QLog.xcodeproj -scheme QLog -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XS Max,OS=12.1'
+script: cd Frameworks/Cuckoo; ./build_generator; cp Generator/.build/release/cuckoo_generator .;cd ../../QLog; xcodebuild clean && xcodebuild build test -project QLog.xcodeproj -scheme QLog -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XS Max,OS=12.1'
 after_success:
 - bash <(curl -s https://codecov.io/bash)
