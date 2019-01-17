@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2087BE21F284C000427BE3 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9F2087BD21F284C000427BE3 /* .swiftlint.yml */; };
 		9F2D6860202B4CD100145E52 /* QLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2D685F202B4CD100145E52 /* QLog.framework */; };
 		9F2D6861202B4CD100145E52 /* QLog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2D685F202B4CD100145E52 /* QLog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F4E7F052050853A00892524 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F4E7F042050853A00892524 /* Default-568h@2x.png */; };
@@ -31,6 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F2087BD21F284C000427BE3 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9F2D685F202B4CD100145E52 /* QLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4E7F042050853A00892524 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9F56D22520434D3C0051A25F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				9FEBC207209FAE4500108158 /* View Controllers */,
 				9F56D22620434D3C0051A25F /* Localizable.strings */,
 				9F6AAAAE2017E20100DB49A0 /* Info.plist */,
+				9F2087BD21F284C000427BE3 /* .swiftlint.yml */,
 			);
 			path = QLogExample;
 			sourceTree = "<group>";
@@ -119,6 +122,7 @@
 				9F6AAA9C2017E20100DB49A0 /* Frameworks */,
 				9F6AAA9D2017E20100DB49A0 /* Resources */,
 				9F2D6862202B4CD200145E52 /* Embed Frameworks */,
+				9F2087BF21F2850A00427BE3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -168,12 +172,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2087BE21F284C000427BE3 /* .swiftlint.yml in Resources */,
 				9F56D22420434D3C0051A25F /* Localizable.strings in Resources */,
 				9F4E7F052050853A00892524 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9F2087BF21F2850A00427BE3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\ncd QLogExample\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9F6AAA9B2017E20100DB49A0 /* Sources */ = {
