@@ -1,5 +1,5 @@
 language: objective-c
 osx_image: xcode10.1
-script: cd QLog; xcodebuild clean && xcodebuild build test -project QLog.xcodeproj -scheme QLog -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XS Max,OS=12.1'
+script: cd QLog; xcodebuild clean; ../Frameworks/Cuckoo/run generate QLog/QLog.swift QLog/Logger.swift QLog/XcodeLogger.swift QLog/LiveLogViewController.swift QLog/SupportPackageViewController.swift QLog/AppsTableViewController.swift --testable QLog --output QLogTests/GeneratedMocks.swift; xcodebuild build test -project QLog.xcodeproj -scheme QLog -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XS Max,OS=12.1'
 after_success:
 - bash <(curl -s https://codecov.io/bash)
