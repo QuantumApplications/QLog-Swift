@@ -14,17 +14,17 @@ class LiveLogViewControllerTests: XCTestCase {
 
     func testInit() {
         // 2. Action
-        let liveLiveLogViewController = LiveLogViewController()
+        let liveLogViewController = LiveLogViewController()
 
         // 3. Assert
-        XCTAssertEqual(liveLiveLogViewController.navigationItem.leftBarButtonItem?.target as? LiveLogViewController, liveLiveLogViewController)
-        XCTAssertEqual(liveLiveLogViewController.navigationItem.leftBarButtonItem?.action, #selector(LiveLogViewController.back))
-        XCTAssertEqual(liveLiveLogViewController.navigationItem.rightBarButtonItem?.target as? LiveLogViewController, liveLiveLogViewController)
-        XCTAssertEqual(liveLiveLogViewController.navigationItem.rightBarButtonItem?.action, #selector(LiveLogViewController.action))
-        XCTAssertTrue(liveLiveLogViewController.extendedLayoutIncludesOpaqueBars)
-        XCTAssertEqual(liveLiveLogViewController.tabBarItem.title, QLog.Texts.live)
-        XCTAssertEqual(liveLiveLogViewController.tabBarItem.image, QLog.Images.live)
-        XCTAssertEqual(liveLiveLogViewController.tabBarItem.tag, 1)
+        XCTAssertEqual(liveLogViewController.navigationItem.leftBarButtonItem?.target as? LiveLogViewController, liveLogViewController)
+        XCTAssertEqual(liveLogViewController.navigationItem.leftBarButtonItem?.action, #selector(LiveLogViewController.back))
+        XCTAssertEqual(liveLogViewController.navigationItem.rightBarButtonItem?.target as? LiveLogViewController, liveLogViewController)
+        XCTAssertEqual(liveLogViewController.navigationItem.rightBarButtonItem?.action, #selector(LiveLogViewController.action))
+        XCTAssertTrue(liveLogViewController.extendedLayoutIncludesOpaqueBars)
+        XCTAssertEqual(liveLogViewController.tabBarItem.title, QLog.Texts.live)
+        XCTAssertEqual(liveLogViewController.tabBarItem.image, QLog.Images.live)
+        XCTAssertEqual(liveLogViewController.tabBarItem.tag, 1)
     }
 
     func testInitWithCoder() {
@@ -32,25 +32,25 @@ class LiveLogViewControllerTests: XCTestCase {
         let archiver = NSKeyedArchiver(forWritingWith: NSMutableData())
 
         // 2. Action
-        let liveLiveLogViewController = LiveLogViewController(coder: archiver)
+        let liveLogViewController = LiveLogViewController(coder: archiver)
 
         // 3. Assert
-        XCTAssertNil(liveLiveLogViewController)
+        XCTAssertNil(liveLogViewController)
     }
 
     func testShowLog() {
         // 1. Arrange
-        let liveLiveLogViewController = LiveLogViewController()
+        let liveLogViewController = LiveLogViewController()
         let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log.test")
         FileManager.default.createFile(atPath: logUrl.path, contents: nil, attributes: nil)
         let logFileHandle = FileHandle(forWritingAtPath: logUrl.path)
         logFileHandle?.write("test".data(using: .utf8)!)
 
         // 2. Action
-        liveLiveLogViewController.showLog(logUrl)
+        liveLogViewController.showLog(logUrl)
 
         // 3. Assert
-        XCTAssertEqual(liveLiveLogViewController.textView.text, "test")
+        XCTAssertEqual(liveLogViewController.textView.text, "test")
 
         // 4. Annihilate
         try? FileManager.default.removeItem(at: logUrl)
@@ -58,48 +58,49 @@ class LiveLogViewControllerTests: XCTestCase {
 
     func testShowLogWrongLogUrl() {
         // 1. Arrange
-        let liveLiveLogViewController = LiveLogViewController()
+        let liveLogViewController = LiveLogViewController()
         let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log.test")
 
         // 2. Action
-        liveLiveLogViewController.showLog(logUrl)
+        liveLogViewController.showLog(logUrl)
 
         // 3. Assert
-        XCTAssertEqual(liveLiveLogViewController.textView.text, "")
+        XCTAssertEqual(liveLogViewController.textView.text, "")
     }
 
     func testBack() {
         // 1. Arrange
-        let liveLiveLogViewControllerDelegate = MockLiveLogViewControllerDelegate()
-        stub(liveLiveLogViewControllerDelegate) { liveLiveLogViewControllerDelegate in
-            when(liveLiveLogViewControllerDelegate).back(any()).thenDoNothing()
+        let liveLogViewControllerDelegate = MockLiveLogViewControllerDelegate()
+        stub(liveLogViewControllerDelegate) { liveLogViewControllerDelegate in
+            when(liveLogViewControllerDelegate).back(any()).thenDoNothing()
         }
-        let liveLiveLogViewController = LiveLogViewController()
-        liveLiveLogViewController.delegate = liveLiveLogViewControllerDelegate
+        let liveLogViewController = LiveLogViewController()
+        liveLogViewController.delegate = liveLogViewControllerDelegate
 
         // 2. Action
-        liveLiveLogViewController.back()
+        liveLogViewController.back()
 
-        verify(liveLiveLogViewControllerDelegate).back(equal(to: liveLiveLogViewController))
-        verifyNoMoreInteractions(liveLiveLogViewControllerDelegate)
+        // 3. Assert
+        verify(liveLogViewControllerDelegate).back(equal(to: liveLogViewController))
+        verifyNoMoreInteractions(liveLogViewControllerDelegate)
     }
 
     func testAction() {
         // 1. Arrange
-        let liveLiveLogViewControllerDelegate = MockLiveLogViewControllerDelegate()
-        stub(liveLiveLogViewControllerDelegate) { liveLiveLogViewControllerDelegate in
-            when(liveLiveLogViewControllerDelegate).action(any(), sender: any()).thenDoNothing()
+        let liveLogViewControllerDelegate = MockLiveLogViewControllerDelegate()
+        stub(liveLogViewControllerDelegate) { liveLogViewControllerDelegate in
+            when(liveLogViewControllerDelegate).action(any(), sender: any()).thenDoNothing()
         }
-        let liveLiveLogViewController = LiveLogViewController()
-        liveLiveLogViewController.delegate = liveLiveLogViewControllerDelegate
+        let liveLogViewController = LiveLogViewController()
+        liveLogViewController.delegate = liveLogViewControllerDelegate
         let barButtonItem = UIBarButtonItem()
 
         // 2. Action
-        liveLiveLogViewController.action(barButtonItem)
+        liveLogViewController.action(barButtonItem)
 
         // 3. Assert
-        verify(liveLiveLogViewControllerDelegate).action(equal(to: liveLiveLogViewController), sender: equal(to: barButtonItem))
-        verifyNoMoreInteractions(liveLiveLogViewControllerDelegate)
+        verify(liveLogViewControllerDelegate).action(equal(to: liveLogViewController), sender: equal(to: barButtonItem))
+        verifyNoMoreInteractions(liveLogViewControllerDelegate)
     }
 
 }
