@@ -68,6 +68,20 @@ class LiveLogViewControllerTests: XCTestCase {
         XCTAssertEqual(liveLogViewController.textView.text, "")
     }
 
+    func testLogLevelSegmentedControlValueChanged() {
+        // 1. Arrange
+        let liveLogViewController = LiveLogViewController()
+        let logLevel = LogLevel.error
+        liveLogViewController.logLevelSegmentedControl.selectedSegmentIndex = logLevel.rawValue
+        let object = NSObject()
+
+        // 2. Action
+        liveLogViewController.logLevelSegmentedControlValueChanged(object)
+
+        // 3. Assert
+        XCTAssertEqual(UiLogger.getShared().logLevel.rawValue, logLevel.rawValue)
+    }
+
     func testBack() {
         // 1. Arrange
         let liveLogViewControllerDelegate = MockLiveLogViewControllerDelegate()
