@@ -68,6 +68,19 @@ class LiveLogViewControllerTests: XCTestCase {
         XCTAssertEqual(liveLogViewController.textView.text, "")
     }
 
+    func testScroll() {
+        // 1. Arrange
+        let liveLogViewController = LiveLogViewController()
+        liveLogViewController.textView.bounds = CGRect(x: 0, y: 0, width: 0, height: 100)
+        liveLogViewController.view.bounds = CGRect(x: 0, y: 0, width: 0, height: 50)
+
+        // 2. Action
+        liveLogViewController.scroll()
+
+        // 3. Assert
+        liveLogViewController.scrollView.contentOffset = CGPoint(x: 0, y: 50)
+    }
+
     func testLogLevelSegmentedControlValueChanged() {
         // 1. Arrange
         let liveLogViewController = LiveLogViewController()
