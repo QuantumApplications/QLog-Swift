@@ -81,6 +81,17 @@ class LiveLogViewControllerTests: XCTestCase {
         liveLogViewController.scrollView.contentOffset = CGPoint(x: 0, y: 50)
     }
 
+    func testScrollNoChange() {
+        // 1. Arrange
+        let liveLogViewController = LiveLogViewController()
+
+        // 2. Action
+        liveLogViewController.scroll()
+
+        // 3. Assert
+        liveLogViewController.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+    }
+
     func testLogLevelSegmentedControlValueChanged() {
         // 1. Arrange
         let liveLogViewController = LiveLogViewController()
