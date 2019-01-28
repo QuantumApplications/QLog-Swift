@@ -39,4 +39,22 @@ class SupportPackageViewControllerTests: XCTestCase {
         verifyNoMoreInteractions(supportPackageViewControllerDelegate)
     }
 
+    func testGenerateSupportPackage() {
+        // 1. Arrange
+        let supportPackageViewControllerDelegate = MockSupportPackageViewControllerDelegate()
+        stub(supportPackageViewControllerDelegate) { supportPackageViewControllerDelegate in
+            when(supportPackageViewControllerDelegate).generateSupportPackage(any()).thenDoNothing()
+        }
+        let supportPackageViewController = SupportPackageViewController()
+        supportPackageViewController.delegate = supportPackageViewControllerDelegate
+        let barButtonItem = UIBarButtonItem()
+
+        // 2. Action
+        supportPackageViewController.generateSupportPackage(barButtonItem)
+
+        // 3. Assert
+        verify(supportPackageViewControllerDelegate).generateSupportPackage(equal(to: supportPackageViewController))
+        verifyNoMoreInteractions(supportPackageViewControllerDelegate)
+    }
+
 }
