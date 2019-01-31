@@ -67,6 +67,8 @@ class AppsTableViewControllerTests: XCTestCase {
         XCTAssertNil(appsTableViewController)
     }
 
+    // MARK: - Table view data source
+
     func testNumberOfSections() {
         // 1. Arrange
         let appsTableViewController = AppsTableViewController()
@@ -82,6 +84,16 @@ class AppsTableViewControllerTests: XCTestCase {
         // 3. Assert
         XCTAssertEqual(appsTableViewController.tableView(appsTableViewController.tableView, numberOfRowsInSection: 0), 0)
     }
+
+    func testHeightForRowAt() {
+        // 1. Arrange
+        let appsTableViewController = AppsTableViewController()
+
+        // 3. Assert
+        XCTAssertEqual(appsTableViewController.tableView(appsTableViewController.tableView, heightForRowAt: IndexPath(row: 0, section: 0)), 44.0)
+    }
+
+    // MARK: - Navigation
 
     func testBack() {
         // 1. Arrange
