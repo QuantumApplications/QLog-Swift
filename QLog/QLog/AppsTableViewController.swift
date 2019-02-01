@@ -11,6 +11,7 @@ import UIKit
 protocol AppsTableViewControllerDelegate: class {
 
     func back(_ appsTableViewController: AppsTableViewController)
+    func show(_ appsTableViewController: AppsTableViewController, app: URL)
 
 }
 
@@ -21,7 +22,6 @@ class AppsTableViewController: UITableViewController {
             return []
         }
         return (try? FileManager.default.contentsOfDirectory(at: logUrl, includingPropertiesForKeys: nil, options: []).filter { $0.hasDirectoryPath }) ?? []
-
     }
 
     weak var delegate: AppsTableViewControllerDelegate?
@@ -65,9 +65,7 @@ class AppsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let app = self.apps[(indexPath as NSIndexPath).row]
-        let logsTableViewController = LogsTableViewController()
-        logsTableViewController.app = app
-        self.show(logsTableViewController, sender: self)
+        self.delegate?.show(self, app: app)
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

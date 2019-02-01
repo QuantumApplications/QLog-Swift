@@ -113,6 +113,12 @@ extension FrameworkCoordinator: AppsTableViewControllerDelegate {
         appsTableViewController.dismiss(animated: true, completion: nil)
     }
 
+    func show(_ appsTableViewController: AppsTableViewController, app: URL) {
+        let logsTableViewController = LogsTableViewController()
+        logsTableViewController.app = app
+        appsTableViewController.show(logsTableViewController, sender: appsTableViewController)
+    }
+
 }
 
 // MARK: - SupportPackageViewControllerDelegate

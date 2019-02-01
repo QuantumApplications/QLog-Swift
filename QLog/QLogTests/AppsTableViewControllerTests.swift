@@ -93,6 +93,27 @@ class AppsTableViewControllerTests: XCTestCase {
         XCTAssertEqual(appsTableViewController.tableView(appsTableViewController.tableView, heightForRowAt: IndexPath(row: 0, section: 0)), 44.0)
     }
 
+    func testDidSelectRowAt() {
+        // 1. Arrange
+        let app = URL(string: "https://")!
+        let appsTableViewControllerDelegate = MockAppsTableViewControllerDelegate()
+        stub(appsTableViewControllerDelegate) { appsTableViewControllerDelegate in
+            when(appsTableViewControllerDelegate).show(any(), app: any()).thenDoNothing()
+        }
+        let appsTableViewController = MockAppsTableViewController().withEnabledSuperclassSpy()
+        stub(appsTableViewController) { appsTableViewController in
+            when(appsTableViewController.apps.get).thenReturn([app])
+        }
+        appsTableViewController.delegate = appsTableViewControllerDelegate
+
+        // 2. Action
+        appsTableViewController.tableView(appsTableViewController.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+
+        // 3. Assert
+        verify(appsTableViewControllerDelegate).show(equal(to: appsTableViewController), app: equal(to: app))
+        verifyNoMoreInteractions(appsTableViewControllerDelegate)
+    }
+
     // MARK: - Navigation
 
     func testBack() {
@@ -107,6 +128,7 @@ class AppsTableViewControllerTests: XCTestCase {
         // 2. Action
         appsTableViewController.back()
 
+        // 3. Assert
         verify(appsTableViewControllerDelegate).back(equal(to: appsTableViewController))
         verifyNoMoreInteractions(appsTableViewControllerDelegate)
     }
