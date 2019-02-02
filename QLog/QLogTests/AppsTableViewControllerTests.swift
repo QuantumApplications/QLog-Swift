@@ -93,6 +93,24 @@ class AppsTableViewControllerTests: XCTestCase {
         XCTAssertEqual(appsTableViewController.tableView(appsTableViewController.tableView, heightForRowAt: IndexPath(row: 0, section: 0)), 44.0)
     }
 
+    func testCellForRowAt() {
+        // 1. Arrange
+        let app = URL(string: "https://test")!
+        let appsTableViewController = MockAppsTableViewController().withEnabledSuperclassSpy()
+        stub(appsTableViewController) { appsTableViewController in
+            when(appsTableViewController.apps.get).thenReturn([app])
+        }
+
+        // 2. Action
+        let cell = appsTableViewController.tableView(appsTableViewController.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+
+        // 3. Assert
+        XCTAssertTrue(cell is TableViewCell)
+        XCTAssertEqual((cell as! TableViewCell).nameLabel.text, app.lastPathComponent)
+        XCTAssertEqual((cell as! TableViewCell).separatorInset, UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: 15))
+        XCTAssertEqual((cell as! TableViewCell).layoutMargins, UIEdgeInsets.init(top: 0, left: -15, bottom: 0, right: 15))
+    }
+
     func testDidSelectRowAt() {
         // 1. Arrange
         let app = URL(string: "https://")!
