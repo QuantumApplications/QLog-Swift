@@ -18,6 +18,13 @@
 		9F0325931F728922008F2BEE /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325921F728922008F2BEE /* RootViewCoordinator.swift */; };
 		9F0325951F7289D4008F2BEE /* FrameworkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */; };
 		9F48D0902210C76000DB9472 /* UIApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D08F2210C76000DB9472 /* UIApplicationTests.swift */; };
+		9F48D0C62210C76000DB9472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0C52210C76000DB9472 /* AppDelegate.swift */; };
+		9F48D0C82210C76000DB9472 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0C72210C76000DB9472 /* ViewController.swift */; };
+		9F48D0CB2210C76000DB9472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F48D0C92210C76000DB9472 /* Main.storyboard */; };
+		9F48D0CD2210C76000DB9472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F48D0CC2210C76000DB9472 /* Assets.xcassets */; };
+		9F48D0D02210C76000DB9472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F48D0CE2210C76000DB9472 /* LaunchScreen.storyboard */; };
+		9F48D0DE2210C76000DB9472 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0DD2210C76000DB9472 /* main.swift */; };
+		9F48D0E02210C76000DB9472 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0DF2210C76000DB9472 /* TestAppDelegate.swift */; };
 		9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C2203CD16E00328249 /* LoggerTests.swift */; };
 		9F64F8C5203E253F00328249 /* XcodeLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */; };
 		9F8D33EB207572C5001657DA /* LogsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */; };
@@ -52,6 +59,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9F48D0E12210C76000DB9472 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FE859F21EFAA73600560920 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F48D0C22210C76000DB9472;
+			remoteInfo = QLogTestsHostApp;
+		};
 		9FA6873D2055D9B800CD877D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
@@ -150,6 +164,15 @@
 		9F0325921F728922008F2BEE /* RootViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
 		9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameworkCoordinator.swift; sourceTree = "<group>"; };
 		9F48D08F2210C76000DB9472 /* UIApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationTests.swift; sourceTree = "<group>"; };
+		9F48D0C32210C76000DB9472 /* QLogTestsHostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QLogTestsHostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F48D0C52210C76000DB9472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9F48D0C72210C76000DB9472 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F48D0CA2210C76000DB9472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9F48D0CC2210C76000DB9472 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F48D0CF2210C76000DB9472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9F48D0D12210C76000DB9472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F48D0DD2210C76000DB9472 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9F48D0DF2210C76000DB9472 /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
 		9F4BC0E32093CB7B00BDA8EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9F4BC0E72093CB9B00BDA8EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9F64F8C2203CD16E00328249 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
@@ -189,6 +212,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9F48D0C02210C76000DB9472 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FE859F71EFAA73600560920 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,6 +306,28 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		9F48D0C42210C76000DB9472 /* QLogTestsHostApp */ = {
+			isa = PBXGroup;
+			children = (
+				9F48D0DC2210C76000DB9472 /* Main */,
+				9F48D0C72210C76000DB9472 /* ViewController.swift */,
+				9F48D0C92210C76000DB9472 /* Main.storyboard */,
+				9F48D0CC2210C76000DB9472 /* Assets.xcassets */,
+				9F48D0CE2210C76000DB9472 /* LaunchScreen.storyboard */,
+				9F48D0D12210C76000DB9472 /* Info.plist */,
+			);
+			path = QLogTestsHostApp;
+			sourceTree = "<group>";
+		};
+		9F48D0DC2210C76000DB9472 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9F48D0DD2210C76000DB9472 /* main.swift */,
+				9F48D0C52210C76000DB9472 /* AppDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		9F64F8A2203B730000328249 /* Loggers */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				9FA6874D2055DC0A00CD877D /* QLogTests.swift */,
+				9F48D0DF2210C76000DB9472 /* TestAppDelegate.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -359,6 +412,7 @@
 			children = (
 				9FE859FD1EFAA73600560920 /* QLog */,
 				9FE85A081EFAA73700560920 /* QLogTests */,
+				9F48D0C42210C76000DB9472 /* QLogTestsHostApp */,
 				9FA687342055D99600CD877D /* Frameworks */,
 				9FE859FC1EFAA73600560920 /* Products */,
 			);
@@ -369,6 +423,7 @@
 			children = (
 				9FE859FB1EFAA73600560920 /* QLog.framework */,
 				9FE85A041EFAA73700560920 /* QLogTests.xctest */,
+				9F48D0C32210C76000DB9472 /* QLogTestsHostApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -468,6 +523,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		9F48D0C22210C76000DB9472 /* QLogTestsHostApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F48D0DB2210C76000DB9472 /* Build configuration list for PBXNativeTarget "QLogTestsHostApp" */;
+			buildPhases = (
+				9F48D0BF2210C76000DB9472 /* Sources */,
+				9F48D0C02210C76000DB9472 /* Frameworks */,
+				9F48D0C12210C76000DB9472 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QLogTestsHostApp;
+			productName = QLogTestsHostApp;
+			productReference = 9F48D0C32210C76000DB9472 /* QLogTestsHostApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		9FE859FA1EFAA73600560920 /* QLog */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FE85A0F1EFAA73700560920 /* Build configuration list for PBXNativeTarget "QLog" */;
@@ -503,6 +575,7 @@
 			dependencies = (
 				9FA687462055D9C400CD877D /* PBXTargetDependency */,
 				9FE85A071EFAA73700560920 /* PBXTargetDependency */,
+				9F48D0E22210C76000DB9472 /* PBXTargetDependency */,
 			);
 			name = QLogTests;
 			productName = QLogTests;
@@ -515,10 +588,14 @@
 		9FE859F21EFAA73600560920 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Quantum;
 				TargetAttributes = {
+					9F48D0C22210C76000DB9472 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
 					9FE859FA1EFAA73600560920 = {
 						CreatedOnToolsVersion = 8.3.2;
 						LastSwiftMigration = 1000;
@@ -529,6 +606,7 @@
 						DevelopmentTeam = HK9FBL7C9X;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
+						TestTargetID = 9F48D0C22210C76000DB9472;
 					};
 				};
 			};
@@ -538,6 +616,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 9FE859F11EFAA73600560920;
 			productRefGroup = 9FE859FC1EFAA73600560920 /* Products */;
@@ -556,6 +635,7 @@
 			targets = (
 				9FE859FA1EFAA73600560920 /* QLog */,
 				9FE85A031EFAA73700560920 /* QLogTests */,
+				9F48D0C22210C76000DB9472 /* QLogTestsHostApp */,
 			);
 		};
 /* End PBXProject section */
@@ -627,6 +707,16 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9F48D0C12210C76000DB9472 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F48D0D02210C76000DB9472 /* LaunchScreen.storyboard in Resources */,
+				9F48D0CD2210C76000DB9472 /* Assets.xcassets in Resources */,
+				9F48D0CB2210C76000DB9472 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FE859F91EFAA73600560920 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -696,6 +786,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9F48D0BF2210C76000DB9472 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F48D0C82210C76000DB9472 /* ViewController.swift in Sources */,
+				9F48D0C62210C76000DB9472 /* AppDelegate.swift in Sources */,
+				9F48D0DE2210C76000DB9472 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FE859F61EFAA73600560920 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -738,6 +838,7 @@
 				9FF13ED8207AA89B00E5583B /* FrameworkCoordinatorTests.swift in Sources */,
 				9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */,
 				9F48D0902210C76000DB9472 /* UIApplicationTests.swift in Sources */,
+				9F48D0E02210C76000DB9472 /* TestAppDelegate.swift in Sources */,
 				9FDE3CA52064522C00928FCF /* LogViewControllerTests.swift in Sources */,
 				9FAC409420A4E2EC0037B2DC /* ArchiveLogViewControllerTests.swift in Sources */,
 				9FFD18292048B22D00C1814E /* UiLoggerTests.swift in Sources */,
@@ -747,6 +848,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9F48D0E22210C76000DB9472 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F48D0C22210C76000DB9472 /* QLogTestsHostApp */;
+			targetProxy = 9F48D0E12210C76000DB9472 /* PBXContainerItemProxy */;
+		};
 		9FA687462055D9C400CD877D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Cuckoo-iOS";
@@ -764,7 +870,69 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		9F48D0C92210C76000DB9472 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F48D0CA2210C76000DB9472 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9F48D0CE2210C76000DB9472 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F48D0CF2210C76000DB9472 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		9F48D0D22210C76000DB9472 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = QLogTestsHostApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = qa.quantum.QLogTestsHostApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9F48D0D32210C76000DB9472 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = QLogTestsHostApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = qa.quantum.QLogTestsHostApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		9FE85A0D1EFAA73700560920 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -934,6 +1102,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qa.quantum.QLogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QLogTestsHostApp.app/QLogTestsHostApp";
 			};
 			name = Debug;
 		};
@@ -946,12 +1115,22 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qa.quantum.QLogTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QLogTestsHostApp.app/QLogTestsHostApp";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9F48D0DB2210C76000DB9472 /* Build configuration list for PBXNativeTarget "QLogTestsHostApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F48D0D22210C76000DB9472 /* Debug */,
+				9F48D0D32210C76000DB9472 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9FE859F51EFAA73600560920 /* Build configuration list for PBXProject "QLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
