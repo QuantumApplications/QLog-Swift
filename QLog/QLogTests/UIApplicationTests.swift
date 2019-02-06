@@ -25,4 +25,15 @@ class UIApplicationTests: XCTestCase {
         XCTAssertEqual(UIApplication.topViewController(), viewController)
     }
 
+    func testTopViewControllerTabBarController() {
+        // 1. Arrange
+        let viewController = UIViewController()
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [viewController]
+        appWindow?.rootViewController = tabBarController
+
+        // 3. Assert
+        XCTAssertEqual(UIApplication.topViewController(), viewController)
+    }
+
 }
