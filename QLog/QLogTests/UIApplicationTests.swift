@@ -11,8 +11,12 @@ import XCTest
 class UIApplicationTests: XCTestCase {
 
     func testTopViewController() {
+        // 1. Arrange
+        let viewController = UIViewController()
+        appWindow?.rootViewController = viewController
+
         // 3. Assert
-        XCTAssertNotNil(UIApplication.topViewController())
+        XCTAssertEqual(UIApplication.topViewController(), viewController)
     }
 
     func testTopViewControllerNavigationController() {
