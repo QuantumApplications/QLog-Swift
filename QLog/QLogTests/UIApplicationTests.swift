@@ -40,4 +40,15 @@ class UIApplicationTests: XCTestCase {
         XCTAssertEqual(UIApplication.topViewController(), viewController)
     }
 
+    func testTopViewControllerPresented() {
+        // 1. Arrange
+        let viewController = UIViewController()
+        appWindow?.rootViewController = viewController
+        let viewController2 = UIViewController()
+        UIApplication.topViewController()?.present(viewController2, animated: false, completion: nil)
+
+        // 3. Assert
+        XCTAssertEqual(UIApplication.topViewController(), viewController2)
+    }
+
 }
