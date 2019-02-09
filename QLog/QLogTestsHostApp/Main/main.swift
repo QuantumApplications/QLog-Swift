@@ -10,5 +10,4 @@ import UIKit
 
 // Genius solution from http://qualitycoding.org/app-delegate-for-tests/
 let appDelegateClass: AnyClass? = NSClassFromString("QLogTests.TestAppDelegate") ?? AppDelegate.self
-let args = UnsafeMutableRawPointer(CommandLine.unsafeArgv).bindMemory(to: UnsafeMutablePointer<Int8>.self, capacity: Int(CommandLine.argc))
-UIApplicationMain(CommandLine.argc, args, nil, NSStringFromClass(appDelegateClass!))
+_ = UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(appDelegateClass!))
