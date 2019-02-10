@@ -17,7 +17,9 @@ class TestAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         appWindow = self.window
+        self.window?.backgroundColor = UIColor.white
         self.window?.rootViewController = UIViewController()
+        self.window?.makeKeyAndVisible()
         return true
     }
 

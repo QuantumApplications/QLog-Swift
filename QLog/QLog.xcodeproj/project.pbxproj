@@ -20,11 +20,9 @@
 		9F48D0902210C76000DB9472 /* UIApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D08F2210C76000DB9472 /* UIApplicationTests.swift */; };
 		9F48D0C62210C76000DB9472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0C52210C76000DB9472 /* AppDelegate.swift */; };
 		9F48D0C82210C76000DB9472 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0C72210C76000DB9472 /* ViewController.swift */; };
-		9F48D0CB2210C76000DB9472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F48D0C92210C76000DB9472 /* Main.storyboard */; };
-		9F48D0CD2210C76000DB9472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F48D0CC2210C76000DB9472 /* Assets.xcassets */; };
-		9F48D0D02210C76000DB9472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F48D0CE2210C76000DB9472 /* LaunchScreen.storyboard */; };
 		9F48D0DE2210C76000DB9472 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0DD2210C76000DB9472 /* main.swift */; };
 		9F48D0E02210C76000DB9472 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0DF2210C76000DB9472 /* TestAppDelegate.swift */; };
+		9F48D0E72210C76000DB9472 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F48D0E62210C76000DB9472 /* Default-568h@2x.png */; };
 		9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C2203CD16E00328249 /* LoggerTests.swift */; };
 		9F64F8C5203E253F00328249 /* XcodeLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */; };
 		9F8D33EB207572C5001657DA /* LogsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */; };
@@ -167,12 +165,10 @@
 		9F48D0C32210C76000DB9472 /* QLogTestsHostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QLogTestsHostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F48D0C52210C76000DB9472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F48D0C72210C76000DB9472 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9F48D0CA2210C76000DB9472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9F48D0CC2210C76000DB9472 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9F48D0CF2210C76000DB9472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F48D0D12210C76000DB9472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F48D0DD2210C76000DB9472 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9F48D0DF2210C76000DB9472 /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
+		9F48D0E62210C76000DB9472 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9F4BC0E32093CB7B00BDA8EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9F4BC0E72093CB9B00BDA8EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9F64F8C2203CD16E00328249 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
@@ -309,11 +305,9 @@
 		9F48D0C42210C76000DB9472 /* QLogTestsHostApp */ = {
 			isa = PBXGroup;
 			children = (
+				9F48D0E62210C76000DB9472 /* Default-568h@2x.png */,
 				9F48D0DC2210C76000DB9472 /* Main */,
-				9F48D0C72210C76000DB9472 /* ViewController.swift */,
-				9F48D0C92210C76000DB9472 /* Main.storyboard */,
-				9F48D0CC2210C76000DB9472 /* Assets.xcassets */,
-				9F48D0CE2210C76000DB9472 /* LaunchScreen.storyboard */,
+				9F48D0E32210C76000DB9472 /* View Controllers */,
 				9F48D0D12210C76000DB9472 /* Info.plist */,
 			);
 			path = QLogTestsHostApp;
@@ -326,6 +320,14 @@
 				9F48D0C52210C76000DB9472 /* AppDelegate.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		9F48D0E32210C76000DB9472 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F48D0C72210C76000DB9472 /* ViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		9F64F8A2203B730000328249 /* Loggers */ = {
@@ -594,6 +596,7 @@
 				TargetAttributes = {
 					9F48D0C22210C76000DB9472 = {
 						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = HK9FBL7C9X;
 						ProvisioningStyle = Automatic;
 					};
 					9FE859FA1EFAA73600560920 = {
@@ -711,9 +714,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F48D0D02210C76000DB9472 /* LaunchScreen.storyboard in Resources */,
-				9F48D0CD2210C76000DB9472 /* Assets.xcassets in Resources */,
-				9F48D0CB2210C76000DB9472 /* Main.storyboard in Resources */,
+				9F48D0E72210C76000DB9472 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,38 +871,19 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		9F48D0C92210C76000DB9472 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F48D0CA2210C76000DB9472 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9F48D0CE2210C76000DB9472 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F48D0CF2210C76000DB9472 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		9F48D0D22210C76000DB9472 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HK9FBL7C9X;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = QLogTestsHostApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -915,15 +897,15 @@
 		9F48D0D32210C76000DB9472 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HK9FBL7C9X;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = QLogTestsHostApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = qa.quantum.QLogTestsHostApp;
