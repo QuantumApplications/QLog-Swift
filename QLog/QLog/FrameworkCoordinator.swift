@@ -13,7 +13,7 @@ import Zip
 
 class FrameworkCoordinator: RootViewCoordinator {
 
-    let liveLogViewController = LiveLogViewController()
+    var liveLogViewController = LiveLogViewController()
 
     var rootViewController: UIViewController {
         return self.tabbarController

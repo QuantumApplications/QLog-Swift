@@ -6,7 +6,7 @@
 //  Copyright © 2018 Quantum. All rights reserved.
 //
 
-public struct LogEntry {
+public struct LogEntry: Equatable {
 
     let date: Date
     let file: String
@@ -25,4 +25,13 @@ public struct LogEntry {
         return "\(LogEntry.dateFormatter.string(from: self.date)): \(URL(fileURLWithPath: self.file).lastPathComponent):\(self.line) \(self.function): "
     }
 
+}
+
+public func == (lhs: LogEntry, rhs: LogEntry) -> Bool {
+    return lhs.date == rhs.date &&
+        lhs.file == rhs.file &&
+        lhs.function == rhs.function &&
+        lhs.line == rhs.line &&
+        lhs.logLevel == rhs.logLevel &&
+        lhs.text == rhs.text
 }

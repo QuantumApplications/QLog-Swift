@@ -7,6 +7,7 @@
 //
 
 @testable import QLog
+import Cuckoo
 import XCTest
 
 class UiLoggerTests: XCTestCase {
@@ -104,6 +105,17 @@ class UiLoggerTests: XCTestCase {
     }
 
     func testDoLog() {
+        class LiveLogViewControllerMock: LiveLogViewController {
+
+            var expectation: XCTestExpectation?
+            var logged = false
+
+            override func log(_ logEntry: LogEntry) {
+                self.logged = true
+                self.expectation?.fulfill()
+            }
+        }
+
         // 1. Arrange
         let dateString = "04:07:11"
         let dateFormatter = DateFormatter()
@@ -116,9 +128,17 @@ class UiLoggerTests: XCTestCase {
         let text = "Text"
         let logEntry = LogEntry(date: date, file: path, function: function, line: line, logLevel: logLevel, text: text)
         let uiLogger = UiLogger()
+        let liveLogViewController = LiveLogViewControllerMock()
+        uiLogger.frameworkCoordinator.liveLogViewController = liveLogViewController
+        let expectation = self.expectation(description: "log")
+        liveLogViewController.expectation = expectation
 
         // 2. Action
         uiLogger.doLog(logEntry)
+
+        // 3. Assert
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertTrue(liveLogViewController.logged)
     }
 
 }
