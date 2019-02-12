@@ -105,18 +105,15 @@ class UiLoggerTests: XCTestCase {
     }
 
     func testDoLog() {
+        // 1. Arrange
         class LiveLogViewControllerMock: LiveLogViewController {
-
             var expectation: XCTestExpectation?
             var logged = false
-
             override func log(_ logEntry: LogEntry) {
                 self.logged = true
                 self.expectation?.fulfill()
             }
         }
-
-        // 1. Arrange
         let dateString = "04:07:11"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm:ss"

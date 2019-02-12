@@ -38,6 +38,58 @@ class LiveLogViewControllerTests: XCTestCase {
         XCTAssertNil(liveLogViewController)
     }
 
+    func testLog() {
+        // 1. Arrange
+        class LiveLogViewControllerMock: LiveLogViewController {
+            var scrolled = false
+            override func scroll() {
+                self.scrolled = true
+            }
+        }
+        let logEntry = LogEntry(date: Date(), file: "", function: "", line: 0, logLevel: .error, text: "Text")
+        let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedString.Key.foregroundColor: QLog.colorText, NSAttributedString.Key.font: LiveLogViewController.font])
+        let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedString.Key.foregroundColor: logEntry.logLevel.color, NSAttributedString.Key.font: LiveLogViewController.font])
+        let attributedTesttext = attributedMetaText
+        attributedTesttext.append(attributedText)
+        let liveLogViewController = LiveLogViewControllerMock()
+
+        // 2. Action
+        liveLogViewController.log(logEntry)
+
+        // 3. Assert
+        XCTAssertEqual(liveLogViewController.textView.attributedText, attributedTesttext)
+        XCTAssertTrue(liveLogViewController.scrolled)
+    }
+
+    func testLogTwice() {
+        // 1. Arrange
+        class LiveLogViewControllerMock: LiveLogViewController {
+            var scrolled = false
+            override func scroll() {
+                self.scrolled = true
+            }
+        }
+        let logEntry = LogEntry(date: Date(), file: "", function: "", line: 0, logLevel: .error, text: "Text")
+        let logEntry2 = LogEntry(date: Date(), file: "", function: "", line: 0, logLevel: .error, text: "Text 2")
+        let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedString.Key.foregroundColor: QLog.colorText, NSAttributedString.Key.font: LiveLogViewController.font])
+        let attributedMetaText2 = NSMutableAttributedString(string: "\n\(logEntry2.metaText)", attributes: [NSAttributedString.Key.foregroundColor: QLog.colorText, NSAttributedString.Key.font: LiveLogViewController.font])
+        let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedString.Key.foregroundColor: logEntry.logLevel.color, NSAttributedString.Key.font: LiveLogViewController.font])
+        let attributedText2 = NSMutableAttributedString(string: "\(logEntry2.text)", attributes: [NSAttributedString.Key.foregroundColor: logEntry.logLevel.color, NSAttributedString.Key.font: LiveLogViewController.font])
+        let attributedTestText = attributedMetaText
+        attributedTestText.append(attributedText)
+        attributedTestText.append(attributedMetaText2)
+        attributedTestText.append(attributedText2)
+        let liveLogViewController = LiveLogViewControllerMock()
+
+        // 2. Action
+        liveLogViewController.log(logEntry)
+        liveLogViewController.log(logEntry2)
+
+        // 3. Assert
+        XCTAssertEqual(liveLogViewController.textView.attributedText, attributedTestText)
+        XCTAssertTrue(liveLogViewController.scrolled)
+    }
+
     func testShowLog() {
         // 1. Arrange
         let liveLogViewController = LiveLogViewController()
@@ -91,6 +143,8 @@ class LiveLogViewControllerTests: XCTestCase {
         // 3. Assert
         liveLogViewController.scrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
+
+    // MARK: - Navigation
 
     func testLogLevelSegmentedControlValueChanged() {
         // 1. Arrange
