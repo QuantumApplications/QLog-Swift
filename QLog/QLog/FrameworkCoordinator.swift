@@ -13,12 +13,11 @@ import Zip
 
 class FrameworkCoordinator: RootViewCoordinator {
 
-    var liveLogViewController = LiveLogViewController()
+    let liveLogCoordinator: LiveLogCoordinator
 
     var rootViewController: UIViewController {
         return self.tabbarController
     }
-    var shown = false
 
     private lazy var tabbarController: UITabBarController = {
         let tabBarController = UITabBarController()
@@ -26,23 +25,16 @@ class FrameworkCoordinator: RootViewCoordinator {
     }()
 
     init() {
-        self.addLogViewController()
+        let navigationController = UINavigationController()
+        self.liveLogCoordinator = LiveLogCoordinator(navigationController: navigationController)
+        liveLogCoordinator.start()
+        self.tabbarController.viewControllers = [navigationController]
         self.addArchiveViewController()
         self.addSupportPackageViewController()
     }
 
     func start() {
-        guard !self.shown else {
-            return
-        }
-        self.shown = true
         UIApplication.topViewController()?.present(self.rootViewController, animated: true, completion: nil)
-    }
-
-    private func addLogViewController() {
-        let viewController = self.liveLogViewController
-        viewController.delegate = self
-        self.addViewController(viewController: viewController, title: QLog.Texts.live)
     }
 
     private func addArchiveViewController() {
@@ -67,49 +59,12 @@ class FrameworkCoordinator: RootViewCoordinator {
 
 }
 
-// MARK: - LogViewControllerDelegate
-
-/// Needs to be global, otherwise the controller will be destroyed when the file is handed over to target application
-var documentInteractionController: UIDocumentInteractionController!
-
-extension FrameworkCoordinator: LiveLogViewControllerDelegate {
-
-    func back(_ liveLogViewController: LiveLogViewController) {
-        self.shown = false
-        liveLogViewController.dismiss(animated: true, completion: nil)
-    }
-
-    func action(_ liveLogViewController: LiveLogViewController, sender: UIBarButtonItem) {
-        // Get attributed text
-        guard let text = liveLogViewController.textView.attributedText else {
-            return
-        }
-        // Convert attributed text to HTML
-        let documentAttributes = [NSAttributedString.DocumentAttributeKey.documentType: NSAttributedString.DocumentType.html]
-        let htmlData = (try? text.data(from: NSRange(location: 0, length: text.length), documentAttributes: documentAttributes)) ?? Data()
-        // Save HTML to file
-        let tempDirectory = NSTemporaryDirectory() as NSString
-        let tempFilePath = tempDirectory.appendingPathComponent("log.htm")
-        // Delete old file if existing
-        if FileManager.default.fileExists(atPath: tempFilePath) {
-            try? FileManager.default.removeItem(atPath: tempFilePath)
-        }
-        FileManager.default.createFile(atPath: tempFilePath, contents: htmlData, attributes: nil)
-        // Share HTML file
-        documentInteractionController = UIDocumentInteractionController()
-        documentInteractionController.url = URL(fileURLWithPath: tempFilePath)
-        documentInteractionController.uti = String(kUTTypeHTML)
-        documentInteractionController.presentOptionsMenu(from: sender, animated: true)
-    }
-
-}
-
 // MARK: - AppsTableViewControllerDelegate
 
 extension FrameworkCoordinator: AppsTableViewControllerDelegate {
 
     func back(_ appsTableViewController: AppsTableViewController) {
-        self.shown = false
+        UiLogger.shared?.shown = false
         appsTableViewController.dismiss(animated: true, completion: nil)
     }
 
@@ -133,7 +88,7 @@ extension FrameworkCoordinator: SupportPackageViewControllerDelegate {
     static let targetName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Application"
 
     func back(_ supportPackageViewController: SupportPackageViewController) {
-        self.shown = false
+        UiLogger.shared?.shown = false
         supportPackageViewController.dismiss(animated: true, completion: nil)
     }
 
@@ -151,7 +106,7 @@ extension FrameworkCoordinator: SupportPackageViewControllerDelegate {
         documentInteractionController = UIDocumentInteractionController()
         documentInteractionController.url = zipFileUrl
         documentInteractionController.uti = String(kUTTypeZipArchive)
-        documentInteractionController.presentOptionsMenu(from: liveLogViewController.view.frame, in: liveLogViewController.view, animated: true)
+        //documentInteractionController.presentOptionsMenu(from: liveLogViewController.view.frame, in: liveLogViewController.view, animated: true)
     }
 
 }

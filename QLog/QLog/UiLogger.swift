@@ -33,6 +33,8 @@ public class UiLogger: Logger {
 
     let logUrl: URL
 
+    var shown = false
+
     lazy var frameworkCoordinator: FrameworkCoordinator = FrameworkCoordinator()
 
     public static func getShared(logLevel: LogLevel = .info, logUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")) -> UiLogger {
@@ -46,13 +48,19 @@ public class UiLogger: Logger {
         self.logLevel = logLevel
         self.logUrl = logUrl
         // Add QLog to CornerSwipeController
-        CornerSwipeController.topRightCornerHandler = { self.frameworkCoordinator.start() }
+        CornerSwipeController.topRightCornerHandler = {
+            guard !self.shown else {
+                return
+            }
+            self.shown = true
+            self.frameworkCoordinator.start()
+        }
         CornerSwipeController.enable()
     }
 
     public func doLog(_ logEntry: LogEntry) {
         DispatchQueue.main.async {
-            self.frameworkCoordinator.liveLogViewController.log(logEntry)
+            self.frameworkCoordinator.liveLogCoordinator.log(logEntry)
         }
     }
 
