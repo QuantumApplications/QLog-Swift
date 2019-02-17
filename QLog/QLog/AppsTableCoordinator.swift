@@ -1,0 +1,44 @@
+//
+//  AppsTableCoordinator.swift
+//  QLog
+//
+//  Created by Christian Oberdörfer on 16.02.19.
+//  Copyright © 2019 Quantum. All rights reserved.
+//
+
+import Foundation
+
+class AppsTableCoordinator: Coordinator {
+
+    private let navigationController: UINavigationController
+    private let appsTableViewController: AppsTableViewController
+
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+        self.appsTableViewController = AppsTableViewController()
+        appsTableViewController.delegate = self
+    }
+
+    func start() {
+        self.navigationController.navigationBar.topItem?.title = QLog.Texts.archive
+        self.navigationController.pushViewController(self.appsTableViewController, animated: true)
+    }
+
+}
+
+// MARK: - AppsTableViewControllerDelegate
+
+extension AppsTableCoordinator: AppsTableViewControllerDelegate {
+
+    func back(_ appsTableViewController: AppsTableViewController) {
+        UiLogger.shared?.shown = false
+        appsTableViewController.dismiss(animated: true, completion: nil)
+    }
+
+    func show(_ appsTableViewController: AppsTableViewController, app: URL) {
+        let logsTableViewController = LogsTableViewController()
+        logsTableViewController.app = app
+        appsTableViewController.show(logsTableViewController, sender: appsTableViewController)
+    }
+
+}

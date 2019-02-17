@@ -24,6 +24,7 @@
 		9F48D0E02210C76000DB9472 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0DF2210C76000DB9472 /* TestAppDelegate.swift */; };
 		9F48D0E72210C76000DB9472 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F48D0E62210C76000DB9472 /* Default-568h@2x.png */; };
 		9F5449102225F756006A8393 /* LiveLogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54490F2225F756006A8393 /* LiveLogCoordinator.swift */; };
+		9F5449192225F757006A8393 /* AppsTableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5449182225F757006A8393 /* AppsTableCoordinator.swift */; };
 		9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C2203CD16E00328249 /* LoggerTests.swift */; };
 		9F64F8C5203E253F00328249 /* XcodeLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */; };
 		9F8D33EB207572C5001657DA /* LogsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */; };
@@ -173,6 +174,7 @@
 		9F4BC0E32093CB7B00BDA8EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9F4BC0E72093CB9B00BDA8EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9F54490F2225F756006A8393 /* LiveLogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveLogCoordinator.swift; sourceTree = "<group>"; };
+		9F5449182225F757006A8393 /* AppsTableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsTableCoordinator.swift; sourceTree = "<group>"; };
 		9F64F8C2203CD16E00328249 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
 		9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLoggerTests.swift; sourceTree = "<group>"; };
 		9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsTableViewControllerTests.swift; sourceTree = "<group>"; };
@@ -273,9 +275,10 @@
 			isa = PBXGroup;
 			children = (
 				9F0325901F7286E2008F2BEE /* Coordinator.swift */,
-				9F0325921F728922008F2BEE /* RootViewCoordinator.swift */,
+				9F5449182225F757006A8393 /* AppsTableCoordinator.swift */,
 				9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */,
 				9F54490F2225F756006A8393 /* LiveLogCoordinator.swift */,
+				9F0325921F728922008F2BEE /* RootViewCoordinator.swift */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -809,6 +812,7 @@
 				98C447E6D0BD8EDF28AAE684 /* AppsTableViewController.swift in Sources */,
 				9FF41616202BB67A00566B93 /* UIApplication.swift in Sources */,
 				98C441B8DCC375B975F387B8 /* LogsTableViewController.swift in Sources */,
+				9F5449192225F757006A8393 /* AppsTableCoordinator.swift in Sources */,
 				9F5449102225F756006A8393 /* LiveLogCoordinator.swift in Sources */,
 				9FF4161B202BB90E00566B93 /* LogEntry.swift in Sources */,
 				98C44D66CC9B368B2253C96D /* LiveLogViewController.swift in Sources */,

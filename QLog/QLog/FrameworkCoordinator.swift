@@ -13,6 +13,7 @@ import Zip
 
 class FrameworkCoordinator: RootViewCoordinator {
 
+    let appsTableCoordinator: AppsTableCoordinator
     let liveLogCoordinator: LiveLogCoordinator
 
     var rootViewController: UIViewController {
@@ -25,22 +26,21 @@ class FrameworkCoordinator: RootViewCoordinator {
     }()
 
     init() {
-        let navigationController = UINavigationController()
-        self.liveLogCoordinator = LiveLogCoordinator(navigationController: navigationController)
+        let liveLogNavigationController = UINavigationController()
+        self.liveLogCoordinator = LiveLogCoordinator(navigationController: liveLogNavigationController)
         liveLogCoordinator.start()
-        self.tabbarController.viewControllers = [navigationController]
-        self.addArchiveViewController()
+
+        let appsTableNavigationController = UINavigationController()
+        self.appsTableCoordinator = AppsTableCoordinator(navigationController: appsTableNavigationController)
+        appsTableCoordinator.start()
+
+        self.tabbarController.viewControllers = [liveLogNavigationController, appsTableNavigationController]
+
         self.addSupportPackageViewController()
     }
 
     func start() {
         UIApplication.topViewController()?.present(self.rootViewController, animated: true, completion: nil)
-    }
-
-    private func addArchiveViewController() {
-        let viewController = AppsTableViewController()
-        viewController.delegate = self
-        self.addViewController(viewController: viewController, title: QLog.Texts.archive)
     }
 
     private func addSupportPackageViewController() {
@@ -55,23 +55,6 @@ class FrameworkCoordinator: RootViewCoordinator {
         var viewControllers = self.tabbarController.viewControllers ?? [UIViewController]()
         viewControllers.append(navigationController)
         self.tabbarController.viewControllers = viewControllers
-    }
-
-}
-
-// MARK: - AppsTableViewControllerDelegate
-
-extension FrameworkCoordinator: AppsTableViewControllerDelegate {
-
-    func back(_ appsTableViewController: AppsTableViewController) {
-        UiLogger.shared?.shown = false
-        appsTableViewController.dismiss(animated: true, completion: nil)
-    }
-
-    func show(_ appsTableViewController: AppsTableViewController, app: URL) {
-        let logsTableViewController = LogsTableViewController()
-        logsTableViewController.app = app
-        appsTableViewController.show(logsTableViewController, sender: appsTableViewController)
     }
 
 }
