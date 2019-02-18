@@ -29,6 +29,8 @@
 		9F64F8C5203E253F00328249 /* XcodeLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */; };
 		9F8D33EB207572C5001657DA /* LogsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */; };
 		9F9A5EB5221A0396006A105B /* SupportPackageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EB4221A0396006A105B /* SupportPackageCoordinator.swift */; };
+		9F9A5EC1221B73E5006A105B /* ArchiveLogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EC0221B73E5006A105B /* ArchiveLogCoordinator.swift */; };
+		9F9A5EC3221B75B5006A105B /* LogsTableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EC2221B75B5006A105B /* LogsTableCoordinator.swift */; };
 		9FA687482055DA3900CD877D /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA6873E2055D9B800CD877D /* Cuckoo.framework */; };
 		9FA6874A2055DB3900CD877D /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA687492055DB3800CD877D /* GeneratedMocks.swift */; };
 		9FA6874E2055DC0A00CD877D /* QLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6874D2055DC0A00CD877D /* QLogTests.swift */; };
@@ -180,6 +182,8 @@
 		9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLoggerTests.swift; sourceTree = "<group>"; };
 		9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		9F9A5EB4221A0396006A105B /* SupportPackageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPackageCoordinator.swift; sourceTree = "<group>"; };
+		9F9A5EC0221B73E5006A105B /* ArchiveLogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveLogCoordinator.swift; sourceTree = "<group>"; };
+		9F9A5EC2221B75B5006A105B /* LogsTableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsTableCoordinator.swift; sourceTree = "<group>"; };
 		9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cuckoo.xcodeproj; path = ../../Frameworks/Cuckoo/Cuckoo.xcodeproj; sourceTree = "<group>"; };
 		9FA687492055DB3800CD877D /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		9FA6874D2055DC0A00CD877D /* QLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QLogTests.swift; sourceTree = "<group>"; };
@@ -279,9 +283,9 @@
 				9F0325901F7286E2008F2BEE /* Coordinator.swift */,
 				9F0325921F728922008F2BEE /* RootViewCoordinator.swift */,
 				9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */,
-				9F5449182225F757006A8393 /* AppsTableCoordinator.swift */,
-				9F54490F2225F756006A8393 /* LiveLogCoordinator.swift */,
-				9F9A5EB4221A0396006A105B /* SupportPackageCoordinator.swift */,
+				9F9A5EBD221B733A006A105B /* Live */,
+				9F9A5EBE221B7347006A105B /* Archive */,
+				9F9A5EBF221B7361006A105B /* Support Package */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -350,6 +354,32 @@
 				9FFD18282048B22D00C1814E /* UiLoggerTests.swift */,
 			);
 			name = Loggers;
+			sourceTree = "<group>";
+		};
+		9F9A5EBD221B733A006A105B /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				9F54490F2225F756006A8393 /* LiveLogCoordinator.swift */,
+			);
+			name = Live;
+			sourceTree = "<group>";
+		};
+		9F9A5EBE221B7347006A105B /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				9F5449182225F757006A8393 /* AppsTableCoordinator.swift */,
+				9F9A5EC2221B75B5006A105B /* LogsTableCoordinator.swift */,
+				9F9A5EC0221B73E5006A105B /* ArchiveLogCoordinator.swift */,
+			);
+			name = Archive;
+			sourceTree = "<group>";
+		};
+		9F9A5EBF221B7361006A105B /* Support Package */ = {
+			isa = PBXGroup;
+			children = (
+				9F9A5EB4221A0396006A105B /* SupportPackageCoordinator.swift */,
+			);
+			name = "Support Package";
 			sourceTree = "<group>";
 		};
 		9FA687342055D99600CD877D /* Frameworks */ = {
@@ -823,6 +853,7 @@
 				9F0255E220966AA3002C1BDE /* ArchiveLogViewController.swift in Sources */,
 				D270AF6B2099B1AD0059AE0F /* SupportPackageViewController.swift in Sources */,
 				9F0325911F7286E2008F2BEE /* Coordinator.swift in Sources */,
+				9F9A5EC1221B73E5006A105B /* ArchiveLogCoordinator.swift in Sources */,
 				9F9A5EB5221A0396006A105B /* SupportPackageCoordinator.swift in Sources */,
 				9FF4161D202BBC7F00566B93 /* Logger.swift in Sources */,
 				9F0325951F7289D4008F2BEE /* FrameworkCoordinator.swift in Sources */,
@@ -831,6 +862,7 @@
 				9FF41644202E012100566B93 /* UiLogger.swift in Sources */,
 				9F0325931F728922008F2BEE /* RootViewCoordinator.swift in Sources */,
 				9FF41621202BC71800566B93 /* LogLevel.swift in Sources */,
+				9F9A5EC3221B75B5006A105B /* LogsTableCoordinator.swift in Sources */,
 				9FF4161F202BBCBF00566B93 /* XcodeLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,8 +15,6 @@ class ArchiveLogViewController: UIViewController {
     init() {
         super.init(nibName: "ArchiveLogViewController", bundle: Bundle(identifier: "qa.quantum.QLog")!)
         self.loadView()
-        // Add bar buttons
-        // self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(action))
     }
 
     required init?(coder aDecoder: NSCoder) {

@@ -10,6 +10,7 @@ import Foundation
 
 class AppsTableCoordinator: Coordinator {
 
+    private var logsTableCoordinator: LogsTableCoordinator?
     private let navigationController: UINavigationController
     private let appsTableViewController: AppsTableViewController
 
@@ -36,9 +37,8 @@ extension AppsTableCoordinator: AppsTableViewControllerDelegate {
     }
 
     func show(_ appsTableViewController: AppsTableViewController, app: URL) {
-        let logsTableViewController = LogsTableViewController()
-        logsTableViewController.app = app
-        appsTableViewController.show(logsTableViewController, sender: appsTableViewController)
+        self.logsTableCoordinator = LogsTableCoordinator(navigationController: self.navigationController, app: app)
+        self.logsTableCoordinator?.start()
     }
 
 }
