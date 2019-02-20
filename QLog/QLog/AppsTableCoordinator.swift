@@ -31,12 +31,12 @@ class AppsTableCoordinator: Coordinator {
 
 extension AppsTableCoordinator: AppsTableViewControllerDelegate {
 
-    func back(_ appsTableViewController: AppsTableViewController) {
+    func back() {
         UiLogger.shared?.shown = false
-        appsTableViewController.dismiss(animated: true, completion: nil)
+        self.appsTableViewController.dismiss(animated: true, completion: nil)
     }
 
-    func show(_ appsTableViewController: AppsTableViewController, app: URL) {
+    func show(_ app: URL) {
         self.logsTableCoordinator = LogsTableCoordinator(navigationController: self.navigationController, app: app)
         self.logsTableCoordinator?.start()
     }

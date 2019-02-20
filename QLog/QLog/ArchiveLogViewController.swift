@@ -21,9 +21,4 @@ class ArchiveLogViewController: UIViewController {
         return nil
     }
 
-    func showLog(_ logUrl: URL) {
-        self.webView.stopLoading()
-        self.webView.loadRequest(URLRequest(url: logUrl))
-    }
-
 }

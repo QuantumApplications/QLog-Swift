@@ -10,8 +10,8 @@ import UIKit
 
 protocol AppsTableViewControllerDelegate: class {
 
-    func back(_ appsTableViewController: AppsTableViewController)
-    func show(_ appsTableViewController: AppsTableViewController, app: URL)
+    func back()
+    func show(_ app: URL)
 
 }
 
@@ -65,7 +65,7 @@ class AppsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let app = self.apps[(indexPath as NSIndexPath).row]
-        self.delegate?.show(self, app: app)
+        self.delegate?.show(app)
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -75,7 +75,7 @@ class AppsTableViewController: UITableViewController {
     // MARK: - Navigation
 
     @objc func back() {
-        self.delegate?.back(self)
+        self.delegate?.back()
     }
 
 }

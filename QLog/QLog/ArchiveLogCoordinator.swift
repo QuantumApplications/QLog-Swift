@@ -12,15 +12,18 @@ class ArchiveLogCoordinator: Coordinator {
 
     private let navigationController: UINavigationController
     private let archiveLogViewController: ArchiveLogViewController
+    private let log: URL
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, log: URL) {
         self.navigationController = navigationController
+        self.log = log
         self.archiveLogViewController = ArchiveLogViewController()
-        //archiveLogViewController.delegate = self
     }
 
     func start() {
-        self.navigationController.pushViewController(self.archiveLogViewController, animated: true)
+        self.archiveLogViewController.webView.stopLoading()
+        self.archiveLogViewController.webView.loadRequest(URLRequest(url: self.log))
+        self.navigationController.show(self.archiveLogViewController, sender: nil)
     }
 
 }

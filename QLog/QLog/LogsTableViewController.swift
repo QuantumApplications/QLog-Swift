@@ -8,25 +8,24 @@
 
 import UIKit
 
+protocol LogsTableViewControllerDelegate: class {
+
+    func didSelect(_ log: URL)
+
+}
+
 class LogsTableViewController: UITableViewController {
 
-    var app: URL!
     var logs: [URL] = [URL]()
+
+    weak var delegate: LogsTableViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: 15)
-        self.title = app?.lastPathComponent ?? ""
         // Register table cell class from nib
         let bundle = Bundle(identifier: "qa.quantum.QLog")!
         self.tableView.register(UINib(nibName: "TableViewCell", bundle: bundle), forCellReuseIdentifier: "TableViewCell")
-        // Load logs
-        self.logs = {
-            guard let url = self.app else {
-                return []
-            }
-            return (try? FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: []).filter { !$0.hasDirectoryPath }) ?? []
-        }()
     }
 
     // MARK: - Table view data source
@@ -49,9 +48,7 @@ class LogsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let archiveLogViewController = ArchiveLogViewController()
-        archiveLogViewController.showLog(self.logs[(indexPath as NSIndexPath).row])
-        self.show(archiveLogViewController, sender: self)
+        self.delegate?.didSelect(self.logs[(indexPath as NSIndexPath).row])
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
