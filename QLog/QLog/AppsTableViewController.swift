@@ -17,12 +17,7 @@ protocol AppsTableViewControllerDelegate: class {
 
 class AppsTableViewController: UITableViewController {
 
-    var apps: [URL] {
-        guard let logUrl = UiLogger.shared?.logUrl else {
-            return []
-        }
-        return (try? FileManager.default.contentsOfDirectory(at: logUrl, includingPropertiesForKeys: nil, options: []).filter { $0.hasDirectoryPath }) ?? []
-    }
+    var apps: [URL] = [URL]()
 
     weak var delegate: AppsTableViewControllerDelegate?
 

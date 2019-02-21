@@ -13,10 +13,17 @@ class AppsTableCoordinator: Coordinator {
     private var logsTableCoordinator: LogsTableCoordinator?
     private let navigationController: UINavigationController
     private let appsTableViewController: AppsTableViewController
+    private let apps: [URL]
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        if let logUrl = UiLogger.shared?.logUrl {
+            self.apps = (try? FileManager.default.contentsOfDirectory(at: logUrl, includingPropertiesForKeys: nil, options: []).filter { $0.hasDirectoryPath }) ?? []
+        } else {
+            self.apps = []
+        }
         self.appsTableViewController = AppsTableViewController()
+        self.appsTableViewController.apps = self.apps
         appsTableViewController.delegate = self
     }
 
