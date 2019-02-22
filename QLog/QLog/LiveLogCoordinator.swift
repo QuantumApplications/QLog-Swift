@@ -22,6 +22,7 @@ class LiveLogCoordinator: Coordinator {
 
     func start() {
         self.navigationController.navigationBar.topItem?.title = QLog.Texts.live
+        self.liveLogViewController.tabBarItem = UITabBarItem(title: QLog.Texts.live, image: QLog.Images.live, tag: 1)
         self.navigationController.pushViewController(self.liveLogViewController, animated: true)
     }
 

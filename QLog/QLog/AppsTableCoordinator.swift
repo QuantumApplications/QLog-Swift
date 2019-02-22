@@ -29,6 +29,7 @@ class AppsTableCoordinator: Coordinator {
 
     func start() {
         self.navigationController.navigationBar.topItem?.title = QLog.Texts.archive
+        self.appsTableViewController.tabBarItem = UITabBarItem(title: QLog.Texts.archive, image: QLog.Images.archive, tag: 2)
         self.navigationController.pushViewController(self.appsTableViewController, animated: true)
     }
 

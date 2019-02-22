@@ -35,7 +35,6 @@ class LiveLogViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(action))
         // Allow scrolling if navigation bars are opaque (WTF Apple?)
         self.extendedLayoutIncludesOpaqueBars = true
-        self.tabBarItem = UITabBarItem(title: QLog.Texts.live, image: QLog.Images.live, tag: 1)
         // Set segmented control
         self.logLevelSegmentedControl.selectedSegmentIndex = UiLogger.getShared().logLevel.rawValue
     }

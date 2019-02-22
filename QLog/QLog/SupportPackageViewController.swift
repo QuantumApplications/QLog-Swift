@@ -24,7 +24,6 @@ class SupportPackageViewController: UIViewController {
         super.init(nibName: "SupportPackageViewController", bundle: Bundle(identifier: "qa.quantum.QLog")!)
         self.loadView()
         self.navigationItem.leftBarButtonItem =  UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
-        self.tabBarItem = UITabBarItem(title: QLog.Texts.supportPackage, image: QLog.Images.supportPackage, tag: 3)
         // Localization
         self.generateSupportPackageButton.setTitle(QLog.Texts.generateSupportPackage, for: .normal)
     }

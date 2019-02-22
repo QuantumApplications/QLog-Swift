@@ -23,6 +23,7 @@ class SupportPackageCoordinator: Coordinator {
 
     func start() {
         self.navigationController.navigationBar.topItem?.title = QLog.Texts.supportPackage
+        self.supportPackageViewController.tabBarItem = UITabBarItem(title: QLog.Texts.supportPackage, image: QLog.Images.supportPackage, tag: 3)
         self.navigationController.pushViewController(self.supportPackageViewController, animated: true)
     }
 
