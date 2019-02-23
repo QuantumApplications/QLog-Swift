@@ -250,8 +250,6 @@
 			children = (
 				98C44FECC530031877EC625A /* AppsTableViewController.swift */,
 				98C446ACEEDEEDE9E3462BC5 /* LogsTableViewController.swift */,
-				98C44C21EF09382A628C868A /* TableViewCell.swift */,
-				98C446DD725BF0CE15FBEA6D /* TableViewCell.xib */,
 				9F0255E020966AA3002C1BDE /* ArchiveLogViewController.swift */,
 				9F0255E120966AA3002C1BDE /* ArchiveLogViewController.xib */,
 			);
@@ -286,6 +284,8 @@
 				9F9A5EBD221B733A006A105B /* Live */,
 				9F9A5EBE221B7347006A105B /* Archive */,
 				9F9A5EBF221B7361006A105B /* Support Package */,
+				9F0325961F728B37008F2BEE /* View Controllers */,
+				9F9A5EC42221F5DD006A105B /* Table View Cells */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -382,6 +382,15 @@
 			name = "Support Package";
 			sourceTree = "<group>";
 		};
+		9F9A5EC42221F5DD006A105B /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				98C44C21EF09382A628C868A /* TableViewCell.swift */,
+				98C446DD725BF0CE15FBEA6D /* TableViewCell.xib */,
+			);
+			name = "Table View Cells";
+			sourceTree = "<group>";
+		};
 		9FA687342055D99600CD877D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,7 +485,6 @@
 				9FF41618202BB76100566B93 /* Controllers */,
 				9F0325971F728B4A008F2BEE /* Coordinators */,
 				9FF41619202BB90000566B93 /* Loggers */,
-				9F0325961F728B37008F2BEE /* View Controllers */,
 				9FF41614202BB65900566B93 /* Util */,
 				9FE859FE1EFAA73600560920 /* QLog.h */,
 				9FE859FF1EFAA73600560920 /* Info.plist */,
