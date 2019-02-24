@@ -30,12 +30,4 @@ class ArchiveLogViewControllerTests: XCTestCase {
         XCTAssertNil(archiveLogViewController)
     }
 
-    func testShowLog() {
-        // 1. Arrange
-        let archiveLogViewController = ArchiveLogViewController()
-
-        // 2. Action
-        archiveLogViewController.showLog(URL(string: "https://")!)
-    }
-
 }

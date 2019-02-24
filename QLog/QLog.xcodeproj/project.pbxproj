@@ -17,33 +17,25 @@
 		9F0325911F7286E2008F2BEE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325901F7286E2008F2BEE /* Coordinator.swift */; };
 		9F0325931F728922008F2BEE /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325921F728922008F2BEE /* RootViewCoordinator.swift */; };
 		9F0325951F7289D4008F2BEE /* FrameworkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */; };
-		9F48D0902210C76000DB9472 /* UIApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D08F2210C76000DB9472 /* UIApplicationTests.swift */; };
 		9F48D0C62210C76000DB9472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0C52210C76000DB9472 /* AppDelegate.swift */; };
 		9F48D0C82210C76000DB9472 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0C72210C76000DB9472 /* ViewController.swift */; };
 		9F48D0DE2210C76000DB9472 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0DD2210C76000DB9472 /* main.swift */; };
-		9F48D0E02210C76000DB9472 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0DF2210C76000DB9472 /* TestAppDelegate.swift */; };
 		9F48D0E72210C76000DB9472 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F48D0E62210C76000DB9472 /* Default-568h@2x.png */; };
 		9F5449102225F756006A8393 /* LiveLogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54490F2225F756006A8393 /* LiveLogCoordinator.swift */; };
 		9F5449192225F757006A8393 /* AppsTableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5449182225F757006A8393 /* AppsTableCoordinator.swift */; };
-		9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C2203CD16E00328249 /* LoggerTests.swift */; };
-		9F64F8C5203E253F00328249 /* XcodeLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */; };
-		9F8D33EB207572C5001657DA /* LogsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */; };
+		9F57DACB222347FF0024FE5B /* QLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6874D2055DC0A00CD877D /* QLogTests.swift */; };
+		9F57DACC222348150024FE5B /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0DF2210C76000DB9472 /* TestAppDelegate.swift */; };
+		9F57DAD8222348D10024FE5B /* FrameworkCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF13ED7207AA89B00E5583B /* FrameworkCoordinatorTests.swift */; };
+		9F57DAD9222348D50024FE5B /* UIApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D08F2210C76000DB9472 /* UIApplicationTests.swift */; };
+		9F57DADA222348D80024FE5B /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA687492055DB3800CD877D /* GeneratedMocks.swift */; };
 		9F9A5EB5221A0396006A105B /* SupportPackageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EB4221A0396006A105B /* SupportPackageCoordinator.swift */; };
 		9F9A5EC1221B73E5006A105B /* ArchiveLogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EC0221B73E5006A105B /* ArchiveLogCoordinator.swift */; };
 		9F9A5EC3221B75B5006A105B /* LogsTableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EC2221B75B5006A105B /* LogsTableCoordinator.swift */; };
 		9FA687482055DA3900CD877D /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA6873E2055D9B800CD877D /* Cuckoo.framework */; };
-		9FA6874A2055DB3900CD877D /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA687492055DB3800CD877D /* GeneratedMocks.swift */; };
-		9FA6874E2055DC0A00CD877D /* QLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6874D2055DC0A00CD877D /* QLogTests.swift */; };
-		9FAC409420A4E2EC0037B2DC /* ArchiveLogViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC409320A4E2EC0037B2DC /* ArchiveLogViewControllerTests.swift */; };
-		9FDE3CA52064522C00928FCF /* LogViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CA42064522C00928FCF /* LogViewControllerTests.swift */; };
-		9FDE3CB9206C342900928FCF /* SupportPackageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CB8206C342900928FCF /* SupportPackageViewControllerTests.swift */; };
-		9FDE3CBC206EE1C800928FCF /* AppsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CBB206EE1C800928FCF /* AppsTableViewControllerTests.swift */; };
 		9FE85A051EFAA73700560920 /* QLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE859FB1EFAA73600560920 /* QLog.framework */; };
-		9FE85A0A1EFAA73700560920 /* LogEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A091EFAA73700560920 /* LogEntryTests.swift */; };
 		9FE85A0C1EFAA73700560920 /* QLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE859FE1EFAA73600560920 /* QLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FE85A3F1EFAA85500560920 /* QLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A3E1EFAA85500560920 /* QLog.swift */; };
 		9FE85A671EFACEB300560920 /* LiveLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE85A651EFACEB300560920 /* LiveLogViewController.xib */; };
-		9FF13ED8207AA89B00E5583B /* FrameworkCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF13ED7207AA89B00E5583B /* FrameworkCoordinatorTests.swift */; };
 		9FF41616202BB67A00566B93 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41615202BB67A00566B93 /* UIApplication.swift */; };
 		9FF4161B202BB90E00566B93 /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4161A202BB90E00566B93 /* LogEntry.swift */; };
 		9FF4161D202BBC7F00566B93 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4161C202BBC7F00566B93 /* Logger.swift */; };
@@ -52,9 +44,6 @@
 		9FF41642202E00A400566B93 /* FileLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41641202E00A400566B93 /* FileLogger.swift */; };
 		9FF41644202E012100566B93 /* UiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41643202E012100566B93 /* UiLogger.swift */; };
 		9FF41646202E14A500566B93 /* AppCodeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41645202E14A400566B93 /* AppCodeLogger.swift */; };
-		9FFD182520460C6700C1814E /* AppCodeLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD182420460C6700C1814E /* AppCodeLoggerTests.swift */; };
-		9FFD18272047629200C1814E /* FileLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD18262047629100C1814E /* FileLoggerTests.swift */; };
-		9FFD18292048B22D00C1814E /* UiLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD18282048B22D00C1814E /* UiLoggerTests.swift */; };
 		D270AF642099B0DF0059AE0F /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D270AF592099B0C10059AE0F /* Zip.framework */; };
 		D270AF6A2099B1AD0059AE0F /* SupportPackageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D270AF682099B1AD0059AE0F /* SupportPackageViewController.xib */; };
 		D270AF6B2099B1AD0059AE0F /* SupportPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D270AF692099B1AD0059AE0F /* SupportPackageViewController.swift */; };
@@ -284,8 +273,6 @@
 				9F9A5EBD221B733A006A105B /* Live */,
 				9F9A5EBE221B7347006A105B /* Archive */,
 				9F9A5EBF221B7361006A105B /* Support Package */,
-				9F0325961F728B37008F2BEE /* View Controllers */,
-				9F9A5EC42221F5DD006A105B /* Table View Cells */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -484,6 +471,8 @@
 				9FF41617202BB73900566B93 /* Main */,
 				9FF41618202BB76100566B93 /* Controllers */,
 				9F0325971F728B4A008F2BEE /* Coordinators */,
+				9F0325961F728B37008F2BEE /* View Controllers */,
+				9F9A5EC42221F5DD006A105B /* Table View Cells */,
 				9FF41619202BB90000566B93 /* Loggers */,
 				9FF41614202BB65900566B93 /* Util */,
 				9FE859FE1EFAA73600560920 /* QLog.h */,
@@ -498,8 +487,8 @@
 			children = (
 				9FAC408B20A39CC70037B2DC /* Main */,
 				9F3CF4CF207AA84400D7B737 /* Coordinators */,
-				9F64F8A2203B730000328249 /* Loggers */,
 				9FDE3CA2206451F900928FCF /* View Controllers */,
+				9F64F8A2203B730000328249 /* Loggers */,
 				9F48D08E2210C73200DB9472 /* Util */,
 				9FA687492055DB3800CD877D /* GeneratedMocks.swift */,
 				9FE85A0B1EFAA73700560920 /* Info.plist */,
@@ -879,22 +868,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F8D33EB207572C5001657DA /* LogsTableViewControllerTests.swift in Sources */,
-				9FA6874E2055DC0A00CD877D /* QLogTests.swift in Sources */,
-				9FDE3CB9206C342900928FCF /* SupportPackageViewControllerTests.swift in Sources */,
-				9FA6874A2055DB3900CD877D /* GeneratedMocks.swift in Sources */,
-				9F64F8C5203E253F00328249 /* XcodeLoggerTests.swift in Sources */,
-				9FFD18272047629200C1814E /* FileLoggerTests.swift in Sources */,
-				9FDE3CBC206EE1C800928FCF /* AppsTableViewControllerTests.swift in Sources */,
-				9FE85A0A1EFAA73700560920 /* LogEntryTests.swift in Sources */,
-				9FFD182520460C6700C1814E /* AppCodeLoggerTests.swift in Sources */,
-				9FF13ED8207AA89B00E5583B /* FrameworkCoordinatorTests.swift in Sources */,
-				9F64F8C3203CD16E00328249 /* LoggerTests.swift in Sources */,
-				9F48D0902210C76000DB9472 /* UIApplicationTests.swift in Sources */,
-				9F48D0E02210C76000DB9472 /* TestAppDelegate.swift in Sources */,
-				9FDE3CA52064522C00928FCF /* LogViewControllerTests.swift in Sources */,
-				9FAC409420A4E2EC0037B2DC /* ArchiveLogViewControllerTests.swift in Sources */,
-				9FFD18292048B22D00C1814E /* UiLoggerTests.swift in Sources */,
+				9F57DAD9222348D50024FE5B /* UIApplicationTests.swift in Sources */,
+				9F57DAD8222348D10024FE5B /* FrameworkCoordinatorTests.swift in Sources */,
+				9F57DACC222348150024FE5B /* TestAppDelegate.swift in Sources */,
+				9F57DACB222347FF0024FE5B /* QLogTests.swift in Sources */,
+				9F57DADA222348D80024FE5B /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

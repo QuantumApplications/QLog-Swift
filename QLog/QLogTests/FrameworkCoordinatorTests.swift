@@ -16,27 +16,4 @@ class FrameworkCoordinatorTests: XCTestCase {
         XCTAssertTrue(FrameworkCoordinator().rootViewController is UITabBarController)
     }
 
-    func testStart() {
-        // 1. Arrange
-        let frameworkCoordinator = FrameworkCoordinator()
-
-        // 2. Action
-        frameworkCoordinator.start()
-
-        // 3. Assert
-        XCTAssertTrue(frameworkCoordinator.shown)
-    }
-
-    func testStartShown() {
-        // 1. Arrange
-        let frameworkCoordinator = FrameworkCoordinator()
-        frameworkCoordinator.shown = true
-
-        // 2. Action
-        frameworkCoordinator.start()
-
-        // 3. Assert
-        XCTAssertTrue(frameworkCoordinator.shown)
-    }
-
 }
