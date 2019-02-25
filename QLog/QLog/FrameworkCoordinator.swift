@@ -12,7 +12,7 @@ import UIKit
 class FrameworkCoordinator: RootViewCoordinator {
 
     let appsTableCoordinator: AppsTableCoordinator
-    let liveLogCoordinator: LiveLogCoordinator
+    var liveLogCoordinator: LiveLogCoordinator
     let supportPackageCoordinator: SupportPackageCoordinator
 
     var rootViewController: UIViewController {

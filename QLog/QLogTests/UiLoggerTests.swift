@@ -65,7 +65,7 @@ class UiLoggerTests: XCTestCase {
         XCTAssertEqual(uiLogger.logLevel, .info)
         XCTAssertEqual(uiLogger.logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
         XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
-        XCTAssertTrue(uiLogger.frameworkCoordinator.shown)
+        XCTAssertTrue(uiLogger.shown)
     }
 
     func testInitWithLogLevel() {
@@ -106,12 +106,11 @@ class UiLoggerTests: XCTestCase {
 
     func testDoLog() {
         // 1. Arrange
-        class LiveLogViewControllerMock: LiveLogViewController {
-            var expectation: XCTestExpectation?
-            var logged = false
-            override func log(_ logEntry: LogEntry) {
-                self.logged = true
-                self.expectation?.fulfill()
+        let expectation = self.expectation(description: "log")
+        let liveLogCoordinator = MockLiveLogCoordinator(navigationController: UINavigationController())
+        stub(liveLogCoordinator) { liveLogCoordinator in
+            when(liveLogCoordinator).log(any()).then { _ in
+                expectation.fulfill()
             }
         }
         let dateString = "04:07:11"
@@ -125,17 +124,15 @@ class UiLoggerTests: XCTestCase {
         let text = "Text"
         let logEntry = LogEntry(date: date, file: path, function: function, line: line, logLevel: logLevel, text: text)
         let uiLogger = UiLogger()
-        let liveLogViewController = LiveLogViewControllerMock()
-        uiLogger.frameworkCoordinator.liveLogViewController = liveLogViewController
-        let expectation = self.expectation(description: "log")
-        liveLogViewController.expectation = expectation
+        uiLogger.frameworkCoordinator.liveLogCoordinator = liveLogCoordinator
 
         // 2. Action
         uiLogger.doLog(logEntry)
 
         // 3. Assert
         waitForExpectations(timeout: 5, handler: nil)
-        XCTAssertTrue(liveLogViewController.logged)
+        verify(liveLogCoordinator).log(equal(to: logEntry))
+        verifyNoMoreInteractions(liveLogCoordinator)
     }
 
 }
