@@ -34,6 +34,11 @@
 		9F57DADE22247F060024FE5B /* XcodeLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */; };
 		9F57DADF22247F200024FE5B /* FileLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD18262047629100C1814E /* FileLoggerTests.swift */; };
 		9F57DAE022247F540024FE5B /* UiLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD18282048B22D00C1814E /* UiLoggerTests.swift */; };
+		9F57DAE122248E510024FE5B /* LogViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CA42064522C00928FCF /* LogViewControllerTests.swift */; };
+		9F57DAE22225EE4A0024FE5B /* AppsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CBB206EE1C800928FCF /* AppsTableViewControllerTests.swift */; };
+		9F57DAE32225F5710024FE5B /* LogsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */; };
+		9F57DAE42225F58D0024FE5B /* ArchiveLogViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC409320A4E2EC0037B2DC /* ArchiveLogViewControllerTests.swift */; };
+		9F57DAE52225F5B70024FE5B /* SupportPackageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CB8206C342900928FCF /* SupportPackageViewControllerTests.swift */; };
 		9F9A5EB5221A0396006A105B /* SupportPackageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EB4221A0396006A105B /* SupportPackageCoordinator.swift */; };
 		9F9A5EC1221B73E5006A105B /* ArchiveLogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EC0221B73E5006A105B /* ArchiveLogCoordinator.swift */; };
 		9F9A5EC3221B75B5006A105B /* LogsTableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EC2221B75B5006A105B /* LogsTableCoordinator.swift */; };
@@ -875,15 +880,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F57DAE42225F58D0024FE5B /* ArchiveLogViewControllerTests.swift in Sources */,
 				9F57DAD9222348D50024FE5B /* UIApplicationTests.swift in Sources */,
 				9F57DADF22247F200024FE5B /* FileLoggerTests.swift in Sources */,
+				9F57DAE22225EE4A0024FE5B /* AppsTableViewControllerTests.swift in Sources */,
 				9F57DAD8222348D10024FE5B /* FrameworkCoordinatorTests.swift in Sources */,
 				9F57DADD22247EEA0024FE5B /* AppCodeLoggerTests.swift in Sources */,
 				9F57DACC222348150024FE5B /* TestAppDelegate.swift in Sources */,
 				9F57DACB222347FF0024FE5B /* QLogTests.swift in Sources */,
 				9F57DADA222348D80024FE5B /* GeneratedMocks.swift in Sources */,
+				9F57DAE32225F5710024FE5B /* LogsTableViewControllerTests.swift in Sources */,
+				9F57DAE122248E510024FE5B /* LogViewControllerTests.swift in Sources */,
 				9F57DAE022247F540024FE5B /* UiLoggerTests.swift in Sources */,
 				9F57DADE22247F060024FE5B /* XcodeLoggerTests.swift in Sources */,
+				9F57DAE52225F5B70024FE5B /* SupportPackageViewControllerTests.swift in Sources */,
 				9F57DADC22247EDA0024FE5B /* LoggerTests.swift in Sources */,
 				9F57DADB22247EC30024FE5B /* LogEntryTests.swift in Sources */,
 			);

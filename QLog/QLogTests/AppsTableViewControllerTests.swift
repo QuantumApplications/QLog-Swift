@@ -11,22 +11,6 @@ import XCTest
 
 class AppsTableViewControllerTests: XCTestCase {
 
-    func testApps() {
-        // 1. Arrange
-        let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("logTest")
-        let logDirectoryUrl = logUrl.appendingPathComponent("logDirectory")
-        try? FileManager.default.createDirectory(at: logUrl, withIntermediateDirectories: true, attributes: nil)
-        try? FileManager.default.createDirectory(at: logDirectoryUrl, withIntermediateDirectories: true, attributes: nil)
-        _ = UiLogger.getShared(logUrl: logUrl)
-
-        // 3. Assert
-        XCTAssertEqual(AppsTableViewController().apps.map { $0.absoluteString }, [logDirectoryUrl.absoluteString + "/"])
-
-        // 4. Annihilate
-        try? FileManager.default.removeItem(at: logDirectoryUrl)
-        try? FileManager.default.removeItem(at: logUrl)
-    }
-
     func testAppsEmptyLogUrl() {
         // 1. Arrange
         UiLogger.shared = nil
@@ -51,9 +35,6 @@ class AppsTableViewControllerTests: XCTestCase {
         XCTAssertEqual(appsTableViewController.navigationItem.leftBarButtonItem?.target as? AppsTableViewController, appsTableViewController)
         XCTAssertEqual(appsTableViewController.navigationItem.leftBarButtonItem?.action, #selector(AppsTableViewController.back))
         XCTAssertNil(appsTableViewController.navigationItem.rightBarButtonItem)
-        XCTAssertEqual(appsTableViewController.tabBarItem.title, QLog.Texts.archive)
-        XCTAssertEqual(appsTableViewController.tabBarItem.image, QLog.Images.archive)
-        XCTAssertEqual(appsTableViewController.tabBarItem.tag, 2)
     }
 
     func testInitWithCoder() {
@@ -116,7 +97,7 @@ class AppsTableViewControllerTests: XCTestCase {
         let app = URL(string: "https://")!
         let appsTableViewControllerDelegate = MockAppsTableViewControllerDelegate()
         stub(appsTableViewControllerDelegate) { appsTableViewControllerDelegate in
-            when(appsTableViewControllerDelegate).show(any(), app: any()).thenDoNothing()
+            when(appsTableViewControllerDelegate).show(any()).thenDoNothing()
         }
         let appsTableViewController = MockAppsTableViewController().withEnabledSuperclassSpy()
         stub(appsTableViewController) { appsTableViewController in
@@ -128,7 +109,7 @@ class AppsTableViewControllerTests: XCTestCase {
         appsTableViewController.tableView(appsTableViewController.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
 
         // 3. Assert
-        verify(appsTableViewControllerDelegate).show(equal(to: appsTableViewController), app: equal(to: app))
+        verify(appsTableViewControllerDelegate).show(equal(to: app))
         verifyNoMoreInteractions(appsTableViewControllerDelegate)
     }
 
@@ -138,7 +119,7 @@ class AppsTableViewControllerTests: XCTestCase {
         // 1. Arrange
         let appsTableViewControllerDelegate = MockAppsTableViewControllerDelegate()
         stub(appsTableViewControllerDelegate) { appsTableViewControllerDelegate in
-            when(appsTableViewControllerDelegate).back(any()).thenDoNothing()
+            when(appsTableViewControllerDelegate).back().thenDoNothing()
         }
         let appsTableViewController = AppsTableViewController()
         appsTableViewController.delegate = appsTableViewControllerDelegate
@@ -147,7 +128,7 @@ class AppsTableViewControllerTests: XCTestCase {
         appsTableViewController.back()
 
         // 3. Assert
-        verify(appsTableViewControllerDelegate).back(equal(to: appsTableViewController))
+        verify(appsTableViewControllerDelegate).back()
         verifyNoMoreInteractions(appsTableViewControllerDelegate)
     }
 

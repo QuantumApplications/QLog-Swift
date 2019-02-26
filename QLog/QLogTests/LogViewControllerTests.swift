@@ -22,9 +22,6 @@ class LiveLogViewControllerTests: XCTestCase {
         XCTAssertEqual(liveLogViewController.navigationItem.rightBarButtonItem?.target as? LiveLogViewController, liveLogViewController)
         XCTAssertEqual(liveLogViewController.navigationItem.rightBarButtonItem?.action, #selector(LiveLogViewController.action))
         XCTAssertTrue(liveLogViewController.extendedLayoutIncludesOpaqueBars)
-        XCTAssertEqual(liveLogViewController.tabBarItem.title, QLog.Texts.live)
-        XCTAssertEqual(liveLogViewController.tabBarItem.image, QLog.Images.live)
-        XCTAssertEqual(liveLogViewController.tabBarItem.tag, 1)
     }
 
     func testInitWithCoder() {
