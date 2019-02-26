@@ -10,21 +10,25 @@ import Foundation
 
 class AppsTableCoordinator: Coordinator {
 
-    private var logsTableCoordinator: LogsTableCoordinator?
     private let navigationController: UINavigationController
     private let appsTableViewController: AppsTableViewController
     private let apps: [URL]
 
+    private var logsTableCoordinator: LogsTableCoordinator?
+
+    private static func getApps() -> [URL] {
+        guard let logUrl = UiLogger.shared?.logUrl else {
+            return []
+        }
+        return (try? FileManager.default.contentsOfDirectory(at: logUrl, includingPropertiesForKeys: nil, options: []).filter { $0.hasDirectoryPath }) ?? []
+    }
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        if let logUrl = UiLogger.shared?.logUrl {
-            self.apps = (try? FileManager.default.contentsOfDirectory(at: logUrl, includingPropertiesForKeys: nil, options: []).filter { $0.hasDirectoryPath }) ?? []
-        } else {
-            self.apps = []
-        }
         self.appsTableViewController = AppsTableViewController()
+        self.apps = AppsTableCoordinator.getApps()
         self.appsTableViewController.apps = self.apps
-        appsTableViewController.delegate = self
+        self.appsTableViewController.delegate = self
     }
 
     func start() {

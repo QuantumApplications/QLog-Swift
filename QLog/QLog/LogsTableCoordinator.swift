@@ -27,7 +27,7 @@ class LogsTableCoordinator: Coordinator {
     }
 
     func start() {
-        self.navigationController.show(self.logsTableViewController, sender: nil)
+        self.navigationController.pushViewController(self.logsTableViewController, animated: true)
     }
 
 }
