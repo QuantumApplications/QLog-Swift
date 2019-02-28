@@ -10,20 +10,25 @@ import Foundation
 
 class LogsTableCoordinator: Coordinator {
 
-    private var archiveLogCoordinator: ArchiveLogCoordinator?
     private let navigationController: UINavigationController
     private let logsTableViewController: LogsTableViewController
     private let app: URL
     private let logs: [URL]
 
+    private var archiveLogCoordinator: ArchiveLogCoordinator?
+
+    private static func getLogs(_ app: URL) -> [URL] {
+        return (try? FileManager.default.contentsOfDirectory(at: app, includingPropertiesForKeys: nil, options: []).filter { !$0.hasDirectoryPath }) ?? []
+    }
+
     init(navigationController: UINavigationController, app: URL) {
         self.navigationController = navigationController
-        self.app = app
-        self.logs = (try? FileManager.default.contentsOfDirectory(at: self.app, includingPropertiesForKeys: nil, options: []).filter { !$0.hasDirectoryPath }) ?? []
         self.logsTableViewController = LogsTableViewController()
+        self.app = app
+        self.logs = LogsTableCoordinator.getLogs(self.app)
         self.logsTableViewController.title = self.app.lastPathComponent
         self.logsTableViewController.logs = self.logs
-        logsTableViewController.delegate = self
+        self.logsTableViewController.delegate = self
     }
 
     func start() {
@@ -32,7 +37,7 @@ class LogsTableCoordinator: Coordinator {
 
 }
 
-// MARK: - AppsTableViewControllerDelegate
+// MARK: - LogsTableViewControllerDelegate
 
 extension LogsTableCoordinator: LogsTableViewControllerDelegate {
 
