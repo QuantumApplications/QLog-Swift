@@ -16,8 +16,8 @@ class ArchiveLogCoordinator: Coordinator {
 
     init(navigationController: UINavigationController, log: URL) {
         self.navigationController = navigationController
-        self.log = log
         self.archiveLogViewController = ArchiveLogViewController()
+        self.log = log
     }
 
     func start() {

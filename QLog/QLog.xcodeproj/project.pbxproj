@@ -41,6 +41,7 @@
 		9F57DAE52225F5B70024FE5B /* SupportPackageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CB8206C342900928FCF /* SupportPackageViewControllerTests.swift */; };
 		9F57DAE822272BEF0024FE5B /* AppsTableCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57DAE722272BEF0024FE5B /* AppsTableCoordinatorTests.swift */; };
 		9F57DAEA222885600024FE5B /* LogsTableCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57DAE9222885600024FE5B /* LogsTableCoordinatorTests.swift */; };
+		9F57DAEC222885600024FE5B /* ArchiveLogCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57DAEB222885600024FE5B /* ArchiveLogCoordinatorTests.swift */; };
 		9F9A5EB5221A0396006A105B /* SupportPackageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EB4221A0396006A105B /* SupportPackageCoordinator.swift */; };
 		9F9A5EC1221B73E5006A105B /* ArchiveLogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EC0221B73E5006A105B /* ArchiveLogCoordinator.swift */; };
 		9F9A5EC3221B75B5006A105B /* LogsTableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EC2221B75B5006A105B /* LogsTableCoordinator.swift */; };
@@ -182,6 +183,7 @@
 		9F5449182225F757006A8393 /* AppsTableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsTableCoordinator.swift; sourceTree = "<group>"; };
 		9F57DAE722272BEF0024FE5B /* AppsTableCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsTableCoordinatorTests.swift; sourceTree = "<group>"; };
 		9F57DAE9222885600024FE5B /* LogsTableCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsTableCoordinatorTests.swift; sourceTree = "<group>"; };
+		9F57DAEB222885600024FE5B /* ArchiveLogCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveLogCoordinatorTests.swift; sourceTree = "<group>"; };
 		9F64F8C2203CD16E00328249 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
 		9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLoggerTests.swift; sourceTree = "<group>"; };
 		9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsTableViewControllerTests.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 			children = (
 				9F57DAE722272BEF0024FE5B /* AppsTableCoordinatorTests.swift */,
 				9F57DAE9222885600024FE5B /* LogsTableCoordinatorTests.swift */,
+				9F57DAEB222885600024FE5B /* ArchiveLogCoordinatorTests.swift */,
 			);
 			name = Archive;
 			sourceTree = "<group>";
@@ -897,6 +900,7 @@
 				9F57DAE42225F58D0024FE5B /* ArchiveLogViewControllerTests.swift in Sources */,
 				9F57DAD9222348D50024FE5B /* UIApplicationTests.swift in Sources */,
 				9F57DADF22247F200024FE5B /* FileLoggerTests.swift in Sources */,
+				9F57DAEC222885600024FE5B /* ArchiveLogCoordinatorTests.swift in Sources */,
 				9F57DAE22225EE4A0024FE5B /* AppsTableViewControllerTests.swift in Sources */,
 				9F57DAD8222348D10024FE5B /* FrameworkCoordinatorTests.swift in Sources */,
 				9F57DADD22247EEA0024FE5B /* AppCodeLoggerTests.swift in Sources */,
