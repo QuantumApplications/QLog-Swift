@@ -178,7 +178,7 @@ class LiveLogViewControllerTests: XCTestCase {
         // 1. Arrange
         let liveLogViewControllerDelegate = MockLiveLogViewControllerDelegate()
         stub(liveLogViewControllerDelegate) { liveLogViewControllerDelegate in
-            when(liveLogViewControllerDelegate).back(any()).thenDoNothing()
+            when(liveLogViewControllerDelegate).back().thenDoNothing()
         }
         let liveLogViewController = LiveLogViewController()
         liveLogViewController.delegate = liveLogViewControllerDelegate
@@ -187,7 +187,7 @@ class LiveLogViewControllerTests: XCTestCase {
         liveLogViewController.back()
 
         // 3. Assert
-        verify(liveLogViewControllerDelegate).back(equal(to: liveLogViewController))
+        verify(liveLogViewControllerDelegate).back()
         verifyNoMoreInteractions(liveLogViewControllerDelegate)
     }
 
@@ -195,7 +195,7 @@ class LiveLogViewControllerTests: XCTestCase {
         // 1. Arrange
         let liveLogViewControllerDelegate = MockLiveLogViewControllerDelegate()
         stub(liveLogViewControllerDelegate) { liveLogViewControllerDelegate in
-            when(liveLogViewControllerDelegate).action(any(), sender: any()).thenDoNothing()
+            when(liveLogViewControllerDelegate).action(sender: any()).thenDoNothing()
         }
         let liveLogViewController = LiveLogViewController()
         liveLogViewController.delegate = liveLogViewControllerDelegate
@@ -205,7 +205,7 @@ class LiveLogViewControllerTests: XCTestCase {
         liveLogViewController.action(barButtonItem)
 
         // 3. Assert
-        verify(liveLogViewControllerDelegate).action(equal(to: liveLogViewController), sender: equal(to: barButtonItem))
+        verify(liveLogViewControllerDelegate).action(sender: equal(to: barButtonItem))
         verifyNoMoreInteractions(liveLogViewControllerDelegate)
     }
 

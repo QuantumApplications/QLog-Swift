@@ -17,7 +17,7 @@ class LiveLogCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.liveLogViewController = LiveLogViewController()
-        liveLogViewController.delegate = self
+        self.liveLogViewController.delegate = self
     }
 
     func start() {
@@ -39,12 +39,12 @@ var documentInteractionController: UIDocumentInteractionController!
 
 extension LiveLogCoordinator: LiveLogViewControllerDelegate {
 
-    func back(_ liveLogViewController: LiveLogViewController) {
+    func back() {
         UiLogger.shared?.shown = false
-        liveLogViewController.dismiss(animated: true, completion: nil)
+        self.liveLogViewController.dismiss(animated: true, completion: nil)
     }
 
-    func action(_ liveLogViewController: LiveLogViewController, sender: UIBarButtonItem) {
+    func action(sender: UIBarButtonItem) {
         // Get attributed text
         guard let text = liveLogViewController.textView.attributedText else {
             return

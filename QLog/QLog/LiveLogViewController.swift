@@ -10,8 +10,8 @@ import UIKit
 
 protocol LiveLogViewControllerDelegate: class {
 
-    func back(_ liveLogViewController: LiveLogViewController)
-    func action(_ liveLogViewController: LiveLogViewController, sender: UIBarButtonItem)
+    func back()
+    func action(sender: UIBarButtonItem)
 
 }
 
@@ -73,11 +73,11 @@ class LiveLogViewController: UIViewController {
     }
 
     @objc func back() {
-        self.delegate?.back(self)
+        self.delegate?.back()
     }
 
     @objc func action(_ sender: UIBarButtonItem) {
-        self.delegate?.action(self, sender: sender)
+        self.delegate?.action(sender: sender)
     }
 
 }
