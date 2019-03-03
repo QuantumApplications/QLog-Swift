@@ -18,7 +18,7 @@ class SupportPackageCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.supportPackageViewController = SupportPackageViewController()
-        supportPackageViewController.delegate = self
+        self.supportPackageViewController.delegate = self
     }
 
     func start() {
@@ -33,19 +33,19 @@ class SupportPackageCoordinator: Coordinator {
 
 extension SupportPackageCoordinator: SupportPackageViewControllerDelegate {
 
-    static let dateFormatter: DateFormatter = {
+    private static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return dateFormatter
     }()
-    static let targetName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Application"
+    private static let targetName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Application"
 
-    func back(_ supportPackageViewController: SupportPackageViewController) {
+    func back() {
         UiLogger.shared?.shown = false
-        supportPackageViewController.dismiss(animated: true, completion: nil)
+        self.supportPackageViewController.dismiss(animated: true, completion: nil)
     }
 
-    func generateSupportPackage(_ supportPackageViewController: SupportPackageViewController) {
+    func generateSupportPackage() {
         // Zip log files
         let zipDirectoryUrl = URL(fileURLWithPath: NSTemporaryDirectory())
         let zipFileUrl = zipDirectoryUrl.appendingPathComponent("Support Package \(SupportPackageCoordinator.targetName) \(SupportPackageCoordinator.dateFormatter.string(from: Date())).zip")

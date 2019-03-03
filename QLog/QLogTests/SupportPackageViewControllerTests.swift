@@ -27,7 +27,7 @@ class SupportPackageViewControllerTests: XCTestCase {
         // 1. Arrange
         let supportPackageViewControllerDelegate = MockSupportPackageViewControllerDelegate()
         stub(supportPackageViewControllerDelegate) { supportPackageViewControllerDelegate in
-            when(supportPackageViewControllerDelegate).back(any()).thenDoNothing()
+            when(supportPackageViewControllerDelegate).back().thenDoNothing()
         }
         let supportPackageViewController = SupportPackageViewController()
         supportPackageViewController.delegate = supportPackageViewControllerDelegate
@@ -35,7 +35,7 @@ class SupportPackageViewControllerTests: XCTestCase {
         // 2. Action
         supportPackageViewController.back()
 
-        verify(supportPackageViewControllerDelegate).back(equal(to: supportPackageViewController))
+        verify(supportPackageViewControllerDelegate).back()
         verifyNoMoreInteractions(supportPackageViewControllerDelegate)
     }
 
@@ -43,7 +43,7 @@ class SupportPackageViewControllerTests: XCTestCase {
         // 1. Arrange
         let supportPackageViewControllerDelegate = MockSupportPackageViewControllerDelegate()
         stub(supportPackageViewControllerDelegate) { supportPackageViewControllerDelegate in
-            when(supportPackageViewControllerDelegate).generateSupportPackage(any()).thenDoNothing()
+            when(supportPackageViewControllerDelegate).generateSupportPackage().thenDoNothing()
         }
         let supportPackageViewController = SupportPackageViewController()
         supportPackageViewController.delegate = supportPackageViewControllerDelegate
@@ -53,7 +53,7 @@ class SupportPackageViewControllerTests: XCTestCase {
         supportPackageViewController.generateSupportPackage(barButtonItem)
 
         // 3. Assert
-        verify(supportPackageViewControllerDelegate).generateSupportPackage(equal(to: supportPackageViewController))
+        verify(supportPackageViewControllerDelegate).generateSupportPackage()
         verifyNoMoreInteractions(supportPackageViewControllerDelegate)
     }
 

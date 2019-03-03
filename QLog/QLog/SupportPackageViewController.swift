@@ -10,8 +10,8 @@ import UIKit
 
 protocol SupportPackageViewControllerDelegate: class {
 
-    func back(_ supportPackageViewController: SupportPackageViewController)
-    func generateSupportPackage(_ supportPackageViewController: SupportPackageViewController)
+    func back()
+    func generateSupportPackage()
 
 }
 
@@ -35,11 +35,11 @@ class SupportPackageViewController: UIViewController {
     // MARK: - Navigation
 
     @objc func back() {
-        self.delegate?.back(self)
+        self.delegate?.back()
     }
 
     @IBAction func generateSupportPackage(_ sender: Any) {
-        self.delegate?.generateSupportPackage(self)
+        self.delegate?.generateSupportPackage()
     }
 
 }
