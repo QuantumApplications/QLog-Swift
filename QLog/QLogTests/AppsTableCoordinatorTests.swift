@@ -30,22 +30,22 @@ class AppsTableCoordinatorTests: XCTestCase {
         // 1. Arrange
         let navigationController = UINavigationController()
         let appsTableCoordinator = AppsTableCoordinator(navigationController: navigationController)
-        _ = UiLogger.getShared()
-        UiLogger.shared?.shown = true
+        _ = UiLogger.shared
+        UiLogger.shared.shown = true
         appsTableCoordinator.start()
 
         // 2. Action
         appsTableCoordinator.back()
 
         // 3. Assert
-        XCTAssertFalse(UiLogger.shared?.shown ?? true)
+        XCTAssertFalse(UiLogger.shared.shown)
     }
 
     func testShow() {
         // 1. Arrange
         let navigationController = UINavigationController()
         let appsTableCoordinator = AppsTableCoordinator(navigationController: navigationController)
-        _ = UiLogger.getShared()
+        _ = UiLogger.shared
 
         // 2. Action
         appsTableCoordinator.show(URL(string: "https://")!)

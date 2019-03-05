@@ -30,15 +30,15 @@ class LiveLogCoordinatorTests: XCTestCase {
         // 1. Arrange
         let navigationController = UINavigationController()
         let liveLogCoordinator = LiveLogCoordinator(navigationController: navigationController)
-        _ = UiLogger.getShared()
-        UiLogger.shared?.shown = true
+        _ = UiLogger.shared
+        UiLogger.shared.shown = true
         liveLogCoordinator.start()
 
         // 2. Action
         liveLogCoordinator.back()
 
         // 3. Assert
-        XCTAssertFalse(UiLogger.shared?.shown ?? true)
+        XCTAssertFalse(UiLogger.shared.shown)
     }
 
 }

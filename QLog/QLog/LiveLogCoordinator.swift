@@ -40,7 +40,7 @@ var documentInteractionController: UIDocumentInteractionController!
 extension LiveLogCoordinator: LiveLogViewControllerDelegate {
 
     func back() {
-        UiLogger.shared?.shown = false
+        UiLogger.shared.shown = false
         self.liveLogViewController.dismiss(animated: true, completion: nil)
     }
 

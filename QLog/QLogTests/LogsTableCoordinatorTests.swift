@@ -30,8 +30,7 @@ class LogsTableCoordinatorTests: XCTestCase {
         // 1. Arrange
         let navigationController = UINavigationController()
         let logsTableCoordinator = LogsTableCoordinator(navigationController: navigationController, app: URL(string: "https://")!)
-        _ = UiLogger.getShared()
-        UiLogger.shared?.shown = true
+        UiLogger.shared.shown = true
         logsTableCoordinator.start()
 
         // 2. Action

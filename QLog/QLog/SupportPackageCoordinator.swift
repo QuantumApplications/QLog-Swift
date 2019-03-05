@@ -41,7 +41,7 @@ extension SupportPackageCoordinator: SupportPackageViewControllerDelegate {
     private static let targetName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Application"
 
     func back() {
-        UiLogger.shared?.shown = false
+        UiLogger.shared.shown = false
         self.supportPackageViewController.dismiss(animated: true, completion: nil)
     }
 
@@ -49,7 +49,7 @@ extension SupportPackageCoordinator: SupportPackageViewControllerDelegate {
         // Zip log files
         let zipDirectoryUrl = URL(fileURLWithPath: NSTemporaryDirectory())
         let zipFileUrl = zipDirectoryUrl.appendingPathComponent("Support Package \(SupportPackageCoordinator.targetName) \(SupportPackageCoordinator.dateFormatter.string(from: Date())).zip")
-        let logPathUrl = UiLogger.getShared().logUrl
+        let logPathUrl = UiLogger.shared.logUrl
         guard (try? Zip.zipFiles(paths: [logPathUrl], zipFilePath: zipFileUrl, password: nil, progress: { progress in
             print(progress)
         })) != nil else {

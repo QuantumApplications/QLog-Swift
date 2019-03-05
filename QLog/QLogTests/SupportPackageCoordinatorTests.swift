@@ -30,15 +30,15 @@ class SupportPackageCoordinatorTests: XCTestCase {
         // 1. Arrange
         let navigationController = UINavigationController()
         let supportPackageCoordinator = SupportPackageCoordinator(navigationController: navigationController)
-        _ = UiLogger.getShared()
-        UiLogger.shared?.shown = true
+        _ = UiLogger.shared
+        UiLogger.shared.shown = true
         supportPackageCoordinator.start()
 
         // 2. Action
         supportPackageCoordinator.back()
 
         // 3. Assert
-        XCTAssertFalse(UiLogger.shared?.shown ?? true)
+        XCTAssertFalse(UiLogger.shared.shown ?? true)
     }
 
 }

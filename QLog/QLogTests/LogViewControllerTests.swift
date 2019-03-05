@@ -154,14 +154,14 @@ class LiveLogViewControllerTests: XCTestCase {
         liveLogViewController.logLevelSegmentedControlValueChanged(object)
 
         // 3. Assert
-        XCTAssertEqual(UiLogger.getShared().logLevel.rawValue, logLevel.rawValue)
+        XCTAssertEqual(UiLogger.shared.logLevel.rawValue, logLevel.rawValue)
     }
 
     func testLogLevelSegmentedControlValueChangedInvalidIndex() {
         // 1. Arrange
         let liveLogViewController = LiveLogViewController()
         let logLevel = LogLevel.warning
-        UiLogger.getShared().logLevel = logLevel
+        UiLogger.shared.logLevel = logLevel
         let logLevelSegmentedControl = UISegmentedControl(items: ["0", "1", "2", "3", "4", "5", "6"])
         logLevelSegmentedControl.selectedSegmentIndex = 7
         liveLogViewController.logLevelSegmentedControl = logLevelSegmentedControl
@@ -171,7 +171,7 @@ class LiveLogViewControllerTests: XCTestCase {
         liveLogViewController.logLevelSegmentedControlValueChanged(object)
 
         // 3. Assert
-        XCTAssertEqual(UiLogger.getShared().logLevel.rawValue, logLevel.rawValue)
+        XCTAssertEqual(UiLogger.shared.logLevel.rawValue, logLevel.rawValue)
     }
 
     func testBack() {

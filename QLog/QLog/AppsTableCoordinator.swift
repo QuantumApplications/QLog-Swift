@@ -17,9 +17,7 @@ class AppsTableCoordinator: Coordinator {
     private var logsTableCoordinator: LogsTableCoordinator?
 
     private static func getApps() -> [URL] {
-        guard let logUrl = UiLogger.shared?.logUrl else {
-            return []
-        }
+        let logUrl = UiLogger.shared.logUrl
         return (try? FileManager.default.contentsOfDirectory(at: logUrl, includingPropertiesForKeys: nil, options: []).filter { $0.hasDirectoryPath }) ?? []
     }
 
@@ -44,7 +42,7 @@ class AppsTableCoordinator: Coordinator {
 extension AppsTableCoordinator: AppsTableViewControllerDelegate {
 
     func back() {
-        UiLogger.shared?.shown = false
+        UiLogger.shared.shown = false
         self.appsTableViewController.dismiss(animated: true, completion: nil)
     }
 

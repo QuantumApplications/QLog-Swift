@@ -36,7 +36,7 @@ class LiveLogViewController: UIViewController {
         // Allow scrolling if navigation bars are opaque (WTF Apple?)
         self.extendedLayoutIncludesOpaqueBars = true
         // Set segmented control
-        self.logLevelSegmentedControl.selectedSegmentIndex = UiLogger.getShared().logLevel.rawValue
+        self.logLevelSegmentedControl.selectedSegmentIndex = UiLogger.shared.logLevel.rawValue
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -69,7 +69,7 @@ class LiveLogViewController: UIViewController {
     // MARK: - Navigation
 
     @IBAction func logLevelSegmentedControlValueChanged(_ sender: Any) {
-        UiLogger.getShared().logLevel = LogLevel(rawValue: self.logLevelSegmentedControl.selectedSegmentIndex) ?? UiLogger.getShared().logLevel
+        UiLogger.shared.logLevel = LogLevel(rawValue: self.logLevelSegmentedControl.selectedSegmentIndex) ?? UiLogger.shared.logLevel
     }
 
     @objc func back() {

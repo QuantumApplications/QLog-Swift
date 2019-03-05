@@ -27,26 +27,35 @@ extension LogLevel {
 
 public class UiLogger: Logger {
 
+    public static var shared: UiLogger {
+        return UiLogger.sharedUiLogger
+    }
+
     public var logLevel: LogLevel = .info
-
-    static var shared: UiLogger?
-
-    let logUrl: URL
-
-    var shown = false
 
     lazy var frameworkCoordinator: FrameworkCoordinator = FrameworkCoordinator()
 
-    public static func getShared(logLevel: LogLevel = .info, logUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")) -> UiLogger {
-        if UiLogger.shared == nil {
-            UiLogger.shared = UiLogger(logLevel: logLevel, logUrl: logUrl)
-        }
-        return UiLogger.shared!
+    var logUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")
+
+    var shown = false
+
+    private static var sharedUiLogger: UiLogger = {
+        return UiLogger()
+    }()
+
+    public func with (logLevel: LogLevel = .info, logUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")) -> UiLogger {
+        UiLogger.sharedUiLogger.logLevel = logLevel
+        UiLogger.sharedUiLogger.logUrl = logUrl
+        return UiLogger.sharedUiLogger
     }
 
-    init(logLevel: LogLevel = .info, logUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")) {
-        self.logLevel = logLevel
-        self.logUrl = logUrl
+    public func doLog(_ logEntry: LogEntry) {
+        DispatchQueue.main.async {
+            self.frameworkCoordinator.liveLogCoordinator.log(logEntry)
+        }
+    }
+
+    private init() {
         // Add QLog to CornerSwipeController
         CornerSwipeController.topRightCornerHandler = {
             guard !self.shown else {
@@ -56,12 +65,6 @@ public class UiLogger: Logger {
             self.frameworkCoordinator.start()
         }
         CornerSwipeController.enable()
-    }
-
-    public func doLog(_ logEntry: LogEntry) {
-        DispatchQueue.main.async {
-            self.frameworkCoordinator.liveLogCoordinator.log(logEntry)
-        }
     }
 
 }

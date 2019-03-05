@@ -12,16 +12,13 @@ import XCTest
 class AppsTableViewControllerTests: XCTestCase {
 
     func testAppsEmptyLogUrl() {
-        // 1. Arrange
-        UiLogger.shared = nil
-
         // 3. Assert
         XCTAssertEqual(AppsTableViewController().apps, [URL]())
     }
 
     func testAppsWrongLogUrl() {
         // 1. Arrange
-        _ = UiLogger.getShared(logUrl: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("xxx"))
+        _ = UiLogger.shared.with(logUrl: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("xxx"))
 
         // 3. Assert
         XCTAssertEqual(AppsTableViewController().apps, [URL]())

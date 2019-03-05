@@ -22,85 +22,28 @@ class UiLoggerTests: XCTestCase {
     }
 
     func testGetShared() {
-        // 1. Arrange
-        UiLogger.shared = nil
-
         // 3. Assert
-        XCTAssertTrue(UiLogger.getShared() === UiLogger.shared!)
-        XCTAssertTrue(UiLogger.getShared() === UiLogger.shared!)
-        XCTAssertEqual(UiLogger.getShared().logLevel, .info)
-        XCTAssertEqual(UiLogger.getShared().logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
+        XCTAssertEqual(UiLogger.shared.with().logLevel, .info)
+        XCTAssertEqual(UiLogger.shared.with().logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
         XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
     }
 
     func testGetSharedWithLogLevel() {
-        // 1. Arrange
-        UiLogger.shared = nil
-
         // 3. Assert
-        XCTAssertTrue(UiLogger.getShared(logLevel: .error) === UiLogger.shared!)
-        XCTAssertEqual(UiLogger.getShared().logLevel, .error)
-        XCTAssertEqual(UiLogger.getShared().logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
+        XCTAssertTrue(UiLogger.shared.with(logLevel: .error) === UiLogger.shared)
+        XCTAssertEqual(UiLogger.shared.logLevel, .error)
+        XCTAssertEqual(UiLogger.shared.logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
         XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
     }
 
     func testGetSharedWithLogUrl() {
         // 1. Arrange
-        UiLogger.shared = nil
         let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("test")
 
         // 3. Assert
-        XCTAssertTrue(UiLogger.getShared(logUrl: logUrl) === UiLogger.shared!)
-        XCTAssertEqual(UiLogger.getShared().logLevel, .info)
-        XCTAssertEqual(UiLogger.getShared().logUrl, logUrl)
-        XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
-    }
-
-    func testInit() {
-        // 2. Action
-        let uiLogger = UiLogger()
-        CornerSwipeController.topRightCornerHandler?()
-
-        // 3. Assert
-        XCTAssertEqual(uiLogger.logLevel, .info)
-        XCTAssertEqual(uiLogger.logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
-        XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
-        XCTAssertTrue(uiLogger.shown)
-    }
-
-    func testInitWithLogLevel() {
-        // 1. Arrange
-        let uiLogger = UiLogger(logLevel: .error)
-
-        // 3. Assert
-        XCTAssertEqual(uiLogger.logLevel, .error)
-        XCTAssertEqual(uiLogger.logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
-        XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
-    }
-
-    func testInitWithLogUrl() {
-        // 1. Arrange
-        let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("test")
-
-        // 2. Action
-        let uiLogger = UiLogger(logUrl: logUrl)
-
-        // 3. Assert
-        XCTAssertEqual(uiLogger.logLevel, .info)
-        XCTAssertEqual(uiLogger.logUrl, logUrl)
-        XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
-    }
-
-    func testInitWithWrongLogUrl() {
-        // 1. Arrange
-        let logUrl = URL(string: "file://")!
-
-        // 2. Action
-        let uiLogger = UiLogger(logUrl: logUrl)
-
-        // 3. Assert
-        XCTAssertEqual(uiLogger.logLevel, .info)
-        XCTAssertEqual(uiLogger.logUrl, logUrl)
+        XCTAssertTrue(UiLogger.shared.with(logUrl: logUrl) === UiLogger.shared)
+        XCTAssertEqual(UiLogger.shared.logLevel, .info)
+        XCTAssertEqual(UiLogger.shared.logUrl, logUrl)
         XCTAssertNotNil(CornerSwipeController.topRightCornerHandler)
     }
 
@@ -123,7 +66,7 @@ class UiLoggerTests: XCTestCase {
         let logLevel: LogLevel = .error
         let text = "Text"
         let logEntry = LogEntry(date: date, file: path, function: function, line: line, logLevel: logLevel, text: text)
-        let uiLogger = UiLogger()
+        let uiLogger = UiLogger.shared
         uiLogger.frameworkCoordinator.liveLogCoordinator = liveLogCoordinator
 
         // 2. Action

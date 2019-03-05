@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         QLog.Texts.live = "Live".localized
         QLog.Texts.supportPackage = "Support Package".localized
         QLog.Texts.generateSupportPackage = "Generate Support Package".localized
-        QLog.loggers = [AppCodeLogger(), XcodeLogger(), FileLogger(), UiLogger.getShared()]
+        QLog.loggers = [AppCodeLogger(), XcodeLogger(), FileLogger(), UiLogger.shared]
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
         self.window?.rootViewController = ViewController()
