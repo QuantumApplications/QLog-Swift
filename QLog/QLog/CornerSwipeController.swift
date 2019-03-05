@@ -8,6 +8,11 @@
 
 import UIKit
 
+/**
+ A controller to handle corner swipe gestures.
+ The controller creates a handler for each corner,
+ which executes a funtion when triggered.
+ */
 public class CornerSwipeController: NSObject {
 
     public static let shared = CornerSwipeController()
@@ -17,15 +22,18 @@ public class CornerSwipeController: NSObject {
     public static var bottomLeftCornerHandler: (() -> Void)?
     public static var bottomRightCornerHandler: (() -> Void)?
 
-    static var combination = 0
-
+    /**
+     Enables the corner swipe controller
+     */
     public static func enable() {
         // Register observer to be notified when a new window appears
         NotificationCenter.default.addObserver(CornerSwipeController.shared, selector: #selector(registerGestureRecognizer), name: UIWindow.didBecomeVisibleNotification, object: nil)
-        CornerSwipeController.bottomLeftCornerHandler = { CornerSwipeController.bottomLeftCombination() }
-        CornerSwipeController.bottomRightCornerHandler = { CornerSwipeController.bottomRightCombination() }
     }
 
+    /**
+     Registers a gesture recognizer for each corner
+     - parameter notification: The notification containing the window
+     */
     @objc func registerGestureRecognizer(_ notification: NSNotification) {
         // Create a gesture recognizer for each edge
         let gestureRecognizerTop = UIScreenEdgePanGestureRecognizer(target: CornerSwipeController.shared, action: #selector(screenEdgeSwiped))
@@ -46,6 +54,10 @@ public class CornerSwipeController: NSObject {
         window.addGestureRecognizer(gestureRecognizerRight)
     }
 
+    /**
+     Determines from which screen edge was swiped and calls the corresponding handler
+     - parameter recognizer: The triggered recognizer
+     */
     @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
         // Show the log viewer if gesture if performed at top right corner
         // 0 is the border between title bar and content
@@ -65,24 +77,6 @@ public class CornerSwipeController: NSObject {
         } else if frame.width - location.x < 200 && frame.height - location.y < 160 {
             // bottom right corner
             CornerSwipeController.bottomRightCornerHandler?()
-        }
-    }
-
-    static func bottomLeftCombination() {
-        switch CornerSwipeController.combination {
-        case 2:
-            print("Easter Egg")
-        default:
-            CornerSwipeController.combination = 1
-        }
-    }
-
-    static func bottomRightCombination() {
-        switch CornerSwipeController.combination {
-        case 1, 2:
-            CornerSwipeController.combination = 2
-        default:
-            CornerSwipeController.combination = 0
         }
     }
 

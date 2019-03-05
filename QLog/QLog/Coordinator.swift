@@ -8,8 +8,12 @@
 
 import Foundation
 
+/// The coordinator protocol
 protocol Coordinator: class {
 
+    /**
+     Starts the coordinator and pushes the corresponding view controller
+     */
     func start()
 
 }

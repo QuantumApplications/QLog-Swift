@@ -10,7 +10,9 @@ import UIKit
 
 protocol SupportPackageViewControllerDelegate: class {
 
+    /// Goes back
     func back()
+    /// Generates a support package
     func generateSupportPackage()
 
 }
@@ -24,7 +26,6 @@ class SupportPackageViewController: UIViewController {
         super.init(nibName: "SupportPackageViewController", bundle: Bundle(identifier: "qa.quantum.QLog")!)
         self.loadView()
         self.navigationItem.leftBarButtonItem =  UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
-        // Localization
         self.generateSupportPackageButton.setTitle(QLog.Texts.generateSupportPackage, for: .normal)
     }
 

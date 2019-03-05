@@ -10,9 +10,15 @@ import UIKit
 
 // Get top view controller
 // Taken from https://stackoverflow.com/a/30858591/5804550
-
 extension UIApplication {
 
+    /**
+     Returns the top view controller for given view controller
+     or current root view controller.
+     - parameter controller: The Controller to get the top view controller of.
+     If not set, the current root view controller is used.
+     - returns: The top view controller if available
+     */
     public class func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let navigationController = controller as? UINavigationController {
             return topViewController(controller: navigationController.visibleViewController)

@@ -10,7 +10,9 @@ import UIKit
 
 protocol LiveLogViewControllerDelegate: class {
 
+    /// Goes back
     func back()
+    /// Action button was pressed
     func action(sender: UIBarButtonItem)
 
 }

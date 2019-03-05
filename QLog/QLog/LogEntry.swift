@@ -6,6 +6,9 @@
 //  Copyright © 2018 Quantum. All rights reserved.
 //
 
+/**
+ The log entry to be used for logging
+ */
 public struct LogEntry: Equatable {
 
     let date: Date
@@ -21,6 +24,7 @@ public struct LogEntry: Equatable {
         return dateFormatter
     }()
 
+    /// The meta data of a log entry containing date, file, line and function
     var metaText: String {
         return "\(LogEntry.dateFormatter.string(from: self.date)): \(URL(fileURLWithPath: self.file).lastPathComponent):\(self.line) \(self.function): "
     }

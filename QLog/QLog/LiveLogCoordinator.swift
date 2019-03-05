@@ -9,11 +9,16 @@
 import Foundation
 import MobileCoreServices
 
+/// Coordinates handling of live logging
 class LiveLogCoordinator: Coordinator {
 
     private let navigationController: UINavigationController
     private let liveLogViewController: LiveLogViewController
 
+    /**
+     Creates a new live log coordinator
+     - parameter navigationController: The navigation controller to use
+     */
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.liveLogViewController = LiveLogViewController()
@@ -26,6 +31,10 @@ class LiveLogCoordinator: Coordinator {
         self.navigationController.pushViewController(self.liveLogViewController, animated: true)
     }
 
+    /**
+     Logs a log entry
+     - parameter logEntry: The log entry
+     */
     func log(_ logEntry: LogEntry) {
         self.liveLogViewController.log(logEntry)
     }
@@ -39,11 +48,19 @@ var documentInteractionController: UIDocumentInteractionController!
 
 extension LiveLogCoordinator: LiveLogViewControllerDelegate {
 
+    /**
+     Dismisses the view controller
+     */
     func back() {
         UiLogger.shared.shown = false
         self.liveLogViewController.dismiss(animated: true, completion: nil)
     }
 
+    /**
+     Converts the logged text to HTML
+     and presents the document interaction dialog to handle the file
+     - parameter sender: The pressed UI bar button
+     */
     func action(sender: UIBarButtonItem) {
         // Get attributed text
         guard let text = liveLogViewController.textView.attributedText else {

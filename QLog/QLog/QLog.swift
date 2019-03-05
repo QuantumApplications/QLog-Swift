@@ -6,6 +6,8 @@
 //  Copyright © 2017 Quantum. All rights reserved.
 //
 
+// MARK: - Static error functions
+
 public func QLogHighlight<T>(file: String = #file, function: String = #function, line: Int = #line, _ object: T) {
     QLog.log(LogEntry(date: Date(), file: file, function: function, line: line, logLevel: .highlight, text: "\(object)"))
 }
@@ -26,6 +28,9 @@ public func QLogError<T>(file: String = #file, function: String = #function, lin
     QLog.log(LogEntry(date: Date(), file: file, function: function, line: line, logLevel: .error, text: "\(object)"))
 }
 
+/**
+ Global static class to hold all log settings
+ */
 public class QLog {
 
     public struct Images {
@@ -53,6 +58,10 @@ public class QLog {
     public static var colorError = UIColor.red
     public static var colorText = UIColor.black
 
+    /**
+     Logs a log entry to all attached loggers
+     - parameter logEntry: The log entry
+     */
     static func log(_ logEntry: LogEntry) {
         for logger in QLog.loggers {
             logger.log(logEntry)

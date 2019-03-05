@@ -8,6 +8,7 @@
 
 extension LogLevel {
 
+    /// Associates a emoji with each log level
     var emoji: String {
         switch self {
         case .highlight:
@@ -25,6 +26,11 @@ extension LogLevel {
 
 }
 
+/**
+ Logger to log into Xcode console.
+ Since Xcode console does not support coloring
+ each log message is wrapped into a corresponding pair of emojis.
+ */
 public class XcodeLogger: Logger {
 
     public var logLevel: LogLevel = .highlight

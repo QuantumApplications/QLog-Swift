@@ -10,6 +10,10 @@ import UIKit
 
 protocol LogsTableViewControllerDelegate: class {
 
+    /**
+     A log file was selected
+     - parameter log: The log file URL
+     */
     func didSelect(_ log: URL)
 
 }

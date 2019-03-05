@@ -8,6 +8,7 @@
 
 extension LogLevel {
 
+    /// Associates a string with each log level
     var text: String {
         switch self {
         case .highlight:
@@ -25,6 +26,12 @@ extension LogLevel {
 
 }
 
+/**
+ Logger to log into file.
+ For each target of the application (host app, share extension etc.)
+ a new subdirectory is created.
+ For each start of the application a new log file is created in this subdirectory.
+ */
 public class FileLogger: Logger {
 
     public var logLevel: LogLevel = .info
@@ -34,11 +41,19 @@ public class FileLogger: Logger {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return dateFormatter
     }()
+    /// The name of the target (host app, share extension etc.)
     static let targetName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Application"
 
     let logFileHandle: FileHandle?
     let logUrl: URL
 
+    /**
+     Creates a new file logger with a new log file.
+     The log file is stored in a subdirectory for the target name.
+     The subdirectory is stored at the log url.
+     - parameter logLevel: The log level. Default is info.
+     - parameter logUrl: The URL to store the log data at. Default is "log" in documents directory.
+     */
     public init(logLevel: LogLevel = .info, logUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")) {
         self.logLevel = logLevel
         self.logUrl = logUrl

@@ -10,7 +10,9 @@ import UIKit
 
 protocol AppsTableViewControllerDelegate: class {
 
+    /// Goes back
     func back()
+    /// Shows log files of an application target
     func show(_ app: URL)
 
 }

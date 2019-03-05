@@ -6,6 +6,7 @@
 //  Copyright © 2018 Quantum. All rights reserved.
 //
 
+/// The enum defining the log levels
 public enum LogLevel: Int {
 
     case highlight = 4

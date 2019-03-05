@@ -10,11 +10,16 @@ import Foundation
 import MobileCoreServices
 import Zip
 
+/// Coordinates handling of support packages
 class SupportPackageCoordinator: Coordinator {
 
     private let navigationController: UINavigationController
     private let supportPackageViewController: SupportPackageViewController
 
+    /**
+     Creates a new support package coordinator
+     - parameter navigationController: The navigation controller to use
+     */
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.supportPackageViewController = SupportPackageViewController()
@@ -38,13 +43,21 @@ extension SupportPackageCoordinator: SupportPackageViewControllerDelegate {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return dateFormatter
     }()
+    /// The name of the target (host app, share extension etc.)
     private static let targetName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Application"
 
+    /**
+     Dismisses the view controller
+     */
     func back() {
         UiLogger.shared.shown = false
         self.supportPackageViewController.dismiss(animated: true, completion: nil)
     }
 
+    /**
+     Compresses and archives all log files
+     and presents the document interaction dialog to handle the ZIP file
+     */
     func generateSupportPackage() {
         // Zip log files
         let zipDirectoryUrl = URL(fileURLWithPath: NSTemporaryDirectory())

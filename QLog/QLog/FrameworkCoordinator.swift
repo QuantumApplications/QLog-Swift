@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// Coordinates handling of the framework
 class FrameworkCoordinator: RootViewCoordinator {
 
     let appsTableCoordinator: AppsTableCoordinator

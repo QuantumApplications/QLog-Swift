@@ -8,12 +8,17 @@
 
 import Foundation
 
+/// Coordinates handling of archived logs
 class ArchiveLogCoordinator: Coordinator {
 
     private let navigationController: UINavigationController
     private let archiveLogViewController: ArchiveLogViewController
     private let log: URL
 
+    /**
+     Creates a new archive log coordinator
+     - parameter navigationController: The navigation controller to use
+     */
     init(navigationController: UINavigationController, log: URL) {
         self.navigationController = navigationController
         self.archiveLogViewController = ArchiveLogViewController()

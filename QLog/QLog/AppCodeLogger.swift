@@ -14,6 +14,7 @@ let ansiResetSequence = "\(escape)[\(ansiReset)"
 
 extension LogLevel {
 
+    /// Associates an ansi color with each log level
     var ansiColor: String {
         switch self {
         case .highlight:
@@ -35,6 +36,9 @@ extension LogLevel {
 
 }
 
+/**
+ Logger to log into AppCode console.
+ */
 public class AppCodeLogger: Logger {
 
     public var logLevel: LogLevel = .highlight

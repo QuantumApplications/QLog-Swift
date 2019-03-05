@@ -8,6 +8,7 @@
 
 extension LogLevel {
 
+    /// Associates a UI color with each log level
     var color: UIColor {
         switch self {
         case .highlight:
@@ -24,26 +25,40 @@ extension LogLevel {
     }
 
 }
-
+/**
+ Logger to allow live logging.
+ Also shows archive and support package views.
+ Logger is shown via swipe gesture of corner swipe controller.
+ */
 public class UiLogger: Logger {
 
+    /// The shared UI logger
     public static var shared: UiLogger {
         return UiLogger.sharedUiLogger
     }
 
+    /// The log level
     public var logLevel: LogLevel = .info
 
     lazy var frameworkCoordinator: FrameworkCoordinator = FrameworkCoordinator()
 
     var logUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")
 
+    /// True if logger is shown via framework coordinator
     var shown = false
 
+    /// The internal shared UI logger
     private static var sharedUiLogger: UiLogger = {
         return UiLogger()
     }()
 
-    public func with (logLevel: LogLevel = .info, logUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")) -> UiLogger {
+    /**
+     Changes log level and log url of the shared UI logger and returns it
+     - parameter logLevel: The new log level. Default is info.
+     - parameter logUrl: The new log URL. Default is "log" in documents directory.
+     - returns: The shared UI logger
+     */
+    public func with(logLevel: LogLevel = .info, logUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log")) -> UiLogger {
         UiLogger.sharedUiLogger.logLevel = logLevel
         UiLogger.sharedUiLogger.logUrl = logUrl
         return UiLogger.sharedUiLogger
@@ -55,6 +70,10 @@ public class UiLogger: Logger {
         }
     }
 
+    /**
+     Creates a new UI logger
+     and add the framework coordinator to the corner swipe controller
+     */
     private init() {
         // Add QLog to CornerSwipeController
         CornerSwipeController.topRightCornerHandler = {
