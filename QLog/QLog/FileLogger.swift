@@ -36,16 +36,16 @@ public class FileLogger: Logger {
 
     public var logLevel: LogLevel = .info
 
-    static let dateFormatter: DateFormatter = {
+    private static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return dateFormatter
     }()
     /// The name of the target (host app, share extension etc.)
-    static let targetName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Application"
+    private static let targetName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Application"
 
-    let logFileHandle: FileHandle?
-    let logUrl: URL
+    private let logFileHandle: FileHandle?
+    private let logUrl: URL
 
     /**
      Creates a new file logger with a new log file.

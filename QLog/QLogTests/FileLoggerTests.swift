@@ -20,49 +20,6 @@ class FileLoggerTests: XCTestCase {
         XCTAssertEqual(LogLevel.error.text, "[ERROR]")
     }
 
-    func testInit() {
-        // 3. Assert
-        XCTAssertEqual(FileLogger().logLevel, .info)
-        XCTAssertNotNil(FileLogger().logFileHandle)
-        XCTAssertEqual(FileLogger().logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
-    }
-
-    func testInitWithLogLevel() {
-        // 1. Arrange
-        let fileLogger = FileLogger(logLevel: .error)
-
-        // 3. Assert
-        XCTAssertEqual(fileLogger.logLevel, .error)
-        XCTAssertNotNil(fileLogger.logFileHandle)
-        XCTAssertEqual(fileLogger.logUrl, FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log"))
-    }
-
-    func testInitWithLogUrl() {
-        // 1. Arrange
-        let logUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("test")
-
-        // 2. Action
-        let fileLogger = FileLogger(logUrl: logUrl)
-
-        // 3. Assert
-        XCTAssertEqual(fileLogger.logLevel, .info)
-        XCTAssertNotNil(fileLogger.logFileHandle)
-        XCTAssertEqual(fileLogger.logUrl, logUrl)
-    }
-
-    func testInitWithWrongLogUrl() {
-        // 1. Arrange
-        let logUrl = URL(string: "file://")!
-
-        // 2. Action
-        let fileLogger = FileLogger(logUrl: logUrl)
-
-        // 3. Assert
-        XCTAssertEqual(fileLogger.logLevel, .info)
-        XCTAssertNil(fileLogger.logFileHandle)
-        XCTAssertEqual(fileLogger.logUrl, logUrl)
-    }
-
     func testDoLog() {
         // 1. Arrange
         let dateString = "04:07:11"
