@@ -10,6 +10,13 @@
 import Cuckoo
 import XCTest
 
+class LiveLogViewControllerMock: LiveLogViewController {
+    var scrolled = false
+    override func scroll() {
+        self.scrolled = true
+    }
+}
+
 class LiveLogViewControllerTests: XCTestCase {
 
     func testInit() {
@@ -37,12 +44,6 @@ class LiveLogViewControllerTests: XCTestCase {
 
     func testLog() {
         // 1. Arrange
-        class LiveLogViewControllerMock: LiveLogViewController {
-            var scrolled = false
-            override func scroll() {
-                self.scrolled = true
-            }
-        }
         let logEntry = LogEntry(date: Date(), file: "", function: "", line: 0, logLevel: .error, text: "Text")
         let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedString.Key.foregroundColor: QLog.colorText, NSAttributedString.Key.font: LiveLogViewController.font])
         let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedString.Key.foregroundColor: logEntry.logLevel.color, NSAttributedString.Key.font: LiveLogViewController.font])
@@ -60,12 +61,6 @@ class LiveLogViewControllerTests: XCTestCase {
 
     func testLogTwice() {
         // 1. Arrange
-        class LiveLogViewControllerMock: LiveLogViewController {
-            var scrolled = false
-            override func scroll() {
-                self.scrolled = true
-            }
-        }
         let logEntry = LogEntry(date: Date(), file: "", function: "", line: 0, logLevel: .error, text: "Text")
         let logEntry2 = LogEntry(date: Date(), file: "", function: "", line: 0, logLevel: .error, text: "Text 2")
         let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedString.Key.foregroundColor: QLog.colorText, NSAttributedString.Key.font: LiveLogViewController.font])

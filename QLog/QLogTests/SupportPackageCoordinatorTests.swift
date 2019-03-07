@@ -38,7 +38,7 @@ class SupportPackageCoordinatorTests: XCTestCase {
         supportPackageCoordinator.back()
 
         // 3. Assert
-        XCTAssertFalse(UiLogger.shared.shown ?? true)
+        XCTAssertFalse(UiLogger.shared.shown)
     }
 
 }

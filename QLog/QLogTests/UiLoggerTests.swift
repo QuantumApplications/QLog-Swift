@@ -12,6 +12,12 @@ import XCTest
 
 class UiLoggerTests: XCTestCase {
 
+    private static let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss"
+        return dateFormatter
+    }()
+
     func testText() {
         // 3. Assert
         XCTAssertEqual(LogLevel.highlight.color, QLog.colorHighlight)
@@ -56,16 +62,7 @@ class UiLoggerTests: XCTestCase {
                 expectation.fulfill()
             }
         }
-        let dateString = "04:07:11"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss"
-        let date = dateFormatter.date(from: dateString)!
-        let path = "Directory/File.dat"
-        let function = "Function"
-        let line = 0
-        let logLevel: LogLevel = .error
-        let text = "Text"
-        let logEntry = LogEntry(date: date, file: path, function: function, line: line, logLevel: logLevel, text: text)
+        let logEntry = LogEntry(date: UiLoggerTests.dateFormatter.date(from: "04:07:11")!, file: "Directory/File.dat", function: "Function", line: 0, logLevel: .error, text: "Text")
         let uiLogger = UiLogger.shared
         uiLogger.frameworkCoordinator.liveLogCoordinator = liveLogCoordinator
 
