@@ -6,12 +6,6 @@
 //  Copyright © 2018 Quantum. All rights reserved.
 //
 
-let escape  = "\u{001b}"
-let ansiBold  = "1m"
-let ansiReset = "0m"
-let ansiBoldSequence = "\(escape)[\(ansiBold)"
-let ansiResetSequence = "\(escape)[\(ansiReset)"
-
 extension LogLevel {
 
     /// Associates an ansi color with each log level
@@ -31,8 +25,10 @@ extension LogLevel {
     }
 
     var ansiColorSequence: String {
-        return "\(escape)[\(self.ansiColor)"
+        return "\(LogLevel.escape)[\(self.ansiColor)"
     }
+
+    private static let escape  = "\u{001b}"
 
 }
 
@@ -43,16 +39,20 @@ public class AppCodeLogger: Logger {
 
     public var logLevel: LogLevel = .highlight
 
-    static let ansiTextColor = "37m"
-
-    static let ansiTextSequence = "\(escape)[\(ansiTextColor)"
+    private static let ansiTextColor = "37m"
+    private static let escape  = "\u{001b}"
+    private static let ansiBold  = "1m"
+    private static let ansiReset = "0m"
+    private static let ansiBoldSequence = "\(escape)[\(ansiBold)"
+    private static let ansiResetSequence = "\(escape)[\(ansiReset)"
+    private static let ansiTextSequence = "\(escape)[\(ansiTextColor)"
 
     public init(logLevel: LogLevel = .highlight) {
         self.logLevel = logLevel
     }
 
     public func doLog(_ logEntry: LogEntry) {
-        print("\(ansiBoldSequence)\(AppCodeLogger.ansiTextSequence)\(logEntry.metaText)\(ansiBoldSequence)\(logEntry.logLevel.ansiColorSequence)\(logEntry.text)\(ansiResetSequence)")
+        print("\(AppCodeLogger.ansiBoldSequence)\(AppCodeLogger.ansiTextSequence)\(logEntry.metaText)\(AppCodeLogger.ansiBoldSequence)\(logEntry.logLevel.ansiColorSequence)\(logEntry.text)\(AppCodeLogger.ansiResetSequence)")
     }
 
 }
