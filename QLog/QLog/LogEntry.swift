@@ -18,7 +18,7 @@ public struct LogEntry: Equatable {
     let logLevel: LogLevel
     let text: String
 
-    static let dateFormatter: DateFormatter = {
+    static private let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm:ss"
         return dateFormatter
