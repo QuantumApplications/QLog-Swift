@@ -12,9 +12,9 @@ import UIKit
 /// Coordinates handling of the framework
 class FrameworkCoordinator: RootViewCoordinator {
 
-    let appsTableCoordinator: AppsTableCoordinator
+    private let appsTableCoordinator: AppsTableCoordinator
     var liveLogCoordinator: LiveLogCoordinator
-    let supportPackageCoordinator: SupportPackageCoordinator
+    private let supportPackageCoordinator: SupportPackageCoordinator
 
     var rootViewController: UIViewController {
         return self.tabbarController
