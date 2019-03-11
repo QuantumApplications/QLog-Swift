@@ -19,8 +19,6 @@ protocol LiveLogViewControllerDelegate: class {
 
 class LiveLogViewController: UIViewController {
 
-    static let font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
-
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var logLevelSegmentedControl: UISegmentedControl!
@@ -46,8 +44,8 @@ class LiveLogViewController: UIViewController {
     }
 
     func log(_ logEntry: LogEntry) {
-        let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedString.Key.foregroundColor: QLog.colorText, NSAttributedString.Key.font: LiveLogViewController.font])
-        let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedString.Key.foregroundColor: logEntry.logLevel.color, NSAttributedString.Key.font: LiveLogViewController.font])
+        let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedString.Key.foregroundColor: QLog.colorText, NSAttributedString.Key.font: QLog.font])
+        let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedString.Key.foregroundColor: logEntry.logLevel.color, NSAttributedString.Key.font: QLog.font])
         let oldText = NSMutableAttributedString(attributedString: (self.textView.attributedText))
         oldText.append(attributedMetaText)
         oldText.append(attributedText)

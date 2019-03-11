@@ -45,8 +45,8 @@ class LiveLogViewControllerTests: XCTestCase {
     func testLog() {
         // 1. Arrange
         let logEntry = LogEntry(date: Date(), file: "", function: "", line: 0, logLevel: .error, text: "Text")
-        let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedString.Key.foregroundColor: QLog.colorText, NSAttributedString.Key.font: LiveLogViewController.font])
-        let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedString.Key.foregroundColor: logEntry.logLevel.color, NSAttributedString.Key.font: LiveLogViewController.font])
+        let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedString.Key.foregroundColor: QLog.colorText, NSAttributedString.Key.font: QLog.font])
+        let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedString.Key.foregroundColor: logEntry.logLevel.color, NSAttributedString.Key.font: QLog.font])
         let attributedTesttext = attributedMetaText
         attributedTesttext.append(attributedText)
         let liveLogViewController = LiveLogViewControllerMock()
@@ -63,10 +63,10 @@ class LiveLogViewControllerTests: XCTestCase {
         // 1. Arrange
         let logEntry = LogEntry(date: Date(), file: "", function: "", line: 0, logLevel: .error, text: "Text")
         let logEntry2 = LogEntry(date: Date(), file: "", function: "", line: 0, logLevel: .error, text: "Text 2")
-        let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedString.Key.foregroundColor: QLog.colorText, NSAttributedString.Key.font: LiveLogViewController.font])
-        let attributedMetaText2 = NSMutableAttributedString(string: "\n\(logEntry2.metaText)", attributes: [NSAttributedString.Key.foregroundColor: QLog.colorText, NSAttributedString.Key.font: LiveLogViewController.font])
-        let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedString.Key.foregroundColor: logEntry.logLevel.color, NSAttributedString.Key.font: LiveLogViewController.font])
-        let attributedText2 = NSMutableAttributedString(string: "\(logEntry2.text)", attributes: [NSAttributedString.Key.foregroundColor: logEntry.logLevel.color, NSAttributedString.Key.font: LiveLogViewController.font])
+        let attributedMetaText = NSMutableAttributedString(string: "\n\(logEntry.metaText)", attributes: [NSAttributedString.Key.foregroundColor: QLog.colorText, NSAttributedString.Key.font: QLog.font])
+        let attributedMetaText2 = NSMutableAttributedString(string: "\n\(logEntry2.metaText)", attributes: [NSAttributedString.Key.foregroundColor: QLog.colorText, NSAttributedString.Key.font: QLog.font])
+        let attributedText = NSMutableAttributedString(string: "\(logEntry.text)", attributes: [NSAttributedString.Key.foregroundColor: logEntry.logLevel.color, NSAttributedString.Key.font: QLog.font])
+        let attributedText2 = NSMutableAttributedString(string: "\(logEntry2.text)", attributes: [NSAttributedString.Key.foregroundColor: logEntry.logLevel.color, NSAttributedString.Key.font: QLog.font])
         let attributedTestText = attributedMetaText
         attributedTestText.append(attributedText)
         attributedTestText.append(attributedMetaText2)

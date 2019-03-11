@@ -57,6 +57,7 @@ public class QLog {
     public static var colorWarning = UIColor.orange
     public static var colorError = UIColor.red
     public static var colorText = UIColor.black
+    public static var font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
 
     /**
      Logs a log entry to all attached loggers
