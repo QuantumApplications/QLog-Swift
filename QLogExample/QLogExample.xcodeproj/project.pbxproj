@@ -67,7 +67,6 @@
 		9F6AAA962017E20100DB49A0 = {
 			isa = PBXGroup;
 			children = (
-				9F4E7F042050853A00892524 /* Default-568h@2x.png */,
 				9F6AAAA12017E20100DB49A0 /* QLogExample */,
 				9F6AAAA02017E20100DB49A0 /* Products */,
 				9F2D685F202B4CD100145E52 /* QLog.framework */,
@@ -88,6 +87,7 @@
 				9FAC408A209FAE8F0037B2DC /* Main */,
 				9F2F51AE209FADF700199E81 /* Util */,
 				9FEBC207209FAE4500108158 /* View Controllers */,
+				9F4E7F042050853A00892524 /* Default-568h@2x.png */,
 				9F56D22620434D3C0051A25F /* Localizable.strings */,
 				9F6AAAAE2017E20100DB49A0 /* Info.plist */,
 				9F2087BD21F284C000427BE3 /* .swiftlint.yml */,
