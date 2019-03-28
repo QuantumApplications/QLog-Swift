@@ -682,7 +682,6 @@
 				TargetAttributes = {
 					9F48D0C22210C76000DB9472 = {
 						CreatedOnToolsVersion = 10.1;
-						DevelopmentTeam = HK9FBL7C9X;
 						ProvisioningStyle = Automatic;
 					};
 					9FE859FA1EFAA73600560920 = {
@@ -692,7 +691,6 @@
 					};
 					9FE85A031EFAA73700560920 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = HK9FBL7C9X;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9F48D0C22210C76000DB9472;
@@ -977,7 +975,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HK9FBL7C9X;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = QLogTestsHostApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -999,7 +997,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HK9FBL7C9X;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = QLogTestsHostApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1176,7 +1174,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = HK9FBL7C9X;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = QLogTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qa.quantum.QLogTests;
@@ -1189,7 +1187,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = HK9FBL7C9X;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = QLogTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qa.quantum.QLogTests;

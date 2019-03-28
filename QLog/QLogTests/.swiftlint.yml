@@ -22,4 +22,4 @@ file_length:
   error: 1200
 function_body_length: 15
 cyclomatic_complexity: 5
-function_parameter_count: 4
+function_parameter_count: 2
