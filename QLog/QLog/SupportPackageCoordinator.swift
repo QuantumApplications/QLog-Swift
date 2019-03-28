@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import MobileCoreServices
-import Zip
 
 /// Coordinates handling of support packages
 class SupportPackageCoordinator: Coordinator {
@@ -38,14 +36,6 @@ class SupportPackageCoordinator: Coordinator {
 
 extension SupportPackageCoordinator: SupportPackageViewControllerDelegate {
 
-    private static let dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return dateFormatter
-    }()
-    /// The name of the target (host app, share extension etc.)
-    private static let targetName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Application"
-
     /**
      Dismisses the view controller
      */
@@ -59,20 +49,7 @@ extension SupportPackageCoordinator: SupportPackageViewControllerDelegate {
      and presents the document interaction dialog to handle the ZIP file
      */
     func generateSupportPackage() {
-        // Zip log files
-        let zipDirectoryUrl = URL(fileURLWithPath: NSTemporaryDirectory())
-        let zipFileUrl = zipDirectoryUrl.appendingPathComponent("Support Package \(SupportPackageCoordinator.targetName) \(SupportPackageCoordinator.dateFormatter.string(from: Date())).zip")
-        let logPathUrl = UiLogger.shared.logUrl
-        guard (try? Zip.zipFiles(paths: [logPathUrl], zipFilePath: zipFileUrl, password: nil, progress: { progress in
-            print(progress)
-        })) != nil else {
-            return
-        }
-        // Share zip file
-        documentInteractionController = UIDocumentInteractionController()
-        documentInteractionController.url = zipFileUrl
-        documentInteractionController.uti = String(kUTTypeZipArchive)
-        documentInteractionController.presentOptionsMenu(from: supportPackageViewController.view.frame, in: supportPackageViewController.view, animated: true)
+        QLog.generateSupportPackage(viewController: self.supportPackageViewController)
     }
 
 }
