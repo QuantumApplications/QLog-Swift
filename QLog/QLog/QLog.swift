@@ -6,6 +6,9 @@
 //  Copyright © 2017 Quantum. All rights reserved.
 //
 
+import MobileCoreServices
+import Zip
+
 // MARK: - Static error functions
 
 public func QLogHighlight<T>(file: String = #file, function: String = #function, line: Int = #line, _ object: T) {
@@ -33,6 +36,15 @@ public func QLogError<T>(file: String = #file, function: String = #function, lin
  */
 public class QLog {
 
+    private static let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return dateFormatter
+    }()
+
+    /// The name of the target (host app, share extension etc.)
+    private static let targetName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Application"
+
     public struct Images {
 
         public static var archive = UIImage()
@@ -58,6 +70,21 @@ public class QLog {
     public static var colorError = UIColor.red
     public static var colorText = UIColor.black
     public static var font = UIFont.monospacedDigitSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
+
+    public static func generateSupportPackage(viewController: UIViewController) {
+        // Zip log files
+        let zipDirectoryUrl = URL(fileURLWithPath: NSTemporaryDirectory())
+        let zipFileUrl = zipDirectoryUrl.appendingPathComponent("Support Package \(QLog.targetName) \(QLog.dateFormatter.string(from: Date())).zip")
+        let logPathUrl = UiLogger.shared.logUrl
+        guard (try? Zip.zipFiles(paths: [logPathUrl], zipFilePath: zipFileUrl, password: nil, progress: { _ in })) != nil else {
+            return
+        }
+        // Share zip file
+        documentInteractionController = UIDocumentInteractionController()
+        documentInteractionController.url = zipFileUrl
+        documentInteractionController.uti = String(kUTTypeZipArchive)
+        documentInteractionController.presentOptionsMenu(from: viewController.view.frame, in: viewController.view, animated: true)
+    }
 
     /**
      Logs a log entry to all attached loggers

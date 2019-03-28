@@ -2,18 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:QLog/QLog.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:QLogExample/QLogExample.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:LICENSE">
    </FileRef>
    <FileRef
       location = "group:README.md">
    </FileRef>
    <FileRef
-      location = "group:QLog/../.travis.yml">
-   </FileRef>
-   <FileRef
-      location = "group:QLog/QLog.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:QLogExample/QLogExample.xcodeproj">
+      location = "group:.travis.yml">
    </FileRef>
 </Workspace>
