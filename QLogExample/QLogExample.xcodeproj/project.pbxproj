@@ -155,7 +155,9 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
 				Base,
+				de,
 			);
 			mainGroup = 9F6AAA962017E20100DB49A0;
 			productRefGroup = 9F6AAAA02017E20100DB49A0 /* Products */;
