@@ -1,6 +1,0 @@
-[submodule "Frameworks/Cuckoo"]
-	path = Frameworks/Cuckoo
-	url = https://github.com/Brightify/Cuckoo
-[submodule "Frameworks/Zip"]
-	path = Frameworks/Zip
-	url = https://github.com/marmelroy/Zip.git

@@ -266,3 +266,4 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 /QLog/QLogTests/GeneratedMocks.swift
+/QLog/Carthage

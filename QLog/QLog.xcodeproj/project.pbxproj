@@ -44,10 +44,11 @@
 		9F57DAEA222885600024FE5B /* LogsTableCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57DAE9222885600024FE5B /* LogsTableCoordinatorTests.swift */; };
 		9F57DAEC222885600024FE5B /* ArchiveLogCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57DAEB222885600024FE5B /* ArchiveLogCoordinatorTests.swift */; };
 		9F57DAEF222B2E120024FE5B /* LiveLogCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57DAEE222B2E120024FE5B /* LiveLogCoordinatorTests.swift */; };
+		9F6B9600228F4E91006433F0 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6B95FF228F4E91006433F0 /* Zip.framework */; };
+		9F6B9602228F4EB8006433F0 /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6B9601228F4EB8006433F0 /* Cuckoo.framework */; };
 		9F9A5EB5221A0396006A105B /* SupportPackageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EB4221A0396006A105B /* SupportPackageCoordinator.swift */; };
 		9F9A5EC1221B73E5006A105B /* ArchiveLogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EC0221B73E5006A105B /* ArchiveLogCoordinator.swift */; };
 		9F9A5EC3221B75B5006A105B /* LogsTableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EC2221B75B5006A105B /* LogsTableCoordinator.swift */; };
-		9FA687482055DA3900CD877D /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA6873E2055D9B800CD877D /* Cuckoo.framework */; };
 		9FE85A051EFAA73700560920 /* QLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE859FB1EFAA73600560920 /* QLog.framework */; };
 		9FE85A0C1EFAA73700560920 /* QLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FE859FE1EFAA73600560920 /* QLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FE85A3F1EFAA85500560920 /* QLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85A3E1EFAA85500560920 /* QLog.swift */; };
@@ -60,7 +61,6 @@
 		9FF41642202E00A400566B93 /* FileLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41641202E00A400566B93 /* FileLogger.swift */; };
 		9FF41644202E012100566B93 /* UiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41643202E012100566B93 /* UiLogger.swift */; };
 		9FF41646202E14A500566B93 /* AppCodeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF41645202E14A400566B93 /* AppCodeLogger.swift */; };
-		D270AF642099B0DF0059AE0F /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D270AF592099B0C10059AE0F /* Zip.framework */; };
 		D270AF6A2099B1AD0059AE0F /* SupportPackageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D270AF682099B1AD0059AE0F /* SupportPackageViewController.xib */; };
 		D270AF6B2099B1AD0059AE0F /* SupportPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D270AF692099B1AD0059AE0F /* SupportPackageViewController.swift */; };
 		D2B472CA1F6ABBF700823E27 /* CornerSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */; };
@@ -74,89 +74,12 @@
 			remoteGlobalIDString = 9F48D0C22210C76000DB9472;
 			remoteInfo = QLogTestsHostApp;
 		};
-		9FA6873D2055D9B800CD877D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 18E2A28D1FBB1CFC0058FEC5;
-			remoteInfo = "Cuckoo-iOS";
-		};
-		9FA6873F2055D9B800CD877D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 18E2A2B61FBB211F0058FEC5;
-			remoteInfo = Cuckoo_iOSTests;
-		};
-		9FA687412055D9B800CD877D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 18E2A29B1FBB1D400058FEC5;
-			remoteInfo = "Cuckoo-macOS";
-		};
-		9FA687432055D9B800CD877D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 18E2A2A71FBB20830058FEC5;
-			remoteInfo = Cuckoo_macOSTests;
-		};
-		9FA687452055D9C400CD877D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 18E2A28C1FBB1CFC0058FEC5;
-			remoteInfo = "Cuckoo-iOS";
-		};
 		9FE85A061EFAA73700560920 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9FE859F21EFAA73600560920 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9FE859FA1EFAA73600560920;
 			remoteInfo = QLog;
-		};
-		D270AF582099B0C10059AE0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 347E3A741C1DFFB500A11FD3;
-			remoteInfo = Zip;
-		};
-		D270AF5A2099B0C10059AE0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 347E3A7E1C1DFFB500A11FD3;
-			remoteInfo = ZipTests;
-		};
-		D270AF5C2099B0C10059AE0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 343F50FF1C8DAEEC0028C434;
-			remoteInfo = "Zip OSX";
-		};
-		D270AF5E2099B0C10059AE0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 343F51081C8DAEEC0028C434;
-			remoteInfo = "Zip OSXTests";
-		};
-		D270AF602099B0C10059AE0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 342545B51CE525B200336074;
-			remoteInfo = "Zip tvOS";
-		};
-		D270AF622099B0D20059AE0F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 347E3A731C1DFFB500A11FD3;
-			remoteInfo = Zip;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -190,11 +113,13 @@
 		9F57DAEE222B2E120024FE5B /* LiveLogCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveLogCoordinatorTests.swift; sourceTree = "<group>"; };
 		9F64F8C2203CD16E00328249 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
 		9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLoggerTests.swift; sourceTree = "<group>"; };
+		9F6B95F6228F4BA0006433F0 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
+		9F6B95FF228F4E91006433F0 /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = Carthage/Build/iOS/Zip.framework; sourceTree = "<group>"; };
+		9F6B9601228F4EB8006433F0 /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
 		9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		9F9A5EB4221A0396006A105B /* SupportPackageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPackageCoordinator.swift; sourceTree = "<group>"; };
 		9F9A5EC0221B73E5006A105B /* ArchiveLogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveLogCoordinator.swift; sourceTree = "<group>"; };
 		9F9A5EC2221B75B5006A105B /* LogsTableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsTableCoordinator.swift; sourceTree = "<group>"; };
-		9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cuckoo.xcodeproj; path = ../../Frameworks/Cuckoo/Cuckoo.xcodeproj; sourceTree = "<group>"; };
 		9FA687492055DB3800CD877D /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		9FA6874D2055DC0A00CD877D /* QLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QLogTests.swift; sourceTree = "<group>"; };
 		9FAC409320A4E2EC0037B2DC /* ArchiveLogViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveLogViewControllerTests.swift; sourceTree = "<group>"; };
@@ -221,7 +146,6 @@
 		9FFD182420460C6700C1814E /* AppCodeLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCodeLoggerTests.swift; sourceTree = "<group>"; };
 		9FFD18262047629100C1814E /* FileLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLoggerTests.swift; sourceTree = "<group>"; };
 		9FFD18282048B22D00C1814E /* UiLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiLoggerTests.swift; sourceTree = "<group>"; };
-		D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Zip.xcodeproj; path = ../../Frameworks/Zip/Zip.xcodeproj; sourceTree = "<group>"; };
 		D270AF682099B1AD0059AE0F /* SupportPackageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupportPackageViewController.xib; sourceTree = "<group>"; };
 		D270AF692099B1AD0059AE0F /* SupportPackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPackageViewController.swift; sourceTree = "<group>"; };
 		D2B472C91F6ABBF700823E27 /* CornerSwipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerSwipeController.swift; sourceTree = "<group>"; };
@@ -239,7 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D270AF642099B0DF0059AE0F /* Zip.framework in Frameworks */,
+				9F6B9600228F4E91006433F0 /* Zip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FA687482055DA3900CD877D /* Cuckoo.framework in Frameworks */,
+				9F6B9602228F4EB8006433F0 /* Cuckoo.framework in Frameworks */,
 				9FE85A051EFAA73700560920 /* QLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +317,15 @@
 			name = Loggers;
 			sourceTree = "<group>";
 		};
+		9F6B95FE228F4E90006433F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F6B9601228F4EB8006433F0 /* Cuckoo.framework */,
+				9F6B95FF228F4E91006433F0 /* Zip.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9F9A5EBD221B733A006A105B /* Live */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,27 +359,6 @@
 				98C446DD725BF0CE15FBEA6D /* TableViewCell.xib */,
 			);
 			name = "Table View Cells";
-			sourceTree = "<group>";
-		};
-		9FA687342055D99600CD877D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */,
-				D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */,
-			);
-			name = Frameworks;
-			path = QLog;
-			sourceTree = "<group>";
-		};
-		9FA687362055D9B800CD877D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9FA6873E2055D9B800CD877D /* Cuckoo.framework */,
-				9FA687402055D9B800CD877D /* Cuckoo_iOSTests.xctest */,
-				9FA687422055D9B800CD877D /* Cuckoo.framework */,
-				9FA687442055D9B800CD877D /* Cuckoo_macOSTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		9FAC408B20A39CC70037B2DC /* Main */ = {
@@ -500,8 +412,8 @@
 				9FE859FD1EFAA73600560920 /* QLog */,
 				9FE85A081EFAA73700560920 /* QLogTests */,
 				9F48D0C42210C76000DB9472 /* QLogTestsHostApp */,
-				9FA687342055D99600CD877D /* Frameworks */,
 				9FE859FC1EFAA73600560920 /* Products */,
+				9F6B95FE228F4E90006433F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -543,6 +455,7 @@
 				9FA687492055DB3800CD877D /* GeneratedMocks.swift */,
 				9FE85A0B1EFAA73700560920 /* Info.plist */,
 				9F4BC0E72093CB9B00BDA8EB /* .swiftlint.yml */,
+				9F6B95F6228F4BA0006433F0 /* Cartfile */,
 			);
 			path = QLogTests;
 			sourceTree = "<group>";
@@ -585,18 +498,6 @@
 			name = Loggers;
 			sourceTree = "<group>";
 		};
-		D270AF4E2099B0C10059AE0F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D270AF592099B0C10059AE0F /* Zip.framework */,
-				D270AF5B2099B0C10059AE0F /* ZipTests.xctest */,
-				D270AF5D2099B0C10059AE0F /* Zip.framework */,
-				D270AF5F2099B0C10059AE0F /* Zip OSXTests.xctest */,
-				D270AF612099B0C10059AE0F /* Zip.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -632,6 +533,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FE85A0F1EFAA73700560920 /* Build configuration list for PBXNativeTarget "QLog" */;
 			buildPhases = (
+				9F6B9605228F57F8006433F0 /* ShellScript */,
 				9FE859F61EFAA73600560920 /* Sources */,
 				9FE859F71EFAA73600560920 /* Frameworks */,
 				9FE859F81EFAA73600560920 /* Headers */,
@@ -641,7 +543,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D270AF632099B0D20059AE0F /* PBXTargetDependency */,
 			);
 			name = QLog;
 			productName = QLog;
@@ -652,6 +553,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FE85A121EFAA73700560920 /* Build configuration list for PBXNativeTarget "QLogTests" */;
 			buildPhases = (
+				9F6B9603228F5730006433F0 /* ShellScript */,
 				9FA687472055DA0700CD877D /* ShellScript */,
 				9FE85A001EFAA73700560920 /* Sources */,
 				9FE85A011EFAA73700560920 /* Frameworks */,
@@ -661,7 +563,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				9FA687462055D9C400CD877D /* PBXTargetDependency */,
 				9FE85A071EFAA73700560920 /* PBXTargetDependency */,
 				9F48D0E22210C76000DB9472 /* PBXTargetDependency */,
 			);
@@ -709,16 +610,6 @@
 			mainGroup = 9FE859F11EFAA73600560920;
 			productRefGroup = 9FE859FC1EFAA73600560920 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 9FA687362055D9B800CD877D /* Products */;
-					ProjectRef = 9FA687352055D9B800CD877D /* Cuckoo.xcodeproj */;
-				},
-				{
-					ProductGroup = D270AF4E2099B0C10059AE0F /* Products */;
-					ProjectRef = D270AF4D2099B0C10059AE0F /* Zip.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				9FE859FA1EFAA73600560920 /* QLog */,
@@ -727,72 +618,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		9FA6873E2055D9B800CD877D /* Cuckoo.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Cuckoo.framework;
-			remoteRef = 9FA6873D2055D9B800CD877D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9FA687402055D9B800CD877D /* Cuckoo_iOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = Cuckoo_iOSTests.xctest;
-			remoteRef = 9FA6873F2055D9B800CD877D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9FA687422055D9B800CD877D /* Cuckoo.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Cuckoo.framework;
-			remoteRef = 9FA687412055D9B800CD877D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9FA687442055D9B800CD877D /* Cuckoo_macOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = Cuckoo_macOSTests.xctest;
-			remoteRef = 9FA687432055D9B800CD877D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D270AF592099B0C10059AE0F /* Zip.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Zip.framework;
-			remoteRef = D270AF582099B0C10059AE0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D270AF5B2099B0C10059AE0F /* ZipTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ZipTests.xctest;
-			remoteRef = D270AF5A2099B0C10059AE0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D270AF5D2099B0C10059AE0F /* Zip.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Zip.framework;
-			remoteRef = D270AF5C2099B0C10059AE0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D270AF5F2099B0C10059AE0F /* Zip OSXTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Zip OSXTests.xctest";
-			remoteRef = D270AF5E2099B0C10059AE0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D270AF612099B0C10059AE0F /* Zip.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Zip.framework;
-			remoteRef = D270AF602099B0C10059AE0F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9F48D0C12210C76000DB9472 /* Resources */ = {
@@ -850,6 +675,44 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    cd QLogTests\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		9F6B9603228F5730006433F0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Cuckoo.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Cuckoo.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		9F6B9605228F57F8006433F0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Zip.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Zip.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		9FA687472055DA0700CD877D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -868,7 +731,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/QLogTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n${PROJECT_DIR}/../Frameworks/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\"\n";
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/QLogTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\nCarthage/Checkouts/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -950,20 +813,10 @@
 			target = 9F48D0C22210C76000DB9472 /* QLogTestsHostApp */;
 			targetProxy = 9F48D0E12210C76000DB9472 /* PBXContainerItemProxy */;
 		};
-		9FA687462055D9C400CD877D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Cuckoo-iOS";
-			targetProxy = 9FA687452055D9C400CD877D /* PBXContainerItemProxy */;
-		};
 		9FE85A071EFAA73700560920 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9FE859FA1EFAA73600560920 /* QLog */;
 			targetProxy = 9FE85A061EFAA73700560920 /* PBXContainerItemProxy */;
-		};
-		D270AF632099B0D20059AE0F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Zip;
-			targetProxy = D270AF622099B0D20059AE0F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1134,6 +987,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/QLog/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1153,6 +1010,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/QLog/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1168,6 +1029,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = QLogTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qa.quantum.QLogTests;
@@ -1181,6 +1046,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = QLogTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qa.quantum.QLogTests;
