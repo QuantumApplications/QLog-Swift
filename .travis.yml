@@ -5,16 +5,12 @@ before_install:
 - brew update
 - brew outdated carthage || brew upgrade carthage
 
-before_script:
+install:
 - cd QLog
-- carthage bootstrap --platform iOS
+- bundle install
 
 script:
-- xcodebuild clean
-- cd ..
-- `pwd`/Frameworks/Cuckoo/run generate QLog/QLog/QLog.swift QLog/QLog/Logger.swift QLog/QLog/XcodeLogger.swift QLog/QLog/LiveLogViewController.swift QLog/QLog/SupportPackageViewController.swift QLog/QLog/AppsTableViewController.swift --testable QLog --output QLog/QLogTests/GeneratedMocks.swift
-- cd QLog
-- xcodebuild build test -project QLog.xcodeproj -scheme QLog -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XS Max,OS=12.2'
+- bundle exec fastlane test
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)

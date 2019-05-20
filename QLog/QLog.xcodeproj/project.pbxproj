@@ -116,6 +116,8 @@
 		9F6B95F6228F4BA0006433F0 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		9F6B95FF228F4E91006433F0 /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = Carthage/Build/iOS/Zip.framework; sourceTree = "<group>"; };
 		9F6B9601228F4EB8006433F0 /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
+		9F6B960622933F06006433F0 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
+		9F6B960722934014006433F0 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		9F9A5EB4221A0396006A105B /* SupportPackageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPackageCoordinator.swift; sourceTree = "<group>"; };
 		9F9A5EC0221B73E5006A105B /* ArchiveLogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveLogCoordinator.swift; sourceTree = "<group>"; };
@@ -261,9 +263,9 @@
 		9F48D0C42210C76000DB9472 /* QLogTestsHostApp */ = {
 			isa = PBXGroup;
 			children = (
-				9F48D0E62210C76000DB9472 /* Default-568h@2x.png */,
 				9F48D0DC2210C76000DB9472 /* Main */,
 				9F48D0E32210C76000DB9472 /* View Controllers */,
+				9F48D0E62210C76000DB9472 /* Default-568h@2x.png */,
 				9F48D0D12210C76000DB9472 /* Info.plist */,
 			);
 			path = QLogTestsHostApp;
@@ -412,8 +414,11 @@
 				9FE859FD1EFAA73600560920 /* QLog */,
 				9FE85A081EFAA73700560920 /* QLogTests */,
 				9F48D0C42210C76000DB9472 /* QLogTestsHostApp */,
-				9FE859FC1EFAA73600560920 /* Products */,
 				9F6B95FE228F4E90006433F0 /* Frameworks */,
+				9FE859FC1EFAA73600560920 /* Products */,
+				9F6B95F6228F4BA0006433F0 /* Cartfile */,
+				9F6B960722934014006433F0 /* Gemfile */,
+				9F6B960622933F06006433F0 /* fastlane */,
 			);
 			sourceTree = "<group>";
 		};
@@ -455,7 +460,6 @@
 				9FA687492055DB3800CD877D /* GeneratedMocks.swift */,
 				9FE85A0B1EFAA73700560920 /* Info.plist */,
 				9F4BC0E72093CB9B00BDA8EB /* .swiftlint.yml */,
-				9F6B95F6228F4BA0006433F0 /* Cartfile */,
 			);
 			path = QLogTests;
 			sourceTree = "<group>";
@@ -719,7 +723,7 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/QLog/QLog.swift",
+				QLog/QLog.swift,
 				"$(SRCROOT)/QLog/Logger.swift",
 				"$(SRCROOT)/QLog/XcodeLogger.swift",
 				"$(SRCROOT)/QLog/LiveLogViewController.swift",
