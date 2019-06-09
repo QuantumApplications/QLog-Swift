@@ -8,23 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		9F2087BE21F284C000427BE3 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9F2087BD21F284C000427BE3 /* .swiftlint.yml */; };
-		9F2D6860202B4CD100145E52 /* QLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2D685F202B4CD100145E52 /* QLog.framework */; };
-		9F2D6861202B4CD100145E52 /* QLog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2D685F202B4CD100145E52 /* QLog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F4E7F052050853A00892524 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F4E7F042050853A00892524 /* Default-568h@2x.png */; };
 		9F56D22420434D3C0051A25F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F56D22620434D3C0051A25F /* Localizable.strings */; };
 		9F56D22920434D580051A25F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56D22820434D580051A25F /* Strings.swift */; };
 		9F6AAAA32017E20100DB49A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6AAAA22017E20100DB49A0 /* AppDelegate.swift */; };
 		9F6AAAA52017E20100DB49A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6AAAA42017E20100DB49A0 /* ViewController.swift */; };
+		9F923FB322AD9E9D00750F60 /* QLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F923FB222AD9E9D00750F60 /* QLog.framework */; };
+		9F923FB422AD9E9D00750F60 /* QLog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F923FB222AD9E9D00750F60 /* QLog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9F2D6862202B4CD200145E52 /* Embed Frameworks */ = {
+		9F923FB522AD9E9E00750F60 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9F2D6861202B4CD100145E52 /* QLog.framework in Embed Frameworks */,
+				9F923FB422AD9E9D00750F60 /* QLog.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,7 +33,6 @@
 
 /* Begin PBXFileReference section */
 		9F2087BD21F284C000427BE3 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
-		9F2D685F202B4CD100145E52 /* QLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4E7F042050853A00892524 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9F56D22520434D3C0051A25F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9F56D22720434D410051A25F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		9F6AAAA22017E20100DB49A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F6AAAA42017E20100DB49A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F6AAAAE2017E20100DB49A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F923FB222AD9E9D00750F60 /* QLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F2D6860202B4CD100145E52 /* QLog.framework in Frameworks */,
+				9F923FB322AD9E9D00750F60 /* QLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +69,7 @@
 			children = (
 				9F6AAAA12017E20100DB49A0 /* QLogExample */,
 				9F6AAAA02017E20100DB49A0 /* Products */,
-				9F2D685F202B4CD100145E52 /* QLog.framework */,
+				9F923FB222AD9E9D00750F60 /* QLog.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,8 +121,8 @@
 				9F6AAA9B2017E20100DB49A0 /* Sources */,
 				9F6AAA9C2017E20100DB49A0 /* Frameworks */,
 				9F6AAA9D2017E20100DB49A0 /* Resources */,
-				9F2D6862202B4CD200145E52 /* Embed Frameworks */,
 				9F2087BF21F2850A00427BE3 /* ShellScript */,
+				9F923FB522AD9E9E00750F60 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

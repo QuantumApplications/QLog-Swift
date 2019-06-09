@@ -11,7 +11,7 @@ import Foundation
 class Fastfile: LaneFile {
 
     func testLane() {
-        //carthage(platform: "iOS")
+        carthage(platform: "iOS")
         runTests(scheme: "QLog", device: "iPhone Xs Max")
     }
 

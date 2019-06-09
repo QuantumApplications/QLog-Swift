@@ -19,6 +19,8 @@
 		9F0325951F7289D4008F2BEE /* FrameworkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */; };
 		9F0EF5EB222B303E0060BBB0 /* LogViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE3CA42064522C00928FCF /* LogViewControllerTests.swift */; };
 		9F0EF5EE222C76630060BBB0 /* SupportPackageCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0EF5ED222C76630060BBB0 /* SupportPackageCoordinatorTests.swift */; };
+		9F4083DD22ADA17D00DABB3A /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F923FA722AD9E0200750F60 /* Zip.framework */; };
+		9F4083E122ADAEF800DABB3A /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4083E022ADAEF800DABB3A /* Cuckoo.framework */; };
 		9F48D0C62210C76000DB9472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0C52210C76000DB9472 /* AppDelegate.swift */; };
 		9F48D0C82210C76000DB9472 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0C72210C76000DB9472 /* ViewController.swift */; };
 		9F48D0DE2210C76000DB9472 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48D0DD2210C76000DB9472 /* main.swift */; };
@@ -44,8 +46,6 @@
 		9F57DAEA222885600024FE5B /* LogsTableCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57DAE9222885600024FE5B /* LogsTableCoordinatorTests.swift */; };
 		9F57DAEC222885600024FE5B /* ArchiveLogCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57DAEB222885600024FE5B /* ArchiveLogCoordinatorTests.swift */; };
 		9F57DAEF222B2E120024FE5B /* LiveLogCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57DAEE222B2E120024FE5B /* LiveLogCoordinatorTests.swift */; };
-		9F6B9600228F4E91006433F0 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6B95FF228F4E91006433F0 /* Zip.framework */; };
-		9F6B9602228F4EB8006433F0 /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6B9601228F4EB8006433F0 /* Cuckoo.framework */; };
 		9F9A5EB5221A0396006A105B /* SupportPackageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EB4221A0396006A105B /* SupportPackageCoordinator.swift */; };
 		9F9A5EC1221B73E5006A105B /* ArchiveLogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EC0221B73E5006A105B /* ArchiveLogCoordinator.swift */; };
 		9F9A5EC3221B75B5006A105B /* LogsTableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A5EC2221B75B5006A105B /* LogsTableCoordinator.swift */; };
@@ -95,6 +95,7 @@
 		9F0325921F728922008F2BEE /* RootViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
 		9F0325941F7289D4008F2BEE /* FrameworkCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameworkCoordinator.swift; sourceTree = "<group>"; };
 		9F0EF5ED222C76630060BBB0 /* SupportPackageCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPackageCoordinatorTests.swift; sourceTree = "<group>"; };
+		9F4083E022ADAEF800DABB3A /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = ../Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
 		9F48D08F2210C76000DB9472 /* UIApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationTests.swift; sourceTree = "<group>"; };
 		9F48D0C32210C76000DB9472 /* QLogTestsHostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QLogTestsHostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F48D0C52210C76000DB9472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,12 +114,8 @@
 		9F57DAEE222B2E120024FE5B /* LiveLogCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveLogCoordinatorTests.swift; sourceTree = "<group>"; };
 		9F64F8C2203CD16E00328249 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
 		9F64F8C4203E253F00328249 /* XcodeLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLoggerTests.swift; sourceTree = "<group>"; };
-		9F6B95F6228F4BA0006433F0 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
-		9F6B95FF228F4E91006433F0 /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = Carthage/Build/iOS/Zip.framework; sourceTree = "<group>"; };
-		9F6B9601228F4EB8006433F0 /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/iOS/Cuckoo.framework; sourceTree = "<group>"; };
-		9F6B960622933F06006433F0 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
-		9F6B960722934014006433F0 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		9F8D33EA207572C5001657DA /* LogsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsTableViewControllerTests.swift; sourceTree = "<group>"; };
+		9F923FA722AD9E0200750F60 /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Zip.framework; path = ../Carthage/Build/iOS/Zip.framework; sourceTree = "<group>"; };
 		9F9A5EB4221A0396006A105B /* SupportPackageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPackageCoordinator.swift; sourceTree = "<group>"; };
 		9F9A5EC0221B73E5006A105B /* ArchiveLogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveLogCoordinator.swift; sourceTree = "<group>"; };
 		9F9A5EC2221B75B5006A105B /* LogsTableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsTableCoordinator.swift; sourceTree = "<group>"; };
@@ -165,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F6B9600228F4E91006433F0 /* Zip.framework in Frameworks */,
+				9F4083DD22ADA17D00DABB3A /* Zip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F6B9602228F4EB8006433F0 /* Cuckoo.framework in Frameworks */,
+				9F4083E122ADAEF800DABB3A /* Cuckoo.framework in Frameworks */,
 				9FE85A051EFAA73700560920 /* QLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,8 +319,8 @@
 		9F6B95FE228F4E90006433F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9F6B9601228F4EB8006433F0 /* Cuckoo.framework */,
-				9F6B95FF228F4E91006433F0 /* Zip.framework */,
+				9F4083E022ADAEF800DABB3A /* Cuckoo.framework */,
+				9F923FA722AD9E0200750F60 /* Zip.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -416,9 +413,6 @@
 				9F48D0C42210C76000DB9472 /* QLogTestsHostApp */,
 				9F6B95FE228F4E90006433F0 /* Frameworks */,
 				9FE859FC1EFAA73600560920 /* Products */,
-				9F6B95F6228F4BA0006433F0 /* Cartfile */,
-				9F6B960722934014006433F0 /* Gemfile */,
-				9F6B960622933F06006433F0 /* fastlane */,
 			);
 			sourceTree = "<group>";
 		};
@@ -537,12 +531,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FE85A0F1EFAA73700560920 /* Build configuration list for PBXNativeTarget "QLog" */;
 			buildPhases = (
-				9F6B9605228F57F8006433F0 /* ShellScript */,
+				9F0325AF1F731560008F2BEE /* ShellScript */,
+				9F6B9605228F57F8006433F0 /* Run Script */,
 				9FE859F61EFAA73600560920 /* Sources */,
 				9FE859F71EFAA73600560920 /* Frameworks */,
 				9FE859F81EFAA73600560920 /* Headers */,
 				9FE859F91EFAA73600560920 /* Resources */,
-				9F0325AF1F731560008F2BEE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -557,12 +551,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FE85A121EFAA73700560920 /* Build configuration list for PBXNativeTarget "QLogTests" */;
 			buildPhases = (
-				9F6B9603228F5730006433F0 /* ShellScript */,
+				9F4BC0E82093CD6A00BDA8EB /* ShellScript */,
+				9FC7FEC522ADB0BB002C42B6 /* ShellScript */,
 				9FA687472055DA0700CD877D /* ShellScript */,
 				9FE85A001EFAA73700560920 /* Sources */,
 				9FE85A011EFAA73700560920 /* Frameworks */,
 				9FE85A021EFAA73700560920 /* Resources */,
-				9F4BC0E82093CD6A00BDA8EB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -679,7 +673,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    cd QLogTests\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		9F6B9603228F5730006433F0 /* ShellScript */ = {
+		9F6B9605228F57F8006433F0 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -687,27 +681,9 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Cuckoo.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Zip.framework",
 			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Cuckoo.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-		9F6B9605228F57F8006433F0 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Zip.framework",
-			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -723,7 +699,7 @@
 			files = (
 			);
 			inputPaths = (
-				QLog/QLog.swift,
+				"$(SRCROOT)/QLog/QLog.swift",
 				"$(SRCROOT)/QLog/Logger.swift",
 				"$(SRCROOT)/QLog/XcodeLogger.swift",
 				"$(SRCROOT)/QLog/LiveLogViewController.swift",
@@ -735,7 +711,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/QLogTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\nCarthage/Checkouts/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\"\n";
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/QLogTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n../Carthage/Checkouts/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\"\n";
+		};
+		9FC7FEC522ADB0BB002C42B6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/Cuckoo.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -993,7 +987,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/QLog/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1016,7 +1010,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/QLog/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1035,7 +1029,7 @@
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = QLogTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1052,7 +1046,7 @@
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = QLogTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
