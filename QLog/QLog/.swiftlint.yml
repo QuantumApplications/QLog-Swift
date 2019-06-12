@@ -6,7 +6,6 @@ opt_in_rules:
 - cyclomatic_complexity
 - file_header
 
-
 file_header:
   required_pattern: |
                     \/\/
