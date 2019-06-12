@@ -118,10 +118,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F6AAAB12017E20100DB49A0 /* Build configuration list for PBXNativeTarget "QLogExample" */;
 			buildPhases = (
+				9F2087BF21F2850A00427BE3 /* ShellScript */,
 				9F6AAA9B2017E20100DB49A0 /* Sources */,
 				9F6AAA9C2017E20100DB49A0 /* Frameworks */,
 				9F6AAA9D2017E20100DB49A0 /* Resources */,
-				9F2087BF21F2850A00427BE3 /* ShellScript */,
 				9F923FB522AD9E9E00750F60 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -198,7 +198,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\ncd QLogExample\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n    cd QLogExample\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
