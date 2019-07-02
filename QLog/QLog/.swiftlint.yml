@@ -3,8 +3,8 @@ disabled_rules:
 - force_cast
 - identifier_name
 opt_in_rules:
-- file_header
 - cyclomatic_complexity
+- file_header
 
 file_header:
   required_pattern: |
@@ -18,6 +18,6 @@ file_header:
 file_length:
   warning: 500
   error: 1200
-function_body_length: 15
 cyclomatic_complexity: 5
+function_body_length: 15
 function_parameter_count: 2

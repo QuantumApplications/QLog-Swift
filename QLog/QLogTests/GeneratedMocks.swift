@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: QLog/AppsTableViewController.swift at 2019-06-09 21:27:47 +0000
+// MARK: - Mocks generated from file: QLog/AppsTableViewController.swift at 2019-06-12 18:03:46 +0000
 
 //
 //  AppsTableViewController.swift
@@ -492,7 +492,7 @@ import UIKit
 }
 
 
-// MARK: - Mocks generated from file: QLog/LiveLogCoordinator.swift at 2019-06-09 21:27:47 +0000
+// MARK: - Mocks generated from file: QLog/LiveLogCoordinator.swift at 2019-06-12 18:03:46 +0000
 
 //
 //  LiveLogCoordinator.swift
@@ -628,7 +628,7 @@ import MobileCoreServices
 }
 
 
-// MARK: - Mocks generated from file: QLog/LiveLogViewController.swift at 2019-06-09 21:27:47 +0000
+// MARK: - Mocks generated from file: QLog/LiveLogViewController.swift at 2019-06-12 18:03:46 +0000
 
 //
 //  LiveLogViewController.swift
@@ -1268,7 +1268,7 @@ import UIKit
 }
 
 
-// MARK: - Mocks generated from file: QLog/Logger.swift at 2019-06-09 21:27:47 +0000
+// MARK: - Mocks generated from file: QLog/Logger.swift at 2019-06-12 18:03:46 +0000
 
 //
 //  Logger.swift
@@ -1420,7 +1420,7 @@ public class LoggerStub: Logger {
 }
 
 
-// MARK: - Mocks generated from file: QLog/QLog.swift at 2019-06-09 21:27:47 +0000
+// MARK: - Mocks generated from file: QLog/QLog.swift at 2019-06-12 18:03:46 +0000
 
 //
 //  QLog.swift
@@ -1496,7 +1496,7 @@ public class QLogStub: QLog {
 }
 
 
-// MARK: - Mocks generated from file: QLog/SupportPackageViewController.swift at 2019-06-09 21:27:47 +0000
+// MARK: - Mocks generated from file: QLog/SupportPackageViewController.swift at 2019-06-12 18:03:46 +0000
 
 //
 //  SupportPackageViewController.swift
@@ -1840,7 +1840,7 @@ import UIKit
 }
 
 
-// MARK: - Mocks generated from file: QLog/XcodeLogger.swift at 2019-06-09 21:27:47 +0000
+// MARK: - Mocks generated from file: QLog/XcodeLogger.swift at 2019-06-12 18:03:46 +0000
 
 //
 //  XcodeLogger.swift

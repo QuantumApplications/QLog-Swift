@@ -14,7 +14,13 @@
       location = "group:Cartfile">
    </FileRef>
    <FileRef
+      location = "group:Cartfile.resolved">
+   </FileRef>
+   <FileRef
       location = "group:Gemfile">
+   </FileRef>
+   <FileRef
+      location = "group:Gemfile.lock">
    </FileRef>
    <FileRef
       location = "group:LICENSE">
