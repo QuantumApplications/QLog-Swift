@@ -532,7 +532,6 @@
 			buildConfigurationList = 9FE85A0F1EFAA73700560920 /* Build configuration list for PBXNativeTarget "QLog" */;
 			buildPhases = (
 				9F0325AF1F731560008F2BEE /* ShellScript */,
-				9F6B9605228F57F8006433F0 /* Run Script */,
 				9FE859F61EFAA73600560920 /* Sources */,
 				9FE859F71EFAA73600560920 /* Frameworks */,
 				9FE859F81EFAA73600560920 /* Headers */,
@@ -672,26 +671,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    cd QLogTests\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		9F6B9605228F57F8006433F0 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../Carthage/Build/iOS/Zip.framework",
-			);
-			name = "Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Zip.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		9FA687472055DA0700CD877D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
