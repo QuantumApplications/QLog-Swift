@@ -8,6 +8,9 @@
       location = "group:QLogExample/QLogExample.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:fastlane">
+   </FileRef>
+   <FileRef
       location = "group:.travis.yml">
    </FileRef>
    <FileRef
@@ -27,8 +30,5 @@
    </FileRef>
    <FileRef
       location = "group:README.md">
-   </FileRef>
-   <FileRef
-      location = "group:fastlane">
    </FileRef>
 </Workspace>

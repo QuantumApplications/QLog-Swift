@@ -431,13 +431,13 @@
 			children = (
 				9FF41617202BB73900566B93 /* Main */,
 				9FF41618202BB76100566B93 /* Controllers */,
+				9FF41619202BB90000566B93 /* Loggers */,
 				9F0325971F728B4A008F2BEE /* Coordinators */,
 				9F0325961F728B37008F2BEE /* View Controllers */,
 				9F9A5EC42221F5DD006A105B /* Table View Cells */,
-				9FF41619202BB90000566B93 /* Loggers */,
 				9FF41614202BB65900566B93 /* Util */,
-				9FE859FE1EFAA73600560920 /* QLog.h */,
 				9FE859FF1EFAA73600560920 /* Info.plist */,
+				9FE859FE1EFAA73600560920 /* QLog.h */,
 				9F4BC0E32093CB7B00BDA8EB /* .swiftlint.yml */,
 			);
 			path = QLog;
@@ -531,7 +531,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FE85A0F1EFAA73700560920 /* Build configuration list for PBXNativeTarget "QLog" */;
 			buildPhases = (
-				9F0325AF1F731560008F2BEE /* ShellScript */,
+				9F0325AF1F731560008F2BEE /* swiftlint */,
 				9FE859F61EFAA73600560920 /* Sources */,
 				9FE859F71EFAA73600560920 /* Frameworks */,
 				9FE859F81EFAA73600560920 /* Headers */,
@@ -550,11 +550,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FE85A121EFAA73700560920 /* Build configuration list for PBXNativeTarget "QLogTests" */;
 			buildPhases = (
-				9F4BC0E82093CD6A00BDA8EB /* ShellScript */,
-				9FC7FEC522ADB0BB002C42B6 /* ShellScript */,
-				9FA687472055DA0700CD877D /* ShellScript */,
+				9F4BC0E82093CD6A00BDA8EB /* swiftlint */,
+				9FA687472055DA0700CD877D /* Generate Mocks */,
 				9FE85A001EFAA73700560920 /* Sources */,
 				9FE85A011EFAA73700560920 /* Frameworks */,
+				9FC7FEC522ADB0BB002C42B6 /* Carthage */,
 				9FE85A021EFAA73700560920 /* Resources */,
 			);
 			buildRules = (
@@ -646,33 +646,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9F0325AF1F731560008F2BEE /* ShellScript */ = {
+		9F0325AF1F731560008F2BEE /* swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = swiftlint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    cd QLog\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		9F4BC0E82093CD6A00BDA8EB /* ShellScript */ = {
+		9F4BC0E82093CD6A00BDA8EB /* swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = swiftlint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    cd QLogTests\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		9FA687472055DA0700CD877D /* ShellScript */ = {
+		9FA687472055DA0700CD877D /* Generate Mocks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -686,13 +688,14 @@
 				"$(SRCROOT)/QLog/AppsTableViewController.swift",
 				"$(SRCROOT)/QLog/LiveLogCoordinator.swift",
 			);
+			name = "Generate Mocks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Define output file. Change \"$PROJECT_DIR/Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/QLogTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"$PROJECT_DIR\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"$PROJECT_DIR\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n../Carthage/Checkouts/Cuckoo/run generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\"\n";
 		};
-		9FC7FEC522ADB0BB002C42B6 /* ShellScript */ = {
+		9FC7FEC522ADB0BB002C42B6 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -701,7 +704,9 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/../Carthage/Build/iOS/Cuckoo.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Zip.framework",
 			);
+			name = Carthage;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -898,7 +903,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -954,7 +958,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -966,7 +969,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/QLog/Info.plist";
+				INFOPLIST_FILE = QLog/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -985,7 +988,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/QLog/Info.plist";
+				INFOPLIST_FILE = QLog/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
