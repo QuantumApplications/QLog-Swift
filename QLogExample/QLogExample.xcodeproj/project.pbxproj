@@ -126,7 +126,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F6AAAB12017E20100DB49A0 /* Build configuration list for PBXNativeTarget "QLogExample" */;
 			buildPhases = (
-				9F2087BF21F2850A00427BE3 /* swiftlint */,
+				9F2087BF21F2850A00427BE3 /* SwiftLint */,
 				9F6AAA9B2017E20100DB49A0 /* Sources */,
 				9F6AAA9C2017E20100DB49A0 /* Frameworks */,
 				9F6AAA9D2017E20100DB49A0 /* Resources */,
@@ -191,7 +191,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9F2087BF21F2850A00427BE3 /* swiftlint */ = {
+		9F2087BF21F2850A00427BE3 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -200,7 +200,7 @@
 			);
 			inputPaths = (
 			);
-			name = swiftlint;
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (

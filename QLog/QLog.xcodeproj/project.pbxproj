@@ -531,7 +531,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FE85A0F1EFAA73700560920 /* Build configuration list for PBXNativeTarget "QLog" */;
 			buildPhases = (
-				9F0325AF1F731560008F2BEE /* swiftlint */,
+				9F0325AF1F731560008F2BEE /* SwiftLint */,
 				9FE859F61EFAA73600560920 /* Sources */,
 				9FE859F71EFAA73600560920 /* Frameworks */,
 				9FE859F81EFAA73600560920 /* Headers */,
@@ -550,7 +550,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FE85A121EFAA73700560920 /* Build configuration list for PBXNativeTarget "QLogTests" */;
 			buildPhases = (
-				9F4BC0E82093CD6A00BDA8EB /* swiftlint */,
+				9F4BC0E82093CD6A00BDA8EB /* SwiftLint */,
 				9FA687472055DA0700CD877D /* Generate Mocks */,
 				9FE85A001EFAA73700560920 /* Sources */,
 				9FE85A011EFAA73700560920 /* Frameworks */,
@@ -646,28 +646,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9F0325AF1F731560008F2BEE /* swiftlint */ = {
+		9F0325AF1F731560008F2BEE /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = swiftlint;
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    cd QLog\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		9F4BC0E82093CD6A00BDA8EB /* swiftlint */ = {
+		9F4BC0E82093CD6A00BDA8EB /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = swiftlint;
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
