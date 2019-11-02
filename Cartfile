@@ -1,2 +1,2 @@
-github "Brightify/Cuckoo"
+github "Brightify/Cuckoo" == 1.1.1
 github "marmelroy/Zip"
