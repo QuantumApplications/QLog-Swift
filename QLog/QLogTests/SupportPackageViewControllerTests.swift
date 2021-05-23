@@ -14,7 +14,7 @@ class SupportPackageViewControllerTests: XCTestCase {
 
     func testInitWithCoder() {
         // 1. Arrange
-        let archiver = NSKeyedArchiver(forWritingWith: NSMutableData())
+        let archiver = NSKeyedArchiver(requiringSecureCoding: false)
 
         // 2. Action
         let supportPackageViewController = SupportPackageViewController(coder: archiver)

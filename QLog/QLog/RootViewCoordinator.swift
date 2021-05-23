@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol RootViewCoontrollerProvider: class {
+protocol RootViewCoontrollerProvider: AnyObject {
 
     var rootViewController: UIViewController { get }
 

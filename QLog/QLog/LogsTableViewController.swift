@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol LogsTableViewControllerDelegate: class {
+protocol LogsTableViewControllerDelegate: AnyObject {
 
     /**
      A log file was selected

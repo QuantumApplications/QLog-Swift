@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol LiveLogViewControllerDelegate: class {
+protocol LiveLogViewControllerDelegate: AnyObject {
 
     /// Goes back
     func back()

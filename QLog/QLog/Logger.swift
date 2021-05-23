@@ -9,7 +9,7 @@
 /**
  Logger protocol
  */
-public protocol Logger: class {
+public protocol Logger: AnyObject {
 
     var logLevel: LogLevel { get set }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AppsTableViewControllerDelegate: class {
+protocol AppsTableViewControllerDelegate: AnyObject {
 
     /// Goes back
     func back()

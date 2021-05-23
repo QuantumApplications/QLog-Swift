@@ -9,7 +9,7 @@
 import Foundation
 
 /// The coordinator protocol
-protocol Coordinator: class {
+protocol Coordinator: AnyObject {
 
     /**
      Starts the coordinator and pushes the corresponding view controller
