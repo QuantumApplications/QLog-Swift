@@ -7,6 +7,9 @@
    <FileRef
       location = "group:QLogExample/QLogExample.xcodeproj">
    </FileRef>
+      <FileRef
+      location = "group:.github">
+   </FileRef>
    <FileRef
       location = "group:fastlane">
    </FileRef>
