@@ -7,14 +7,11 @@
    <FileRef
       location = "group:QLogExample/QLogExample.xcodeproj">
    </FileRef>
-      <FileRef
+   <FileRef
       location = "group:.github">
    </FileRef>
    <FileRef
       location = "group:fastlane">
-   </FileRef>
-   <FileRef
-      location = "group:.travis.yml">
    </FileRef>
    <FileRef
       location = "group:Cartfile">

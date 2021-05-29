@@ -34,3 +34,4 @@ jobs:
       - uses: maierj/fastlane-action@v2.0.1
         with:
           lane: test
+      - uses: codecov/codecov-action@v1
