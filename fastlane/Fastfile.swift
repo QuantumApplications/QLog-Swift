@@ -15,7 +15,7 @@ class Fastfile: LaneFile {
         // - Carthage 0.37 does not support Xcode 12
         // - Carthage 0.38 does not support nested dependencies
         sh(command: "./carthage-build.sh bootstrap --platform ios --no-use-binaries --cache-builds")
-        runTests(scheme: "QLog", device: "iPhone Xs Max")
+        runTests(scheme: "QLog", device: "iPhone 12 Pro Max")
     }
 
 }
