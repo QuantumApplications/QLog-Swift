@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-protocol RootViewCoontrollerProvider: AnyObject {
+protocol RootViewControllerProvider: AnyObject {
 
     var rootViewController: UIViewController { get }
 
 }
 
-typealias  RootViewCoordinator = Coordinator & RootViewCoontrollerProvider
+typealias RootViewCoordinator = Coordinator & RootViewControllerProvider
